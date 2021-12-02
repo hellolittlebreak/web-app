@@ -6,7 +6,7 @@ import UnderstandingEmotions from "./components/understandingemotions/index"
 
 function App() {
   return (
-    <div className="bg-gray-100 w-screen h-screen">
+    <div className="bg-white w-screen h-screen">
       <header>
 
       </header>

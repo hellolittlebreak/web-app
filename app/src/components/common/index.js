@@ -1,7 +1,7 @@
 import React from 'react';
 
 const SectionTitle = (props) => {
-    return <div className="">
+    return <div className="lg:ml-2 lg:mr-32">
         <h2 className="w-full border-b-2 text-left text-blue-1100 font-semibold font-heading text-md lg:text-xl">{props.title}</h2>
     </div>
 }
