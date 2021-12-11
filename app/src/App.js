@@ -9,6 +9,10 @@ import Welcome from "./components/welcome";
 
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
+import FindYourselfAtYourBest from "./components/exercises/findyourselfatyourbest/index";
+import QuietDownNegativeThoughts from "./components/exercises/quietdownnegativethoughts";
+import UnderstandFeelingsAndEmotions from "./components/exercises/understandfeelingsandemotions";
+import UnwindFromStressfulMoment from "./components/exercises/unwindfromstressfulmoment";
 
 const firebaseConfig = {
   apiKey: "AIzaSyClDDnFfPSVzOJszY6awn-WOrq3PJNEYMc",
@@ -30,7 +34,7 @@ function App() {
       <header>
 
       </header>
-      <div className="container mx-auto px-4 lg:px-40 pt-6 lg:pt-12 lg:pb-12">
+      <div className="container mx-auto px-4 lg:px-64   pt-6 lg:pt-12 lg:pb-12">
         <Routes>
           <Route path="/" element={< UserBackgroundInfo />} />
           <Route exact path="understanding-emotions" element={<UnderstandingEmotions />} />
@@ -38,6 +42,10 @@ function App() {
           <Route exact path="cantril-self-anchoring-striving-scale" element={<CantrilLadder />} />
           <Route exact path="cantril-self-anchoring-result" element={< CantrilLadderResult />} />
           <Route exact path="select-your-daily-little-break" element={<Welcome />} />
+          <Route exact path="find-yourself-at-your-best" element={<FindYourselfAtYourBest />} />
+          <Route exact path="understand-your-feeling-and-emotions" element={<UnderstandFeelingsAndEmotions />} />
+          <Route exact path="unwind-from-a-stressful-moment" element={<UnwindFromStressfulMoment />} />
+          <Route exact path="quiet-down-the-negative-thoughts" element={<QuietDownNegativeThoughts />} />
         </Routes>
       </div>
       <footer>

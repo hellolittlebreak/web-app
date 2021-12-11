@@ -76,10 +76,10 @@ function CantrilLadder() {
                 case 2:
                     return <div className="">
                         <AnimatedList animation="grow" initialAnimationDuration="5000">
-                            <div className="bg-blue-1000 p-6 lg:ml-2 lg:mr-6 rounded-full my-4 lg:my-8 inline-block">
+                            <div className="bg-blue-1000 p-6 lg:ml-2 lg:mr-6 rounded-lg my-4 lg:my-8 inline-block">
                                 <p className="text-blue-1100 font-heading text-xs lg:text-sm">{exercises.data[currentPage].title}</p>
                             </div>
-                            <p className="text-md text-blue-1100 font-heading text-xs lg:text-lg font-semibold lg:ml-4 lg:mb-6">{exercises.data[currentPage].question}</p>
+                            <p className="text-md text-blue-1100 font-heading text-xs lg:text-base font-semibold lg:ml-4 lg:mb-6">{exercises.data[currentPage].question}</p>
                             <ul className="mt-2 lg:mt-12 flex flex-wrap justify-center">
                                 {exercises.data[currentPage].answers.map((item, index) => {
                                     if (item.isSelected) {
@@ -97,7 +97,7 @@ function CantrilLadder() {
         })()}
         <div className="flex flex-col justify-center">
             <p className="cursor-pointer rounded-full mx-auto py-2 lg:py-4 mt-16 px-4 lg:px-12 bg-blue-1100 hover:bg-blue-800 text-white inline-block font-body text-md lg:text-base" onClick={() => handleClick()}>Continue</p>
-            <p className="cursor-pointer mx-auto py-4 mt-4 px-12 text-blue-1100 font-body text-md lg:text-base" onClick={() => skipExercise()}>Skip Exercise</p>
+            {currentPage === 0 && <p className="cursor-pointer mx-auto py-4 mt-4 px-12 text-blue-1100 font-body text-md lg:text-base" onClick={() => skipExercise()}>Skip Exercise</p>}
         </div>
     </div>
 }
