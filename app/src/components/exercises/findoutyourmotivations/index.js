@@ -53,7 +53,7 @@ const FindOutYourMotivations = () => {
     const [currentPage, setCurrentPage] = useState(0)
     const myRef = useRef(null)
 
-    const executeScroll = () => myRef.current.scrollIntoView()
+    const executeScroll = () => myRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' })
 
     const handleChange = (e, position, isSelected) => {
 
@@ -82,7 +82,7 @@ const FindOutYourMotivations = () => {
         {
             exercises.data.map((item, index) => {
                 if (item.shouldBeVisible === true) {
-                    return <div ref={myRef} className="h-108">
+                    return <div ref={myRef} className="h-84">
                         {/* // <AnimatedList className="h-156" animation="grow" initialAnimationDuration="4000"> */}
 
                         <p className="text-md text-blue-1100 font-heading font-semibold lg:ml-4 lg:mt-6">{item.title}</p>
