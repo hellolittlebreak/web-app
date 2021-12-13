@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { useNavigate, Routes, Route } from "react-router-dom";
 import { AnimatedList } from 'react-animated-list'
 
+
 const Welcome = () => {
     const navigate = useNavigate();
     const [welcomeContent, setWelcomeContent] = useState([
@@ -27,6 +28,11 @@ const Welcome = () => {
             title: "Now, take a Little Break to...",
             description: "",
             content: [
+                {
+                    value: "Find out your motivations",
+                    isSelected: false,
+                    componentLink: "find-out-your-motivations"
+                },
                 {
                     value: "Find yourself at your best",
                     isSelected: false,
@@ -64,27 +70,32 @@ const Welcome = () => {
 
     return <div>
         {(() => {
+
             switch (currentPage) {
                 case 0:
                     return <div className=" duration-500 transition ease-in">
-                        {/* <AnimatedList animation="grow" initialAnimationDuration="5000"> */}
-                        <h2 className="text-left border-b-2 border-blue-1100 text-blue-1100 font-bold font-heading text-md lg:text-xl">{welcomeContent[currentPage].title}</h2>
+                        <AnimatedList animation="grow" initialAnimationDuration="5000">
+                            <h2 className="text-left border-b-2 border-blue-1100 text-blue-1100 font-bold font-heading text-md lg:text-xl">{welcomeContent[currentPage].title}</h2>
 
-                        <ul className="flex flex-col mt-4">
-                            {welcomeContent[currentPage].content.map((item, index) => {
-                                return <p className="bg-blue-1000 p-2 lg:ml-2 lg:mr-6 rounded-lg my-4 text-blue-1100 font-heading text-xs lg:text-sm table">{item.value}</p>
-                            })}
-                        </ul>
+                            <ul className="flex flex-col mt-4">
 
-                        <p className="text-md text-blue-1100 font-heading text-xs lg:text-base font-semibold lg:ml-4 lg:mb-6 lg:mt-6">
-                            {welcomeContent[currentPage].description}
-                        </p>
+                                {welcomeContent[currentPage].content.map((item, index) => {
+                                    return <p className="bg-blue-1000 p-2 lg:ml-2 lg:mr-6 rounded-lg my-4 text-blue-1100 font-heading text-xs lg:text-sm table">{item.value}</p>
+                                })}
 
+                            </ul>
+
+
+                            <p className="text-md text-blue-1100 font-heading text-xs lg:text-base font-semibold lg:ml-4 lg:mb-6 lg:mt-6">
+                                {welcomeContent[currentPage].description}
+                            </p>
+                        </AnimatedList>
                     </div>
                 case 1:
                     return <div>
 
                         <h2 className="text-left border-b-2 border-blue-1100 text-blue-1100 font-bold font-heading text-md lg:text-xl">{welcomeContent[currentPage].title}</h2>
+
                         <div className="flex justify-center lg:mt-10">
                             <ul className="w-full lg:w-2/3 grid grid-rows-4 gap-4 lg:grid-cols-2 mt-4 justify-center text-center">
                                 {welcomeContent[currentPage].content.map((item, index) => {
@@ -96,6 +107,7 @@ const Welcome = () => {
                                     </div>
                                 })}
                             </ul>
+
                         </div>
 
                     </div>
@@ -110,12 +122,6 @@ const Welcome = () => {
                 <p className="cursor-pointer rounded-full mx-auto py-2 lg:py-4 mt-16 px-4 lg:px-12 bg-blue-1100 hover:bg-blue-800 text-white inline-block font-body text-md lg:text-base" onClick={() => handleClick()}>Continue</p>
             </div>
         }
-        {/* <Routes>
-            <Route exact path="find-yourself-at-your-best" element={<FindYourselfAtYourBest />} />
-            <Route exact path="understand-your-feeling-and-emotions" element={<QuietDownNegativeThoughts />} />
-            <Route exact path="unwind-from-a-stressful-moment" element={<UnderstandFeelingsAndEmotions />} />
-            <Route exact path="quiet-down-the-negative-thoughts" element={<UnwindFromStressfulMoment />} />
-        </Routes> */}
     </div>
 }
 

@@ -13,6 +13,7 @@ import FindYourselfAtYourBest from "./components/exercises/findyourselfatyourbes
 import QuietDownNegativeThoughts from "./components/exercises/quietdownnegativethoughts";
 import UnderstandFeelingsAndEmotions from "./components/exercises/understandfeelingsandemotions";
 import UnwindFromStressfulMoment from "./components/exercises/unwindfromstressfulmoment";
+import FindOutYourMotivations from "./components/exercises/findoutyourmotivations";
 
 const firebaseConfig = {
   apiKey: "AIzaSyClDDnFfPSVzOJszY6awn-WOrq3PJNEYMc",
@@ -46,6 +47,7 @@ function App() {
           <Route exact path="understand-your-feeling-and-emotions" element={<UnderstandFeelingsAndEmotions />} />
           <Route exact path="unwind-from-a-stressful-moment" element={<UnwindFromStressfulMoment />} />
           <Route exact path="quiet-down-the-negative-thoughts" element={<QuietDownNegativeThoughts />} />
+          <Route exact path="find-out-your-motivations" element={<FindOutYourMotivations />} />
         </Routes>
       </div>
       <footer>
