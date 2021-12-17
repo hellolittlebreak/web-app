@@ -80,7 +80,7 @@ const Welcome = () => {
                             <ul className="flex flex-col mt-4">
 
                                 {welcomeContent[currentPage].content.map((item, index) => {
-                                    return <p className="bg-blue-1000 p-2 lg:ml-2 lg:mr-6 rounded-lg my-4 text-blue-1100 font-heading text-xs lg:text-sm table">{item.value}</p>
+                                    return <p className="bg-white p-2 lg:ml-2 lg:mr-6 rounded-lg my-4 text-blue-1100 font-heading text-xs lg:text-sm table">{item.value}</p>
                                 })}
 
                             </ul>

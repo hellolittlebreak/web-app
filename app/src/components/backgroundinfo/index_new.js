@@ -205,7 +205,7 @@ function UserBackgroundInfo() {
     }
 
     return (
-        <div className="bg-white rounded-lg">
+        <div className="bg-blue-1000 rounded-lg">
             {/* Left Side */}
             <div className="w-full border-gray-300 h-132 relative">
                 <SectionTitle title={"About you"} />
@@ -241,7 +241,7 @@ function UserBackgroundInfo() {
                 })()
                 }
 
-                <div className="bg-white flex flex-row justify-between w-full h-20 absolute bottom-0 rounded-b-lg">
+                <div className="bg-blue-1000 flex flex-row justify-between w-full h-20 absolute bottom-0 rounded-b-lg">
                     {(() => {
                         if (currentPage > 0) {
                             return <div className="px-2 lg:px-4 mt-2 lg:mt-6 cursor-pointer text-left flex my-auto">

@@ -31,11 +31,11 @@ function App() {
   const analytics = getAnalytics(app);
 
   return (
-    <div className="bg-white w-screen h-full">
+    <div className="bg-blue-1000 w-screen h-screen">
       <header>
 
       </header>
-      <div className="container mx-auto px-4 lg:px-64   pt-6 lg:pt-12 lg:pb-12">
+      <div className="bg-blue-1000 mx-auto px-4 lg:px-64 pt-6">
         <Routes>
           <Route path="/" element={< UserBackgroundInfo />} />
           <Route exact path="understanding-emotions" element={<UnderstandingEmotions />} />
