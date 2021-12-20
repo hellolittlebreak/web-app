@@ -1,42 +1,95 @@
-import React from 'react'
-import { Routes, Route, Link } from "react-router-dom";
-import IdentifyEmotions from './exercises/identifyemotions';
-import { FaArrowRight } from 'react-icons/fa'
+import React, { useState } from 'react';
 import { AnimatedList } from 'react-animated-list';
+import { FaArrowRight } from 'react-icons/fa'
 
-function UnderstandingEmotions(props) {
-  return (
-    <div className="grid grid-rows-2 lg:grid-rows-1 lg:grid-cols-2">
-      {/* Left Side */}
-      <div className="w-full border-2 border-gray-200 rounded-lg h-144 relative">
-        <h2 className="lg:ml-4 lg:mr-16 lg:mt-4 border-b-2 text-left text-blue-1100 font-semibold font-heading text-md lg:text-xl">Understanding emotions</h2>
-        <AnimatedList animation="grow" initialAnimationDuration="5000">
-          {understandingEmotionsList.map(item =>
-            <div className="bg-blue-1000 p-4 lg:ml-2 lg:mr-6 rounded-full lg:my-4 inline-block">
-              <p className="text-blue-1100 font-body text-sm">{item.title}</p>
-            </div>)}
-        </AnimatedList>
-        <div className="bg-gray-200 w-full h-20 absolute bottom-0 rounded-b-lg">
-          <div className="px-2 lg:px-4 mt-2 lg:mt-6 cursor-pointer text-right">
-            <Link component={IdentifyEmotions} to="/identify-emotions/">
-              <p className="inline-flex text-blue-1100 hover:text-blue-500 font-heading text-md align-middle">Continue <FaArrowRight className="ml-2 my-auto" /></p>
-            </Link>
-          </div>
+function IdentifyEmotions() {
+    const [identifyEmotionsExerciseList, setIdentifyEmotionsExerciseList] = useState([
+        {
+            id: 1, title: 'What feelings am I aware of having today?', page: 1, type: 'single-select', answers: [
+                { position: 0, name: "Happy", selected: false }, { position: 1, name: "Sad", selected: false }, { position: 2, name: "Anxious", selected: false }, { position: 3, name: "Angry", selected: false }, { position: 4, name: "Content", selected: false }, { position: 5, name: "Blessed", selected: false }, { position: 6, name: "Stressed", selected: false }, { position: 7, name: "Worried", selected: false }, { position: 8, name: "Bored", selected: false },
+            ]
+        },
+        { id: 2, title: 'When and what triggered you to feel ', page: 2, type: 'input' },
+        { id: 2, title: 'Why did it make you feel ', subTitle: '(Don’t be afraid to ask yourself “why” a few times. It could help you understand why you are feeling as you do, and even bring you to a solution. We often resist our own probing. Click on “i” to see an example.)', page: 3, type: 'input' },
+    ]);
+
+    const [previousPosition, setPreviousPosition] = useState(-1)
+    const [shouldShowContinue, setShouldShowContinue] = useState(false)
+    const [currentPage, setCurrentPage] = useState(0)
+    const [currentMood, setCurrentMood] = useState("")
+
+    const handleChange = (e, index, isSelected) => {
+        try {
+            let items = [...identifyEmotionsExerciseList];
+            const newList = items[currentPage].answers.map((item) => {
+                if (item.position === index) {
+                    const updatedItem = {
+                        ...item,
+                        selected: isSelected,
+                    };
+                    setShouldShowContinue(true)
+
+                    return updatedItem;
+                } else if (item.position === previousPosition) {
+                    const previousItem = {
+                        ...item,
+                        selected: !isSelected,
+                    };
+
+                    return previousItem;
+                }
+
+                return item;
+            });
+            items[currentPage].answers = newList
+            setIdentifyEmotionsExerciseList(items);
+            setPreviousPosition(index)
+            setCurrentMood(items[currentPage].answers[index].name)
+        } catch (e) {
+            console.log(e)
+        }
+    }
+
+    return <div>
+        <div className="p-2 border-b-2 ">
+            <h2 className="text-left text-blue-1100 font-bold font-heading text-md lg:text-xl">Identify emotions</h2>
+            <p className="text-sm text-blue-1100 font-normal font-heading lg:pt-2">Learning to identify our emotions help us develop a better understanding of ourselves, build more meaningful relationships and make better decisions.</p>
         </div>
-      </div>
-      {/* Right Side */}
-      <div className="rounded-lg border-2 border-gray-200">
-        Hello Right Side
-      </div>
-    </div>
+        {(() => {
+            switch (currentPage) {
+                case 0:
+                    return (<div className="p-2 lg:mt-2">
+                        <p className="text-md text-blue-1100 font-heading font-semibold">{identifyEmotionsExerciseList[currentPage].title}</p>
+                        <ul className="mt-2 lg:mt-4 flex flex-wrap">
+                            <AnimatedList animation="grow" initialAnimationDuration="4000">
+                                {identifyEmotionsExerciseList[currentPage].answers.map((answer, index) => {
+                                    if (answer.selected) {
+                                        return <p key={index} className="lg:cursor-pointer select-none m-2 px-4 py-2 inline-block border-2 border-blue-1100 bg-blue-1100 text-white rounded-full border-solid" onClick={(e) => handleChange(e, answer.position, false)}> {answer.name}</p>
+                                    }
+                                    return <p key={index} className="lg:cursor-pointer select-none m-2 px-4 py-2 inline-block border-2 border-blue-1100 hover:bg-blue-1100 hover:text-white rounded-full border-solid" onClick={(e) => handleChange(e, answer.position, true)}> {answer.name}</p>
+                                })}
+                                {shouldShowContinue ? <div className="text-let px-2 lg:px-4 mt-2 lg:mt-6 cursor-pointer">
+                                    {/* <Link component={IdentifyEmotions} to="/identify-emotions/"> */}
+                                    <p onClick={() => {
+                                        setCurrentPage(currentPage + 1)
+                                    }} className="inline-flex text-blue-1100 hover:text-blue-500 font-heading text-md align-middle">Next <FaArrowRight className="ml-2 my-auto" /></p>
+                                    {/* </Link> */}
+                                </div> : <></>}
+                            </AnimatedList>
+                        </ul>
+                    </div>)
+                case 1:
+                    return (<div className="p-2 lg:mt-2">
+                        <p className="text-md text-blue-1100 font-heading font-semibold">{identifyEmotionsExerciseList[currentPage].title} {currentMood}?</p>
+                    </div>)
 
-  );
+                default:
+                    break;
+            }
+        })()
+        }
+
+    </div >
 }
 
-var understandingEmotionsList = [
-  { id: 1, title: "How many emotions have you felt today?" },
-  { id: 2, title: "Is your heart beating faster for the person who’ll be waiting for you at the restaurant?" },
-  { id: 3, title: "Are you feeling butterflies in your stomach at the thought of tomorrow’s deadline?" }
-]
-
-export default UnderstandingEmotions;
+export default IdentifyEmotions;

@@ -3,7 +3,7 @@ import { Routes, Route, Link } from "react-router-dom";
 import UserBackgroundInfo from "./components/backgroundinfo/index_new";
 import CantrilLadder from "./components/cantrilladder";
 import CantrilLadderResult from "./components/cantrilladder/result";
-import IdentifyEmotions from "./components/understandingemotions/exercises/identifyemotions";
+import IdentifyEmotions from "./components/understandingemotions";
 import UnderstandingEmotions from "./components/understandingemotions/index"
 import Welcome from "./components/welcome";
 
@@ -44,7 +44,7 @@ function App() {
           <Route exact path="cantril-self-anchoring-result" element={< CantrilLadderResult />} />
           <Route exact path="select-your-daily-little-break" element={<Welcome />} />
           <Route exact path="find-yourself-at-your-best" element={<FindYourselfAtYourBest />} />
-          <Route exact path="understand-your-feeling-and-emotions" element={<UnderstandFeelingsAndEmotions />} />
+          <Route exact path="understand-your-feeling-and-emotions" element={<IdentifyEmotions />} />
           <Route exact path="unwind-from-a-stressful-moment" element={<UnwindFromStressfulMoment />} />
           <Route exact path="quiet-down-the-negative-thoughts" element={<QuietDownNegativeThoughts />} />
           <Route exact path="find-out-your-motivations" element={<FindOutYourMotivations />} />
