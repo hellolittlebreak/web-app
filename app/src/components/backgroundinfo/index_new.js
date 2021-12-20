@@ -88,7 +88,10 @@ function UserBackgroundInfo() {
                                     return newItem;
                                 } else {
                                     alert("You cannot select more than " + items[currentPage].response.choices.length + " items")
-                                    return item;
+                                    return {
+                                        ...item,
+                                        selected: !isSelected,
+                                    };
                                 }
                             } else {
                                 const newItem = {
