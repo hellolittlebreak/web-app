@@ -76,11 +76,11 @@ const Welcome = () => {
                     return <div className=" duration-500 transition ease-in">
                         <AnimatedList animation="grow" initialAnimationDuration="5000">
                             <h2 className="text-left border-b-2 border-blue-1100 text-blue-1100 font-bold font-heading text-md lg:text-xl">{welcomeContent[currentPage].title}</h2>
-
-                            <ul className="flex flex-col mt-4">
-
+                            <ul className=" mt-4">
                                 {welcomeContent[currentPage].content.map((item, index) => {
-                                    return <p className="bg-white p-2 lg:ml-2 lg:mr-6 rounded-lg my-4 text-blue-1100 font-heading text-xs lg:text-sm table">{item.value}</p>
+                                    return <div className='w-full'>
+                                        <p className="bg-white p-2 lg:ml-2 lg:mr-6 rounded-lg my-4 text-blue-1100 font-heading text-xs lg:text-sm inline-block">{item.value}</p>
+                                    </div>
                                 })}
 
                             </ul>
