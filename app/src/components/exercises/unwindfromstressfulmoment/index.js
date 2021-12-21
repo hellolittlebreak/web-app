@@ -6,51 +6,40 @@ import { FaCheck } from 'react-icons/fa'
 const UnwindFromStressfulMoment = () => {
     const [getRef, setRef] = useDynamicRefs();
     const [exercises, setExercises] = useState({
-        title: "The Fight-or-Flight Response",
+
+        title: "Unwind from a stressful moment",
         data: [
             {
                 refId: "referrerIdOne",
-                title: "Today, we focus on an exercise that helps you recognises when the “fight or flight” is taking over you. We will also give you tips and exercises on how to switch it off and return to your calm and rational self.",
+                title: "The Fight-or-Flight Response",
                 type: "text-details",
                 shouldBeVisible: true,
                 notes: [
+                    {
+                        value: "Today, we focus on an exercise that helps you recognises when the “fight or flight” is taking over you. We will also give you tips and exercises on how to switch it off and return to your calm and rational self.",
+                    },
                     {
                         value: "A stressful situation -- sometimes environmental, such as an important deadline, sometimes psychological, such as persistent worry about losing a job — can trigger a cascade of stress hormones that produce classic physiological responses like elevated heart rate, quickened breathes, tensing muscles sweating palms."
                     },
                     {
                         value: "We have all been there."
-                    },
+                    }
+                ]
+            },
+            {
+                refId: "referrerIdTwo",
+                title: "The Fight or Flight response is a physiological response triggered when we feel a strong emotion like fear, anxiety, anger or stress.",
+                type: "text-details",
+                shouldBeVisible: false,
+                notes: [
                     {
                         value: "This combination of reactions to emotion is also known as the \"fight-or-flight\" response."
-                    },
-                    {
-                        value: "The Fight or Flight response is a physiological response triggered when we feel a strong emotion like fear, anxiety, anger or stress."
                     },
                     {
                         value: "Evolutionarily, this response enables us to react quickly to dangerous situations. In modern days, our body can also overreact to stressors that are not life-threatening, such as traffic jams, work pressure, and family difficulties."
                     },
                     {
                         value: "As our body perceives stress, our nervous system functions like a gas pedal in a car, triggering the “fight or flight” response and releasing cortisol, often called “stress hormone”, into your bloodstream."
-                    }
-                ]
-            },
-            {
-                refId: "referrerIdTwo",
-                title: "The following breathing relaxation technique is developed at Harvard Medical School by cardiologist Dr. Herbert Benson.",
-                type: "text-details",
-                shouldBeVisible: false,
-                notes: [
-                    {
-                        value: "Deep breathing can effectively help lessen stress, anxiety, or other fight-or-flight emotions that could be taking over you in difficult situations."
-                    },
-                    {
-                        value: "Inhaling deeply may not always calm you down."
-                    },
-                    {
-                        value: "But exhaling is linked to our parasympathetic nervous system, which influences our body's ability to relax and calm down."
-                    },
-                    {
-                        value: "When our body is more balanced, we can then deal with our thoughts and take a closer look at how and why we're feeling that way."
                     }
                 ]
             },
@@ -114,7 +103,41 @@ const UnwindFromStressfulMoment = () => {
                 hint: "Maybe you told yourself calm down, nothing's going to happen. Maybe you went for a walk. What did you do and were they effective?",
                 shouldBeVisible: false,
                 type: "text"
-            }
+            },
+            {
+                refId: "referrerIdSix",
+                title: "When emotions take over, often it doesn’t help to tell ourselves “Calm down, nothing’s going to happen”. Reality is something physiological is happening in our body. Instead, try to calm our body down with deep breaths and slow exhales.",
+                shouldBeVisible: false,
+                type: "text-details",
+                notes: [
+                    {
+                        value: "Calming the breath will in turn help regulate our heartbeats and relieve muscle tension. When our body is more balanced, we can then deal with our thoughts and take a closer look at how and why we’re feeling that way."
+                    },
+                    {
+                        value: "In the last exercise, you have practiced journaling to help you recognise when emotions are taking over. Next up, we have a few relaxation techniques that are developed to help you effectively manage your emotions and responses. Extend your Little Break below to try out some of the techniques!  "
+                    }
+                ]
+            },
+            {
+                refId: "referrerIdSeven",
+                title: "The following breathing relaxation technique is developed at Harvard Medical School by cardiologist Dr. Herbert Benson.",
+                type: "text-details",
+                shouldBeVisible: false,
+                notes: [
+                    {
+                        value: "Deep breathing can effectively help lessen stress, anxiety, or other fight-or-flight emotions that could be taking over you in difficult situations."
+                    },
+                    {
+                        value: "Inhaling deeply may not always calm you down."
+                    },
+                    {
+                        value: "But exhaling is linked to our parasympathetic nervous system, which influences our body's ability to relax and calm down."
+                    },
+                    {
+                        value: "When our body is more balanced, we can then deal with our thoughts and take a closer look at how and why we're feeling that way."
+                    }
+                ]
+            },
         ]
     })
 
