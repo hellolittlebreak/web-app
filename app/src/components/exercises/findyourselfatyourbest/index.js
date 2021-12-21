@@ -138,7 +138,6 @@ const FindYourselfAtYourBest = () => {
     }
 
     useEffect(() => {
-        console.log(currentPage)
         const refId = getRef(exercises.data[currentPage].refId);
         refId.current.scrollIntoView({ behavior: 'smooth', block: 'start' })
     }, [currentPage])
@@ -155,9 +154,9 @@ const FindYourselfAtYourBest = () => {
                         <ul className="mt-2 lg:mt-4 flex flex-wrap">
                             {item.choices && item.choices.map((item, index) => {
                                 if (item.isSelected) {
-                                    return <p key={index} className="transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110 cursor-pointer lg:cursor-pointer lg:select-none m-2 px-4 py-2 inline-block border-2 border-blue-1100 bg-blue-1100 text-white rounded-full border-solid" onClick={(e) => handleSelection(e, false, index)}> {item.value}</p>
+                                    return <p key={index} className="transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110 cursor-pointer lg:cursor-pointer lg:select-none m-2 px-4 py-2 inline-block border-2 border-blue-1100 bg-blue-1100 text-white rounded-full border-solid font-body" onClick={(e) => handleSelection(e, false, index)}> {item.value}</p>
                                 }
-                                return <p key={index} className="transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110 cursor-pointer lg:cursor-pointer lg:select-none m-2 px-4 py-2 inline-block border-2 border-blue-1100 bg-white hover:bg-blue-1100 hover:text-white rounded-full border-solid" onClick={(e) => handleSelection(e, true, index)}> {item.value}</p>
+                                return <p key={index} className="transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110 cursor-pointer lg:cursor-pointer lg:select-none m-2 px-4 py-2 inline-block border-2 border-blue-1100 bg-white hover:bg-blue-1100 hover:text-white rounded-full border-solid font-body" onClick={(e) => handleSelection(e, true, index)}> {item.value}</p>
                             })}
                         </ul>
                         {item.hint && <div className="w-full p-2 lg:mt-2">
