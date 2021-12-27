@@ -148,7 +148,7 @@ const FindOutYourMotivations = () => {
             exercises.data.map((item, index) => {
 
                 if (item.shouldBeVisible === true) {
-                    return <div id={index} key={index} ref={setRef(item.refId)} className="h-96">
+                    return <div id={index} key={index} ref={setRef(item.refId)} className="h-screen lg:h-96">
 
                         <p className="text-md text-blue-1100 font-heading font-semibold lg:ml-4 lg:mt-6">{item.title}</p>
                         <ul className="mt-2 lg:mt-4 flex flex-wrap">

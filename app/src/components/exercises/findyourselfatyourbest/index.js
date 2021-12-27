@@ -159,7 +159,7 @@ const FindYourselfAtYourBest = () => {
         {
             exercises.data.map((item, index) => {
                 if (item.shouldBeVisible === true) {
-                    return <div id={index} key={index} ref={setRef(item.refId)} className="h-96 lg:my-20">
+                    return <div id={index} key={index} ref={setRef(item.refId)} className="h-screen lg:h-96 lg:my-20">
                         <p className="text-md text-blue-1100 font-heading font-semibold lg:ml-4 lg:mt-32">{item.title}</p>
                         {item.subTitle && <p className="text-md text-blue-1100 font-heading font-semibold lg:ml-4 lg:mt-6">{item.subTitle}</p>}
                         {item.question && <p className="text-md text-blue-1100 font-heading font-semibold lg:ml-4 lg:mt-6">{item.question}</p>}
