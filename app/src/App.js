@@ -14,6 +14,7 @@ import QuietDownNegativeThoughts from "./components/exercises/quietdownnegativet
 import UnderstandFeelingsAndEmotions from "./components/exercises/understandfeelingsandemotions";
 import UnwindFromStressfulMoment from "./components/exercises/unwindfromstressfulmoment";
 import FindOutYourMotivations from "./components/exercises/findoutyourmotivations";
+import Congratulations from "./components/congratulations";
 
 const firebaseConfig = {
   apiKey: "AIzaSyClDDnFfPSVzOJszY6awn-WOrq3PJNEYMc",
@@ -38,8 +39,6 @@ function App() {
       <div className="bg-blue-1000 mx-auto px-4 lg:px-64 pt-6">
         <Routes>
           <Route path="/" element={< UserBackgroundInfo />} />
-          <Route exact path="understanding-emotions" element={<UnderstandingEmotions />} />
-          <Route exact path="identify-emotions" element={<IdentifyEmotions />} />
           <Route exact path="cantril-self-anchoring-striving-scale" element={<CantrilLadder />} />
           <Route exact path="cantril-self-anchoring-result" element={< CantrilLadderResult />} />
           <Route exact path="select-your-daily-little-break" element={<Welcome />} />
@@ -48,6 +47,7 @@ function App() {
           <Route exact path="unwind-from-a-stressful-moment" element={<UnwindFromStressfulMoment />} />
           <Route exact path="quiet-down-the-negative-thoughts" element={<QuietDownNegativeThoughts />} />
           <Route exact path="find-out-your-motivations" element={<FindOutYourMotivations />} />
+          <Route exact path="congratulations" element={<Congratulations />} />
         </Routes>
       </div>
       <footer>

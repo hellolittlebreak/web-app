@@ -8,6 +8,7 @@ const UnwindFromStressfulMoment = () => {
     const [exercises, setExercises] = useState({
 
         title: "Unwind from a stressful moment",
+        placeholder: "Write here...",
         data: [
             {
                 refId: "referrerIdOne",
@@ -254,8 +255,9 @@ const UnwindFromStressfulMoment = () => {
                                 return <p key={index} className="lg:select-none m-2 px-4 py-2 border-blue-1100  bg-gray-300 hover:bg-blue-1100 hover:text-white text-blue-1100 rounded-lg font-body"> {item.value}</p>
                             })}
                         </ul>
-                        {item.hint && <div className="w-full p-2 lg:mt-2">
-                            <textarea rows="3" className="w-full h-40 rounded-lg lg:mt-6 p-2 text-blue-1100 bg-gray-100 border-blue-1100 border-2 outline-none" type="text" name="response" value={item.response} placeholder={item.hint} onChange={(e) => handleSelection(e, true, index)} />
+                        {item.hint && <div className="w-full p-2">
+                            <p className='font-body text-md text-blue-1100 p-2 bg-gray-300 hover:bg-blue-1100 hover:text-white rounded-lg'>{item.hint}</p>
+                            <textarea rows="3" className="w-full h-40 rounded-lg lg:mt-6 p-2 text-blue-1100 bg-gray-100 border-blue-1100 border-2 outline-none" type="text" name="response" value={item.response} placeholder={exercises.placeholder} onChange={(e) => handleClick(e, currentPage, true)} />
                         </div>}
                         <button className="lg:ml-4 lg:mt-6 bg-blue-1100 hover:bg-blue-700 px-4 py-2 text-white rounded-lg flex text-center" onClick={(e) => handleClick(e, index + 1)} >OK <FaCheck className="my-auto ml-2 pointer-events-none" /></button>
 

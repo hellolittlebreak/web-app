@@ -10,7 +10,7 @@ function IdentifyEmotions() {
             ]
         },
         { id: 2, title: 'When and what triggered you to feel ', page: 2, type: 'input' },
-        { id: 2, title: 'Why did it make you feel ', subTitle: '(Don’t be afraid to ask yourself “why” a few times. It could help you understand why you are feeling as you do, and even bring you to a solution. We often resist our own probing. Click on “i” to see an example.)', page: 3, type: 'input' },
+        { id: 2, title: 'Why did it make you feel ', subTitle: 'Don\'t be afraid to ask yourself “why” a few times. It could help you understand why you are feeling as you do, and even bring you to a solution. We often resist our own probing. Click on “i” to see an example.)', page: 3, type: 'input' },
     ]);
 
     const [previousPosition, setPreviousPosition] = useState(-1)

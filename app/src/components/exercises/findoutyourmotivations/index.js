@@ -2,13 +2,16 @@ import React, { useRef, useState, useEffect, createRef } from 'react'
 import { AnimatedList } from 'react-animated-list'
 import { FaArrowDown, FaArrowUp, FaCheck } from 'react-icons/fa'
 import useDynamicRefs from 'use-dynamic-refs';
+import { useNavigate } from "react-router-dom";
 
 const FindOutYourMotivations = () => {
 
     const [getRef, setRef] = useDynamicRefs();
+    const navigate = useNavigate();
 
     const [exercises, setExercises] = useState({
         title: "Find out your motivations",
+        placeholder: "Write here",
         data: [
             {
                 refId: "refIdOne",
@@ -132,16 +135,20 @@ const FindOutYourMotivations = () => {
         newExercisesList.data = newElement
         setExercises(newExercisesList)
         const currentPosition = parseInt(e.target.parentNode.id) + 1
-        setCurrentPage(() => currentPosition)
+        if (currentPosition === exercises.data.length) {
+            navigate("/congratulations")
+        } else {
+            setCurrentPage(() => currentPosition)
+        }
     }
 
     return <div className="w-full h-full">
         <h2 className="text-left border-b-2 border-blue-1100 text-blue-1100 font-bold font-heading text-md lg:text-xl">{exercises.title}</h2>
         {
             exercises.data.map((item, index) => {
+
                 if (item.shouldBeVisible === true) {
                     return <div id={index} key={index} ref={setRef(item.refId)} className="h-96">
-                        {/* // <AnimatedList className="h-156" animation="grow" initialAnimationDuration="4000"> */}
 
                         <p className="text-md text-blue-1100 font-heading font-semibold lg:ml-4 lg:mt-6">{item.title}</p>
                         <ul className="mt-2 lg:mt-4 flex flex-wrap">
@@ -152,13 +159,14 @@ const FindOutYourMotivations = () => {
                                 return <p key={index} className="transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110 cursor-pointer lg:cursor-pointer lg:select-none m-2 px-4 py-2 inline-block border-2 border-blue-1100 bg-white hover:bg-blue-1100 hover:text-white rounded-full border-solid" onClick={(e) => handleChange(e, index, true)}> {item.value}</p>
                             })}
                         </ul>
-                        {item.hint && <div className="w-full p-2 lg:mt-2">
-                            <textarea rows="3" className="w-full h-40 rounded-lg lg:mt-6 p-2 text-blue-1100 bg-gray-100 border-blue-1100 border-2 outline-none" type="text" name="response" value={item.response} placeholder={item.hint} onChange={(e) => handleChange(e, currentPage, true)} />
+                        {item.hint && <div className="w-full p-2">
+                            <p className='font-body text-md text-blue-1100 p-2 bg-gray-300 hover:bg-blue-1100 hover:text-white rounded-lg'>{item.hint}</p>
+                            <textarea rows="3" className="w-full h-40 rounded-lg lg:mt-6 p-2 text-blue-1100 bg-gray-100 border-blue-1100 border-2 outline-none" type="text" name="response" value={item.response} placeholder={exercises.placeholder} onChange={(e) => handleChange(e, currentPage, true)} />
                         </div>}
                         <button className="lg:ml-4 lg:mt-6 bg-blue-1100 hover:bg-blue-700 px-4 py-2 text-white rounded-lg flex text-center" onClick={(e) => handleClick(e, index + 1)} >OK <FaCheck className="my-auto ml-2 pointer-events-none" /></button>
 
                     </div>
-                    // </AnimatedList>
+
                 }
             })
         }

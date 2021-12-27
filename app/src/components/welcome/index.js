@@ -69,6 +69,7 @@ const Welcome = () => {
     }
 
     return <div>
+
         {(() => {
 
             switch (currentPage) {
@@ -93,30 +94,34 @@ const Welcome = () => {
                     </div>
                 case 1:
                     return <div>
+                        <AnimatedList className="h-156" animation="grow" initialAnimationDuration="4000">
+                            <h2 className="text-left border-b-2 border-blue-1100 text-blue-1100 font-bold font-heading text-md lg:text-xl">{welcomeContent[currentPage].title}</h2>
+                            <div className="flex justify-center lg:mt-10">
+                                <ul className="w-full lg:w-2/3 grid grid-rows-4 gap-4 lg:grid-cols-2 mt-4 justify-center text-center">
+                                    <AnimatedList className="h-156" animation="grow" initialAnimationDuration="4000">
+                                        {welcomeContent[currentPage].content.map((item, index) => {
+                                            if (item.isSelected) {
+                                                return <p key={index} className="transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110 cursor-pointer lg:cursor-pointer lg:select-none m-2 px-4 py-2 inline-block border-2 border-blue-1100 bg-blue-1100 text-white font-heading rounded-lg border-solid" onClick={(e) => handleChange(e, index, false)}> {item.value}</p>
+                                            }
+                                            return <div className="flex  content-center">
+                                                <p key={index} className="transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110 cursor-pointer lg:cursor-pointer lg:select-none m-2 px-4 py-2 inline-block border-2 w-56 h-32 border-blue-1100 bg-white hover:bg-blue-1100 hover:text-white rounded-lg border-solid font-heading" onClick={(e) => handleChange(e, index, true)}> {item.value}</p>
+                                            </div>
+                                        })}
+                                    </ AnimatedList>
+                                </ul>
 
-                        <h2 className="text-left border-b-2 border-blue-1100 text-blue-1100 font-bold font-heading text-md lg:text-xl">{welcomeContent[currentPage].title}</h2>
 
-                        <div className="flex justify-center lg:mt-10">
-                            <ul className="w-full lg:w-2/3 grid grid-rows-4 gap-4 lg:grid-cols-2 mt-4 justify-center text-center">
-                                {welcomeContent[currentPage].content.map((item, index) => {
-                                    if (item.isSelected) {
-                                        return <p key={index} className="transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110 cursor-pointer lg:cursor-pointer lg:select-none m-2 px-4 py-2 inline-block border-2 border-blue-1100 bg-blue-1100 text-white rounded-lg border-solid" onClick={(e) => handleChange(e, index, false)}> {item.value}</p>
-                                    }
-                                    return <div className="flex  content-center">
-                                        <p key={index} className="transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110 cursor-pointer lg:cursor-pointer lg:select-none m-2 px-4 py-2 inline-block border-2 w-56 h-32 border-blue-1100 bg-white hover:bg-blue-1100 hover:text-white rounded-lg border-solid" onClick={(e) => handleChange(e, index, true)}> {item.value}</p>
-                                    </div>
-                                })}
-                            </ul>
-
-                        </div>
-
+                            </div>
+                        </AnimatedList>
                     </div>
 
                 default:
                     break;
+
             }
 
         })()}
+
         {
             currentPage === 0 && <div className="flex flex-col justify-center">
                 <p className="cursor-pointer rounded-full mx-auto py-2 lg:py-4 mt-16 px-4 lg:px-12 bg-blue-1100 hover:bg-blue-800 text-white inline-block font-body text-md lg:text-base" onClick={() => handleClick()}>Continue</p>

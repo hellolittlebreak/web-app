@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from "react";
 import useDynamicRefs from 'use-dynamic-refs';
 import { FaArrowDown, FaArrowUp, FaCheck } from 'react-icons/fa'
+import { useNavigate } from "react-router-dom"
+import ReactPlayer from "react-player"
 
 const FindYourselfAtYourBest = () => {
 
     const [getRef, setRef] = useDynamicRefs();
+    const navigate = useNavigate();
     const [exercises, setExercises] = useState({
         title: "Find yourself at your best",
         data: [
@@ -52,6 +55,11 @@ const FindYourselfAtYourBest = () => {
                 subTitle: "How different would you life be once you have made the change?",
                 question: "We have prepared a 3-minute meditation music for you to listen in the background. It is designed to soothe your mind, relax your muscles and help you get into a state of deep thinking.",
                 type: "informative",
+                shouldBeVisible: false
+            },
+            {
+                refId: "refIdFive",
+                type: "video",
                 shouldBeVisible: false
             }
         ]
@@ -134,7 +142,11 @@ const FindYourselfAtYourBest = () => {
         newExercisesList.data = newElement
         setExercises(newExercisesList)
         const currentPosition = parseInt(e.target.parentNode.id) + 1
-        setCurrentPage(() => currentPosition)
+        if (currentPosition === exercises.data.length) {
+            navigate("/congratulations")
+        } else {
+            setCurrentPage(() => currentPosition)
+        }
     }
 
     useEffect(() => {
@@ -147,8 +159,8 @@ const FindYourselfAtYourBest = () => {
         {
             exercises.data.map((item, index) => {
                 if (item.shouldBeVisible === true) {
-                    return <div id={index} key={index} ref={setRef(item.refId)} className="h-96  lg:mt-20">
-                        <p className="text-md text-blue-1100 font-heading font-semibold lg:ml-4 lg:mt-6">{item.title}</p>
+                    return <div id={index} key={index} ref={setRef(item.refId)} className="h-96 lg:my-20">
+                        <p className="text-md text-blue-1100 font-heading font-semibold lg:ml-4 lg:mt-32">{item.title}</p>
                         {item.subTitle && <p className="text-md text-blue-1100 font-heading font-semibold lg:ml-4 lg:mt-6">{item.subTitle}</p>}
                         {item.question && <p className="text-md text-blue-1100 font-heading font-semibold lg:ml-4 lg:mt-6">{item.question}</p>}
                         <ul className="mt-2 lg:mt-4 flex flex-wrap">
@@ -159,11 +171,14 @@ const FindYourselfAtYourBest = () => {
                                 return <p key={index} className="transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110 cursor-pointer lg:cursor-pointer lg:select-none m-2 px-4 py-2 inline-block border-2 border-blue-1100 bg-white hover:bg-blue-1100 hover:text-white rounded-full border-solid font-body" onClick={(e) => handleSelection(e, true, index)}> {item.value}</p>
                             })}
                         </ul>
-                        {item.hint && <div className="w-full p-2 lg:mt-2">
-                            <textarea rows="3" className="w-full h-40 rounded-lg lg:mt-6 p-2 text-blue-1100 bg-gray-100 border-blue-1100 border-2 outline-none" type="text" name="response" value={item.response} placeholder={item.hint} onChange={(e) => handleSelection(e, true, index)} />
+                        {item.hint && <div className="w-full p-2">
+                            <p className='font-body text-md text-blue-1100 p-2 bg-gray-300 hover:bg-blue-1100 hover:text-white rounded-lg'>{item.hint}</p>
+                            <textarea rows="3" className="w-full h-40 rounded-lg lg:mt-6 p-2 text-blue-1100 bg-gray-100 border-blue-1100 border-2 outline-none" type="text" name="response" value={item.response} placeholder={exercises.placeholder} onChange={(e) => handleClick(e, currentPage, true)} />
                         </div>}
+                        {item.type === "video" && <ReactPlayer className="mx-auto"
+                            url="https://vimeo.com/660493074"
+                        />}
                         <button className="lg:ml-4 lg:mt-6 bg-blue-1100 hover:bg-blue-700 px-4 py-2 text-white rounded-lg flex text-center" onClick={(e) => handleClick(e, index + 1)} >OK <FaCheck className="my-auto ml-2 pointer-events-none" /></button>
-
                     </div>
                 }
             })
