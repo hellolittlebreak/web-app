@@ -36,10 +36,10 @@ function App() {
       </header>
       <div className="bg-blue-1000 mx-auto px-4 lg:px-64 pt-6">
         <Routes>
-          <Route path="/" element={< UserBackgroundInfo />} />
+          {/* <Route path="/" element={< UserBackgroundInfo />} /> */}
           <Route exact path="cantril-self-anchoring-striving-scale" element={<CantrilLadder />} />
           <Route exact path="cantril-self-anchoring-result" element={< CantrilLadderResult />} />
-          <Route exact path="select-your-daily-little-break" element={<Welcome />} />
+          <Route exact path="/" element={<Welcome />} />
           <Route exact path="find-yourself-at-your-best" element={<FindYourselfAtYourBest />} />
           <Route exact path="understand-your-feeling-and-emotions" element={<UnderstandFeelingsAndEmotions />} />
           <Route exact path="unwind-from-a-stressful-moment" element={<UnwindFromStressfulMoment />} />

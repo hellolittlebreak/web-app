@@ -103,7 +103,7 @@ const Welcome = () => {
                                             if (item.isSelected) {
                                                 return <p key={index} className="transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110 cursor-pointer lg:cursor-pointer lg:select-none m-2 px-4 py-2 inline-block border-2 border-blue-1100 bg-blue-1100 text-white font-heading rounded-lg border-solid" onClick={(e) => handleChange(e, index, false)}> {item.value}</p>
                                             }
-                                            return <div className="flex  content-center">
+                                            return <div className="flex content-center">
                                                 <p key={index} className="transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110 cursor-pointer lg:cursor-pointer lg:select-none m-2 px-4 py-2 inline-block border-2 w-56 h-32 border-blue-1100 bg-white hover:bg-blue-1100 hover:text-white rounded-lg border-solid font-heading" onClick={(e) => handleChange(e, index, true)}> {item.value}</p>
                                             </div>
                                         })}
