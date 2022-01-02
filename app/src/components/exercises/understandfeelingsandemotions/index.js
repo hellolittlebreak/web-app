@@ -118,6 +118,7 @@ const UnderstandFeelingsAndEmotions = () => {
                 placeholder: "Write here...",
                 type: "text",
                 shouldBeVisible: false,
+                newTitle: "",
                 response: "",
             },
             {
@@ -126,6 +127,7 @@ const UnderstandFeelingsAndEmotions = () => {
                 placeholder: "Write here...",
                 type: "text",
                 shouldBeVisible: false,
+                newTitle: "",
                 response: "",
             },
         ]
@@ -136,7 +138,6 @@ const UnderstandFeelingsAndEmotions = () => {
     const handleSelection = (e, isSelected, position) => {
         try {
             const currentPosition = e.target.parentNode.parentNode.id
-            console.log(currentPosition)
             switch (exercises.data[currentPosition].type) {
                 case "max-three-selection":
                     let items = { ...exercises };
@@ -195,6 +196,7 @@ const UnderstandFeelingsAndEmotions = () => {
                     break;
                 case "single-selection":
                     let singleSelectionItems = { ...exercises };
+                    let newPosition = parseInt(currentPosition) + 1
                     const singleSelectionList = singleSelectionItems.data[currentPosition].choices.map((item, index) => {
                         let selectedItem;
                         if (index === position) {
@@ -204,7 +206,8 @@ const UnderstandFeelingsAndEmotions = () => {
                             };
                             singleSelectionItems.data[currentPosition].response.choices = []
                             singleSelectionItems.data[currentPosition].response.choices.push({ value: selectedItem.value })
-
+                            singleSelectionItems.data[newPosition].newTitle = singleSelectionItems.data[newPosition].title + " " + selectedItem.value + " ?"
+                            singleSelectionItems.data[newPosition + 1].newTitle = singleSelectionItems.data[newPosition + 1].title + " " + selectedItem.value + " ?"
                             return selectedItem
                         } else {
                             selectedItem = {
@@ -266,7 +269,9 @@ const UnderstandFeelingsAndEmotions = () => {
             exercises.data.map((item, index) => {
                 if (item.shouldBeVisible === true) {
                     return <div id={index} key={index} ref={setRef(item.refId)} className="h-screen lg:h-96 lg:mt-20">
-                        <p className="text-md text-blue-1100 font-heading font-semibold lg:ml-4 lg:mt-6">{item.title}</p>
+                        {
+                            item.newTitle ? <p className="text-md text-blue-1100 font-heading font-semibold lg:ml-4 lg:mt-6">{item.newTitle}</p> : <p className="text-md text-blue-1100 font-heading font-semibold lg:ml-4 lg:mt-6">{item.title}</p>
+                        }
                         <p className="text-md text-blue-1100 font-heading font-semibold lg:ml-4 lg:mt-6">{item.question}</p>
                         <ul className="mt-2 lg:mt-4 flex flex-wrap">
                             {item.choices && item.choices.map((item, index) => {
