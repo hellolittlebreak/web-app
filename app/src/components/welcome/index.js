@@ -25,34 +25,19 @@ const Welcome = () => {
             ]
         },
         {
-            title: "Now, take a Little Break to...",
+            title: "What types of exercises do you feel like doing today?",
             description: "",
             content: [
                 {
-                    value: "Find out your motivations",
+                    value: "Shorter exercises ( Aprox. 3 min )",
                     isSelected: false,
-                    componentLink: "find-out-your-motivations"
+                    componentLink: "short-exercises"
                 },
                 {
-                    value: "Find yourself at your best",
+                    value: "Longer exercises ( Aprox. 7 min )",
                     isSelected: false,
-                    componentLink: "find-yourself-at-your-best"
+                    componentLink: "long-exercises"
                 },
-                {
-                    value: "Understand your feelings and emotions",
-                    isSelected: false,
-                    componentLink: "understand-your-feeling-and-emotions"
-                },
-                {
-                    value: "Unwind from a stressful moment",
-                    isSelected: false,
-                    componentLink: "unwind-from-a-stressful-moment"
-                },
-                {
-                    value: "Quiet down the negative thoughts ",
-                    isSelected: false,
-                    componentLink: "quiet-down-the-negative-thoughts"
-                }
             ]
         }
     ])
@@ -100,9 +85,7 @@ const Welcome = () => {
                                 <ul className="w-full lg:w-2/3 grid grid-rows-4 gap-4 lg:grid-cols-2 mt-4 justify-center text-center">
                                     <AnimatedList className="h-156" animation="grow" initialAnimationDuration="4000">
                                         {welcomeContent[currentPage].content.map((item, index) => {
-                                            if (item.isSelected) {
-                                                return <p key={index} className="transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110 cursor-pointer lg:cursor-pointer lg:select-none m-2 px-4 py-2 inline-block border-2 border-blue-1100 bg-blue-1100 text-white font-heading rounded-lg border-solid" onClick={(e) => handleChange(e, index, false)}> {item.value}</p>
-                                            }
+
                                             return <div className="flex content-center">
                                                 <p key={index} className="transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110 cursor-pointer lg:cursor-pointer lg:select-none m-2 px-4 py-2 inline-block border-2 w-56 h-32 border-blue-1100 bg-white hover:bg-blue-1100 hover:text-white rounded-lg border-solid font-heading" onClick={(e) => handleChange(e, index, true)}> {item.value}</p>
                                             </div>

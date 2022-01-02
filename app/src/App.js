@@ -7,12 +7,16 @@ import Welcome from "./components/welcome";
 
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
-import FindYourselfAtYourBest from "./components/exercises/findyourselfatyourbest/index";
-import QuietDownNegativeThoughts from "./components/exercises/quietdownnegativethoughts";
-import UnderstandFeelingsAndEmotions from "./components/exercises/understandfeelingsandemotions";
-import UnwindFromStressfulMoment from "./components/exercises/unwindfromstressfulmoment";
-import FindOutYourMotivations from "./components/exercises/findoutyourmotivations";
+import FindYourselfAtYourBest from "./components/exercises/long/findyourselfatyourbest/index";
+import QuietDownNegativeThoughts from "./components/exercises/long/quietdownnegativethoughts";
+import UnderstandFeelingsAndEmotions from "./components/exercises/long/understandfeelingsandemotions";
+import UnwindFromStressfulMoment from "./components/exercises/long/unwindfromstressfulmoment";
+import FindOutYourMotivations from "./components/exercises/long/findoutyourmotivations";
 import Congratulations from "./components/congratulations";
+import WhatAreYouWorriedFor from "./components/exercises/short/whatareyouworriedfor";
+import LongExercises from "./components/exercises/long";
+import ShortExercises from "./components/exercises/short";
+import RealityCheck from "./components/exercises/short/realitycheck";
 
 const firebaseConfig = {
   apiKey: "AIzaSyClDDnFfPSVzOJszY6awn-WOrq3PJNEYMc",
@@ -40,11 +44,20 @@ function App() {
           <Route exact path="cantril-self-anchoring-striving-scale" element={<CantrilLadder />} />
           <Route exact path="cantril-self-anchoring-result" element={< CantrilLadderResult />} />
           <Route exact path="/" element={<Welcome />} />
+
+          {/* LONG Exercises */}
+          <Route exact path="long-exercises" element={<LongExercises />} />
           <Route exact path="find-yourself-at-your-best" element={<FindYourselfAtYourBest />} />
           <Route exact path="understand-your-feeling-and-emotions" element={<UnderstandFeelingsAndEmotions />} />
           <Route exact path="unwind-from-a-stressful-moment" element={<UnwindFromStressfulMoment />} />
           <Route exact path="quiet-down-the-negative-thoughts" element={<QuietDownNegativeThoughts />} />
           <Route exact path="find-out-your-motivations" element={<FindOutYourMotivations />} />
+
+          {/* SHORT Exercises */}
+          <Route exact path="short-exercises" element={<ShortExercises />} />
+          <Route exact path="what-are-you-worried-for" element={<WhatAreYouWorriedFor />} />
+          <Route exact path="give-yourself-a-reality-check" element={<RealityCheck />} />
+
           <Route exact path="congratulations" element={<Congratulations />} />
         </Routes>
       </div>

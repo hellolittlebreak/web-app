@@ -142,8 +142,6 @@ const UnwindFromStressfulMoment = () => {
         ]
     })
 
-
-    const [pressed, setPressed] = useState(false)
     const [currentPage, setCurrentPage] = useState(0)
 
     useEffect(() => {
