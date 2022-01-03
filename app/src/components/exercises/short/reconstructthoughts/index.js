@@ -115,7 +115,6 @@ const ReconstructThoughts = () => {
                         <p className=" text-xl text-blue-1100 font-heading font-semibold lg:ml-4 lg:mt-32">{item.title}</p>
                         <ul className="mt-2 lg:mt-4 flex flex-col">
                             {item.suggestions && item.suggestions.map((item, index) => {
-                                // return <p key={index} className="transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110 cursor-pointer lg:cursor-pointer lg:select-none m-2 px-4 py-2 inline-block border-2 border-blue-1100 bg-white hover:bg-blue-1100 hover:text-white rounded-full border-solid"> {item.title}</p>
                                 return <p className='font-body text-md text-blue-1100 p-2 bg-gray-300 rounded-lg my-2'>{item.title}</p>
                             })}
                         </ul>
