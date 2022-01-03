@@ -17,6 +17,7 @@ import WhatAreYouWorriedFor from "./components/exercises/short/whatareyouworried
 import LongExercises from "./components/exercises/long";
 import ShortExercises from "./components/exercises/short";
 import RealityCheck from "./components/exercises/short/realitycheck";
+import ReconstructThoughts from "./components/exercises/short/reconstructthoughts";
 
 const firebaseConfig = {
   apiKey: "AIzaSyClDDnFfPSVzOJszY6awn-WOrq3PJNEYMc",
@@ -57,6 +58,7 @@ function App() {
           <Route exact path="short-exercises" element={<ShortExercises />} />
           <Route exact path="what-are-you-worried-for" element={<WhatAreYouWorriedFor />} />
           <Route exact path="give-yourself-a-reality-check" element={<RealityCheck />} />
+          <Route exact path="reconstruct-thoughts" element={<ReconstructThoughts />} />
 
           <Route exact path="congratulations" element={<Congratulations />} />
         </Routes>

@@ -14,7 +14,7 @@ const RealityCheck = () => {
         data: [
             {
                 refId: "refIdOne",
-                title: "I am not good enough",
+                title: "\"I am not good enough\"",
                 type: "single-selection",
                 shouldBeVisible: true,
                 response: "",
@@ -31,7 +31,7 @@ const RealityCheck = () => {
             },
             {
                 refId: "refIdTwo",
-                title: "I am in bad health",
+                title: "\"I am in bad health\"",
                 type: "single-selection",
                 shouldBeVisible: false,
                 response: "",
@@ -48,7 +48,7 @@ const RealityCheck = () => {
             },
             {
                 refId: "refIdThree",
-                title: "I will be single forever",
+                title: "\"I will be single forever\"",
                 type: "single-selection",
                 shouldBeVisible: false,
                 response: "",
@@ -65,7 +65,7 @@ const RealityCheck = () => {
             },
             {
                 refId: "refIdFour",
-                title: "I failed this test",
+                title: "\"I failed this test\"",
                 type: "single-selection",
                 shouldBeVisible: false,
                 response: "",
@@ -82,7 +82,7 @@ const RealityCheck = () => {
             },
             {
                 refId: "refIdFive",
-                title: "My boss does not like me",
+                title: "\"My boss does not like me\"",
                 type: "single-selection",
                 shouldBeVisible: false,
                 response: "",
@@ -99,7 +99,7 @@ const RealityCheck = () => {
             },
             {
                 refId: "refIdSix",
-                title: "I am single",
+                title: "\"I am single\"",
                 type: "single-selection",
                 shouldBeVisible: false,
                 response: "",
