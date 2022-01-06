@@ -14,11 +14,11 @@ import UnwindFromStressfulMoment from "./components/exercises/long/unwindfromstr
 import FindOutYourMotivations from "./components/exercises/long/findoutyourmotivations";
 import Congratulations from "./components/congratulations";
 import WhatAreYouWorriedFor from "./components/exercises/short/whatareyouworriedfor";
-import LongExercises from "./components/exercises/long";
-import ShortExercises from "./components/exercises/short";
 import RealityCheck from "./components/exercises/short/realitycheck";
 import ReconstructThoughts from "./components/exercises/short/reconstructthoughts";
 import ThingsAboutMe from "./components/exercises/short/thingsaboutme";
+import WhatTriggersYourStress from "./components/exercises/short/whattriggersyourstress";
+import SelectExercises from "./components/welcome/select";
 
 const firebaseConfig = {
   apiKey: "AIzaSyClDDnFfPSVzOJszY6awn-WOrq3PJNEYMc",
@@ -45,10 +45,11 @@ function App() {
           {/* <Route path="/" element={< UserBackgroundInfo />} /> */}
           <Route exact path="cantril-self-anchoring-striving-scale" element={<CantrilLadder />} />
           <Route exact path="cantril-self-anchoring-result" element={< CantrilLadderResult />} />
+
           <Route exact path="/" element={<Welcome />} />
+          <Route exact path="select-exercises" element={<SelectExercises />} />
 
           {/* LONG Exercises */}
-          <Route exact path="long-exercises" element={<LongExercises />} />
           <Route exact path="find-yourself-at-your-best" element={<FindYourselfAtYourBest />} />
           <Route exact path="understand-your-feeling-and-emotions" element={<UnderstandFeelingsAndEmotions />} />
           <Route exact path="unwind-from-a-stressful-moment" element={<UnwindFromStressfulMoment />} />
@@ -56,11 +57,11 @@ function App() {
           <Route exact path="find-out-your-motivations" element={<FindOutYourMotivations />} />
 
           {/* SHORT Exercises */}
-          <Route exact path="short-exercises" element={<ShortExercises />} />
           <Route exact path="what-are-you-worried-for" element={<WhatAreYouWorriedFor />} />
           <Route exact path="give-yourself-a-reality-check" element={<RealityCheck />} />
           <Route exact path="reconstruct-thoughts" element={<ReconstructThoughts />} />
           <Route exact path="improve-self-esteem" element={<ThingsAboutMe />} />
+          <Route exact path="what-triggers-your-stress" element={<WhatTriggersYourStress />} />
 
           <Route exact path="congratulations" element={<Congratulations />} />
         </Routes>
