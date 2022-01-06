@@ -171,11 +171,13 @@ const Welcome = () => {
                                             return <div className="flex flex-col content-center border-default h-full lg:h-120 rounded-lg">
                                                 <p key={index} className="cursor-none lg:select-none m-2 px-4 inline-block w-full border-blue-1100 font-heading font-semibold text-xl text-blue-1100"> {item.value}</p>
                                                 <span key={index} className="cursor-none lg:select-none px-4 inline-block w-full border-blue-1100 font-heading text-sm text-blue-1100 ">{item.duration}</span>
-                                                {item.data.map((exercise, index) => {
-                                                    return <div key={index} className='flex flex-col text-justify lg:cursor-pointer hover:bg-blue-1100' onClick={(e) => handleChange(e, item.type, index)}>
-                                                        <p className="py-2 border-b-default justify-start flex-body text-blue-1100 hover:text-white font-regular">{exercise.value}</p>
-                                                    </div>
-                                                })}
+                                                <div className='pl-2'>
+                                                    {item.data.map((exercise, index) => {
+                                                        return <div key={index} className='flex flex-col text-justify lg:cursor-pointer hover:bg-blue-1100' onClick={(e) => handleChange(e, item.type, index)}>
+                                                            <p className=" py-2 border-b-default justify-start flex-body text-blue-1100 hover:text-white font-regular">{exercise.value}</p>
+                                                        </div>
+                                                    })}
+                                                </div>
                                             </div>
 
                                         })}
