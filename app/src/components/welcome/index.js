@@ -32,23 +32,23 @@ const Welcome = () => {
 
     return <div>
         <AnimatedList animation="grow" initialAnimationDuration="5000">
-            <h2 className="text-left border-b-2 border-blue-1100 text-blue-1100 font-bold font-heading text-md lg:text-xl">{welcomeContent.title}</h2>
-            <ul className=" mt-4">
+            <h2 className="text-left border-b-2 border-blue-1100 text-blue-1100 font-bold font-heading text-xl lg:text-2xl">{welcomeContent.title}</h2>
+            <ul className="mt-16">
                 {welcomeContent.content.map((item, index) => {
-                    return <div className='w-full thought my-8'>
+                    return <div className='w-full thought'>
                         <p className="sb14 text-blue-1100 font-heading text-xs lg:text-sm inline-block">{item.value}</p>
                     </div>
                 })}
 
             </ul>
-            <p className="text-md text-blue-1100 font-heading text-xs lg:text-base font-semibold lg:ml-4 lg:mb-6 lg:mt-6">
+            <p className="text-xl lg:text-md text-blue-1100 font-body font-semibold lg:ml-4 lg:mb-6 mt-16 lg:mt-20">
                 {welcomeContent.description}
             </p>
         </AnimatedList>
 
 
         <div className="flex flex-col justify-center">
-            <p className="cursor-pointer rounded-full mx-auto py-2 lg:py-4 mt-16 px-4 lg:px-12 bg-blue-1100 hover:bg-blue-800 text-white inline-block font-body text-md lg:text-base" onClick={() => handleClick()}>Continue</p>
+            <p className="cursor-pointer rounded-full px-4 lg:px-20 text-center py-4 mt-16 bg-blue-1100 hover:bg-blue-800 text-white  font-body text-md lg:text-base" onClick={() => handleClick()}>Continue</p>
         </div>
 
     </div>

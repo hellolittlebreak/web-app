@@ -112,7 +112,7 @@ const SelectExercises = () => {
 
     return <div>
         <AnimatedList className="h-156" animation="grow" initialAnimationDuration="4000">
-            <h2 className="text-left border-b-2 border-blue-1100 text-blue-1100 font-bold font-heading text-md lg:text-xl">{welcomeContent.title}</h2>
+            <h2 className="text-left border-b-2 border-blue-1100 text-blue-1100 font-bold font-heading text-xl lg:text-2xl">{welcomeContent.title}</h2>
             <div className="flex justify-center lg:mt-10">
                 <ul className="w-full lg:w-2/3 grid grid-cols-2 lg:grid-rows-4 gap-4 lg:grid-cols-2 mt-4 justify-center text-center">
                     <AnimatedList className="h-156" animation="grow" initialAnimationDuration="4000">
