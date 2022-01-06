@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { useNavigate, Routes, Route } from "react-router-dom";
 import { AnimatedList } from 'react-animated-list'
+import "../../styles/main.css"
 
 
 const Welcome = () => {
@@ -29,14 +30,90 @@ const Welcome = () => {
             description: "",
             content: [
                 {
-                    value: "Shorter exercises ( Aprox. 3 min )",
+                    value: "Shorter exercises",
+                    duration: "( Aprox. 3 min )",
                     isSelected: false,
-                    componentLink: "short-exercises"
+                    type: "short-exercises",
+                    data: [
+                        {
+                            value: "What are you worried for?",
+                            isSelected: false,
+                            componentLink: "what-are-you-worried-for"
+                        },
+                        {
+                            value: "Reality check",
+                            isSelected: false,
+                            componentLink: "give-yourself-a-reality-check"
+                        },
+                        {
+                            value: "Reconstruct thoughts",
+                            isSelected: false,
+                            componentLink: "reconstruct-thoughts"
+                        },
+                        {
+                            value: "Self esteem",
+                            isSelected: false,
+                            componentLink: "improve-self-esteem"
+                        },
+                        {
+                            value: "Understanding forgiveness",
+                            isSelected: false,
+                            componentLink: "understanding-forgiveness"
+                        },
+                        {
+                            value: "Behaviour change",
+                            isSelected: false,
+                            componentLink: "behaviour-change"
+                        },
+                        {
+                            value: "What triggers your stress",
+                            isSelected: false,
+                            componentLink: "what-triggers-your-stress"
+                        },
+                        {
+                            value: "Challenge negativity",
+                            isSelected: false,
+                            componentLink: "challenge-negative-thoughts"
+                        },
+                        {
+                            value: "Gratitude",
+                            isSelected: false,
+                            componentLink: "gratitude"
+                        }
+                    ]
                 },
                 {
-                    value: "Longer exercises ( Aprox. 7 min )",
+                    value: "Longer exercises",
+                    duration: "( Aprox. 7 min )",
                     isSelected: false,
-                    componentLink: "long-exercises"
+                    type: "long-exercises",
+                    data: [
+                        {
+                            value: "Find out your motivations",
+                            isSelected: false,
+                            componentLink: "find-out-your-motivations"
+                        },
+                        {
+                            value: "Find yourself at your best",
+                            isSelected: false,
+                            componentLink: "find-yourself-at-your-best"
+                        },
+                        {
+                            value: "Understand your feelings and emotions",
+                            isSelected: false,
+                            componentLink: "understand-your-feeling-and-emotions"
+                        },
+                        {
+                            value: "Unwind from a stressful moment",
+                            isSelected: false,
+                            componentLink: "unwind-from-a-stressful-moment"
+                        },
+                        {
+                            value: "Quiet down the negative thoughts ",
+                            isSelected: false,
+                            componentLink: "quiet-down-the-negative-thoughts"
+                        }
+                    ]
                 },
             ]
         }
@@ -48,8 +125,14 @@ const Welcome = () => {
         setCurrentPage(() => currentPage + 1)
     }
 
-    const handleChange = (e, position, isSelected) => {
-        const componentLink = welcomeContent[currentPage].content[position].componentLink
+    const handleChange = (e, type, position) => {
+        let componentLink
+        if (type === "short-exercises") {
+            componentLink = welcomeContent[currentPage].content[0].data[position].componentLink
+            navigate("/" + componentLink)
+        } else {
+            componentLink = welcomeContent[currentPage].content[1].data[position].componentLink
+        }
         navigate("/" + componentLink)
     }
 
@@ -64,8 +147,8 @@ const Welcome = () => {
                             <h2 className="text-left border-b-2 border-blue-1100 text-blue-1100 font-bold font-heading text-md lg:text-xl">{welcomeContent[currentPage].title}</h2>
                             <ul className=" mt-4">
                                 {welcomeContent[currentPage].content.map((item, index) => {
-                                    return <div className='w-full'>
-                                        <p className="bg-white p-2 lg:ml-2 lg:mr-6 rounded-lg my-4 text-blue-1100 font-heading text-xs lg:text-sm inline-block">{item.value}</p>
+                                    return <div className='w-full thought my-8'>
+                                        <p className="sb14 text-blue-1100 font-heading text-xs lg:text-sm inline-block">{item.value}</p>
                                     </div>
                                 })}
 
@@ -85,10 +168,16 @@ const Welcome = () => {
                                 <ul className="w-full lg:w-2/3 grid grid-rows-4 gap-4 lg:grid-cols-2 mt-4 justify-center text-center">
                                     <AnimatedList className="h-156" animation="grow" initialAnimationDuration="4000">
                                         {welcomeContent[currentPage].content.map((item, index) => {
-
-                                            return <div className="flex content-center">
-                                                <p key={index} className="transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110 cursor-pointer lg:cursor-pointer lg:select-none m-2 px-4 py-2 inline-block border-2 w-full lg:w-56 h-32 border-blue-1100 bg-white hover:bg-blue-1100 hover:text-white rounded-lg border-solid font-heading" onClick={(e) => handleChange(e, index, true)}> {item.value}</p>
+                                            return <div className="flex flex-col content-center border-default h-full lg:h-120 rounded-lg">
+                                                <p key={index} className="cursor-none lg:select-none m-2 px-4 inline-block w-full border-blue-1100 font-heading font-semibold text-xl text-blue-1100"> {item.value}</p>
+                                                <span key={index} className="cursor-none lg:select-none px-4 inline-block w-full border-blue-1100 font-heading text-sm text-blue-1100 ">{item.duration}</span>
+                                                {item.data.map((exercise, index) => {
+                                                    return <div key={index} className='flex flex-col text-justify lg:cursor-pointer hover:bg-blue-1100' onClick={(e) => handleChange(e, item.type, index)}>
+                                                        <p className="py-2 border-b-default justify-start flex-body text-blue-1100 hover:text-white font-regular">{exercise.value}</p>
+                                                    </div>
+                                                })}
                                             </div>
+
                                         })}
                                     </ AnimatedList>
                                 </ul>
