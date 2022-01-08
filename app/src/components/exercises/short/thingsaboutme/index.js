@@ -102,7 +102,7 @@ const ThingsAboutMe = () => {
         }
     }, [currentPage])
 
-    return <div className="lg:py-10">
+    return <div className="lg:py-10 mx-auto px-4 lg:px-64">
         <h2 className="text-left border-b-2 border-blue-1100 text-blue-1100 font-bold font-heading text-md lg:text-xl">{exercises.title}</h2>
         {
             exercises.data.map((item, index) => {

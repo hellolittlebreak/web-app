@@ -257,7 +257,7 @@ const UnderstandFeelingsAndEmotions = () => {
         refId.current.scrollIntoView({ behavior: 'smooth', block: 'start' })
     }, [currentPage])
 
-    return <div>
+    return <div className="mx-auto px-4 lg:px-64 pt-6">
         <h2 className="text-left border-b-2 border-blue-1100 text-blue-1100 font-bold font-heading text-md lg:text-xl">{exercises.title}</h2>
         <div className="bg-white rounded-lg m-4 p-4 text-center font-heading text-blue-1100">
             <p>sonder</p>

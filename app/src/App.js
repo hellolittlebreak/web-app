@@ -40,7 +40,7 @@ function App() {
       <header>
 
       </header>
-      <div className="bg-blue-1000 mx-auto px-4 lg:px-64 pt-6">
+      <div className="bg-blue-1000 ">
         <Routes>
           {/* <Route path="/" element={< UserBackgroundInfo />} /> */}
           <Route exact path="cantril-self-anchoring-striving-scale" element={<CantrilLadder />} />

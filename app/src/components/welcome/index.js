@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { useNavigate, Routes, Route } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { AnimatedList } from 'react-animated-list'
 import "../../styles/main.css"
 
@@ -30,7 +30,7 @@ const Welcome = () => {
         navigate("/select-exercises")
     }
 
-    return <div>
+    return <div className='mx-auto px-4 lg:px-64 pt-6'>
         <AnimatedList animation="grow" initialAnimationDuration="5000">
             <h2 className="text-left border-b-2 border-blue-1100 text-blue-1100 font-bold font-heading text-xl lg:text-2xl">{welcomeContent.title}</h2>
             <ul className="mt-16">
@@ -47,8 +47,8 @@ const Welcome = () => {
         </AnimatedList>
 
 
-        <div className="flex flex-col justify-center">
-            <p className="cursor-pointer rounded-full px-4 lg:px-20 text-center py-4 mt-16 bg-blue-1100 hover:bg-blue-800 text-white  font-body text-md lg:text-base" onClick={() => handleClick()}>Continue</p>
+        <div className="flex flex-col justify-center w-full items-center">
+            <p className="w-full lg:w-56 cursor-pointer rounded-full px-4 lg:px-20 text-center py-4 mt-16 bg-blue-1100 hover:bg-blue-800 text-white  font-body text-md lg:text-base" onClick={() => handleClick()}>Continue</p>
         </div>
 
     </div>

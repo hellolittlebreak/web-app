@@ -1,7 +1,7 @@
 import React from 'react'
 
 const Congratulations = () => {
-    return <div>
+    return <div className='bg-red-500'>
         <h1>Congratulations</h1>
         <p>During this little break time, you have taken the first step towards understanding your emotions and developing a healthier and better life!</p>
         <p>Come back tomorrow for more insights into your own emotions and continue on the mental growth journey.</p>
