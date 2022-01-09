@@ -23,7 +23,7 @@ const SelectExercises = () => {
                         componentLink: "what-are-you-worried-for"
                     },
                     {
-                        value: "Give Yourself A Reality check",
+                        value: "Give yourself a reality check",
                         isSelected: false,
                         componentLink: "give-yourself-a-reality-check"
                     },
@@ -33,7 +33,7 @@ const SelectExercises = () => {
                         componentLink: "reconstruct-thoughts"
                     },
                     {
-                        value: "Self esteem",
+                        value: "Establish your self-esteem",
                         isSelected: false,
                         componentLink: "improve-self-esteem"
                     },
