@@ -1,0 +1,47 @@
+import React from 'react'
+import { FaStar } from 'react-icons/fa';
+import { useNavigate } from "react-router-dom";
+import { useLocation } from 'react-router-dom';
+
+const CongratulationsSelfEsteem = () => {
+    const navigate = useNavigate();
+    const location = useLocation();
+
+    const takeAnotherExercise = () => {
+        navigate("/select-exercises")
+    }
+
+    return <div className='flex pb-32'>
+        {/* Left Part */}
+        <div className='mx-auto w-full lg:w-1/2 ' >
+            <div className='m-8'>
+                <div className='flex justify-center'>
+                    <FaStar size={20} className="text-orange-600 m-4" />
+                </div>
+                <h1 className='text-center text-4xl font-heading text-blue-1100'>Congratulations</h1>
+                <div className='bg-white rounded-lg p-10 mt-10 bg-opacity-50'>
+                    <p className='font-heading text-blue-1100 font-regular text-md my-2'>During this 3-min little break, you have taken the time to embrace yourself and how far you have come</p>
+                    <p className='font-heading text-blue-1100 font-regular text-md my-2'>It is a step closer towards establishing confidence and developing a healthy self-esteem.</p>
+                </div>
+            </div>
+            <p className="font-heading font-bold text-blue-1100 mx-8 my-8">In this "Establish your self-esteem" short exercise, you reflected on 6 things about yourself:</p>
+            {console.log(location.state.value)}
+            {
+                location.state.value.map((item, index) => {
+                    return <div className="mx-8 my-4 flex items-center">
+                        <FaStar size={15} className="text-orange-600 mx-4" />
+                        <p className="text-blue-1100 font-body ">{item.title}<span style={{ fontStyle: 'italic' }} className="font-semibold">{item.response}</span></p>
+
+                    </div>
+                })
+            }
+            <div className="flex flex-col justify-center w-full items-center mt-16">
+                <p className="lg:inline-block lg:cursor-pointer rounded-full px-4 lg:px-20 text-center py-4  bg-blue-1100 hover:bg-blue-800 text-white font-body text-md lg:text-base" onClick={() => takeAnotherExercise()}>Take another exercise</p>
+            </div>
+        </div>
+        {/* End Left Part */}
+
+    </div>
+}
+
+export default CongratulationsSelfEsteem;
