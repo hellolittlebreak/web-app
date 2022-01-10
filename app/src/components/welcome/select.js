@@ -118,7 +118,7 @@ const SelectExercises = () => {
                 <ul className="w-full lg:w-4/5 grid grid-cols-0  lg:grid-rows-0 lg:grid-cols-2 gap-4 mt-4 justify-center text-center">
                     <AnimatedList className="" animation="grow" initialAnimationDuration="4000">
                         {welcomeContent.content.map((item, index) => {
-                            return <div key={index} className="flex flex-col content-center h-full rounded-lg bg-white">
+                            return <div key={index} className="flex flex-col content-center h-full rounded-lg bg-opacity-75 bg-white">
                                 <p className="cursor-none lg:select-none m-2 px-4 inline-block w-full  font-heading font-semibold text-xl text-blue-1100"> {item.value}</p>
                                 <span className="cursor-none lg:select-none px-4 inline-block w-full font-heading text-sm text-blue-1100 ">{item.duration}</span>
                                 <div className=''>
