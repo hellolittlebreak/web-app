@@ -9,15 +9,17 @@ const WhatAreYouWorriedFor = () => {
     const navigate = useNavigate();
 
     const [exercises, setExercises] = useState({
-        title: "",
+        title: "Understanding your worries",
         placeholder: "Write here",
         data: [
             {
                 refId: "refIdOne",
                 title: "What is something that you are worried about?",
-                type: "single-selection",
+                type: "multiple-choice-selection",
                 shouldBeVisible: true,
-                response: "",
+                response: {
+                    choices: []
+                },
                 choices: [
                     {
                         value: "Relationship",
@@ -34,13 +36,21 @@ const WhatAreYouWorriedFor = () => {
                     {
                         value: "Money",
                         isSelected: false
+                    },
+                    {
+                        value: "Other's opinions",
+                        isSelected: false
+                    },
+                    {
+                        value: "Family",
+                        isSelected: false
                     }
                 ]
             },
             {
                 refId: "refIdTwo",
                 type: "text",
-                title: "What are some clues that your worry will NOT come true?",
+                title: "What are some clues that your worry will come true?",
                 hint: "Think about what WILL happen, instead of what COULD happen. This helps you to focus on reality and avoids unrealistic worries",
                 shouldBeVisible: false,
                 response: ""
@@ -95,6 +105,43 @@ const WhatAreYouWorriedFor = () => {
                     singleSelectionItems.data[currentPosition].choices = singleSelectionList
                     setExercises(singleSelectionItems);
                     break;
+                case "multiple-choice-selection":
+                    let allExercises = { ...exercises };
+                    const multipleChoiceSelectionList = allExercises.data[currentPosition].choices.map((item, index) => {
+                        if (index === position) {
+                            if (item.isSelected === false) {
+                                const newItem = {
+                                    ...item,
+                                    isSelected: isSelected,
+                                };
+
+                                allExercises.data[currentPosition].response.choices.push({ value: newItem.value })
+
+                                return newItem;
+
+                            } else {
+                                const newItem = {
+                                    ...item,
+                                    isSelected: isSelected,
+                                }
+
+                                allExercises.data[currentPosition].response.choices.map((item, index) => {
+                                    if (item.value === newItem.name) {
+                                        if (index > -1) {
+                                            allExercises.data[currentPosition].response.choices.splice(index, 1);
+                                        }
+                                    }
+                                })
+
+                                return newItem;
+                            }
+                        }
+
+                        return item;
+                    });
+                    allExercises.data[currentPosition].choices = multipleChoiceSelectionList
+                    setExercises(allExercises);
+                    break;
                 default:
                     break;
             }
@@ -119,7 +166,7 @@ const WhatAreYouWorriedFor = () => {
         setExercises(newExercisesList)
         const currentPosition = parseInt(e.target.parentNode.id) + 1
         if (currentPosition === exercises.data.length) {
-            navigate("/congratulations")
+            navigate("/congratulations-what-are-you-worried-for", { state: { value: exercises.data } })
         } else {
             setCurrentPage(() => currentPosition)
         }
@@ -129,7 +176,6 @@ const WhatAreYouWorriedFor = () => {
         <h2 className="text-left border-b-2 border-blue-1100 text-blue-1100 font-bold font-heading text-md lg:text-xl">{exercises.title}</h2>
         {
             exercises.data.map((item, index) => {
-
                 if (item.shouldBeVisible === true) {
                     return <div id={index} key={index} ref={setRef(item.refId)} className="h-screen lg:h-96">
 
@@ -143,8 +189,8 @@ const WhatAreYouWorriedFor = () => {
                             })}
                         </ul>
                         {item.hint && <div className="w-full p-2">
-                            <p className='font-body text-md text-blue-1100 p-2 bg-gray-300 hover:bg-blue-1100 hover:text-white rounded-lg'>{item.hint}</p>
-                            <textarea rows="3" className="w-full h-40 rounded-lg lg:mt-6 p-2 text-blue-1100 bg-gray-100 border-blue-1100 border-2 outline-none" type="text" name="response" value={item.response} placeholder={exercises.placeholder} onChange={(e) => handleChange(e, currentPage, true)} />
+                            <p className='font-body text-md text-blue-1100 p-2 bg-opacity-75 bg-white  rounded-lg'>{item.hint}</p>
+                            <textarea rows="3" className="w-full h-10 rounded-lg mt-6 p-2 text-blue-1100 bg-gray-100 border-blue-1100 border-2 outline-none" type="text" name="response" value={item.response} placeholder={exercises.placeholder} onChange={(e) => handleChange(e, currentPage, true)} />
                         </div>}
                         <button className="lg:ml-4 lg:mt-6 bg-blue-1100 hover:bg-blue-700 px-4 py-2 text-white rounded-lg flex text-center" onClick={(e) => handleClick(e, index + 1)} >OK <FaCheck className="my-auto ml-2 pointer-events-none" /></button>
 

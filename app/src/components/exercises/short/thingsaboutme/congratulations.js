@@ -1,7 +1,6 @@
 import React from 'react'
 import { FaStar } from 'react-icons/fa';
-import { useNavigate } from "react-router-dom";
-import { useLocation } from 'react-router-dom';
+import { useNavigate, useLocation } from "react-router-dom";
 
 const CongratulationsSelfEsteem = () => {
     const navigate = useNavigate();
@@ -25,7 +24,6 @@ const CongratulationsSelfEsteem = () => {
                 </div>
             </div>
             <p className="font-heading font-bold text-blue-1100 mx-8 my-8">In this "Establish your self-esteem" short exercise, you reflected on 6 things about yourself:</p>
-            {console.log(location.state.value)}
             {
                 location.state.value.map((item, index) => {
                     return <div className="mx-8 my-4 flex items-center">
