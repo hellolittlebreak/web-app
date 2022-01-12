@@ -58,6 +58,7 @@ function App() {
           <Route exact path="unwind-from-a-stressful-moment" element={<UnwindFromStressfulMoment />} />
           <Route exact path="quiet-down-the-negative-thoughts" element={<QuietDownNegativeThoughts />} />
           <Route exact path="find-out-your-motivations" element={<FindOutYourMotivations />} />
+          <Route exact path="reconstruct-thoughts" element={<ReconstructThoughts />} />
 
           {/* SHORT Exercises */}
           <Route exact path="what-are-you-worried-for" element={<WhatAreYouWorriedFor />} />
@@ -66,7 +67,6 @@ function App() {
           <Route exact path="give-yourself-a-reality-check" element={<RealityCheck />} />
           <Route exact path="congratulations-reality-check" element={<CongratulationsRealityCheck />} />
 
-          <Route exact path="reconstruct-thoughts" element={<ReconstructThoughts />} />
           <Route exact path="improve-self-esteem" element={<ThingsAboutMe />} />
           <Route exact path="congratulations-improve-self-esteem" element={<CongratulationsSelfEsteem />} />
 

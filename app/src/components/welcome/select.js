@@ -27,25 +27,11 @@ const SelectExercises = () => {
                         isSelected: false,
                         componentLink: "give-yourself-a-reality-check"
                     },
-                    {
-                        value: "Reconstruct thoughts",
-                        isSelected: false,
-                        componentLink: "reconstruct-thoughts"
-                    },
+
                     {
                         value: "Establish your self-esteem",
                         isSelected: false,
                         componentLink: "improve-self-esteem"
-                    },
-                    {
-                        value: "Understanding forgiveness",
-                        isSelected: false,
-                        componentLink: "understanding-forgiveness"
-                    },
-                    {
-                        value: "Behaviour change",
-                        isSelected: false,
-                        componentLink: "behaviour-change"
                     },
                     {
                         value: "What triggers your stress",
@@ -90,11 +76,26 @@ const SelectExercises = () => {
                         isSelected: false,
                         componentLink: "unwind-from-a-stressful-moment"
                     },
+                    // {
+                    //     value: "Quiet down the negative thoughts ",
+                    //     isSelected: false,
+                    //     componentLink: "quiet-down-the-negative-thoughts"
+                    // },
                     {
-                        value: "Quiet down the negative thoughts ",
+                        value: "Reconstruct thoughts",
                         isSelected: false,
-                        componentLink: "quiet-down-the-negative-thoughts"
-                    }
+                        componentLink: "reconstruct-thoughts"
+                    },
+                    {
+                        value: "Understanding forgiveness",
+                        isSelected: false,
+                        componentLink: "understanding-forgiveness"
+                    },
+                    {
+                        value: "Behaviour change",
+                        isSelected: false,
+                        componentLink: "behaviour-change"
+                    },
                 ]
             },
         ]
