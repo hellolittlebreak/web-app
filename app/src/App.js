@@ -15,13 +15,14 @@ import FindOutYourMotivations from "./components/exercises/long/findoutyourmotiv
 import Congratulations from "./components/congratulations";
 import WhatAreYouWorriedFor from "./components/exercises/short/whatareyouworriedfor";
 import RealityCheck from "./components/exercises/short/realitycheck";
-import ReconstructThoughts from "./components/exercises/short/reconstructthoughts";
+import ReconstructThoughts from "./components/exercises/long/reconstructthoughts";
 import ThingsAboutMe from "./components/exercises/short/thingsaboutme";
 import WhatTriggersYourStress from "./components/exercises/short/whattriggersyourstress";
 import SelectExercises from "./components/welcome/select";
 import CongratulationsRealityCheck from "./components/exercises/short/realitycheck/congratulations";
 import CongratulationsSelfEsteem from "./components/exercises/short/thingsaboutme/congratulations";
 import CongratulationsWhatAreYouWorriedFor from "./components/exercises/short/whatareyouworriedfor/congratulations";
+import ChallengeNegativeThoughts from "./components/exercises/short/challengenegativethoughts";
 
 const firebaseConfig = {
   apiKey: "AIzaSyClDDnFfPSVzOJszY6awn-WOrq3PJNEYMc",
@@ -71,6 +72,8 @@ function App() {
           <Route exact path="congratulations-improve-self-esteem" element={<CongratulationsSelfEsteem />} />
 
           <Route exact path="what-triggers-your-stress" element={<WhatTriggersYourStress />} />
+
+          <Route exact path="challenge-negative-thoughts" element={<ChallengeNegativeThoughts />} />
 
           <Route exact path="congratulations" element={<Congratulations />} />
         </Routes>
