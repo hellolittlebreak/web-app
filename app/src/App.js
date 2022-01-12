@@ -23,6 +23,7 @@ import CongratulationsRealityCheck from "./components/exercises/short/realityche
 import CongratulationsSelfEsteem from "./components/exercises/short/thingsaboutme/congratulations";
 import CongratulationsWhatAreYouWorriedFor from "./components/exercises/short/whatareyouworriedfor/congratulations";
 import ChallengeNegativeThoughts from "./components/exercises/short/challengenegativethoughts";
+import Gratitude from "./components/exercises/short/gratitude";
 
 const firebaseConfig = {
   apiKey: "AIzaSyClDDnFfPSVzOJszY6awn-WOrq3PJNEYMc",
@@ -74,6 +75,8 @@ function App() {
           <Route exact path="what-triggers-your-stress" element={<WhatTriggersYourStress />} />
 
           <Route exact path="challenge-negative-thoughts" element={<ChallengeNegativeThoughts />} />
+
+          <Route exact path="gratitude" element={<Gratitude />} />
 
           <Route exact path="congratulations" element={<Congratulations />} />
         </Routes>
