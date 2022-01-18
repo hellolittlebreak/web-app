@@ -3,6 +3,20 @@ import { useNavigate } from "react-router-dom";
 import { AnimatedList } from 'react-animated-list'
 import "../../styles/main.css"
 import { FaFortAwesome, FaChevronRight } from 'react-icons/fa';
+import {
+    RiQuestionAnswerFill,
+    RiChatCheckFill,
+    RiHomeHeartFill,
+    RiBuilding3Fill,
+    RiServiceFill,
+    RiContrastDrop2Fill,
+    RiVipDiamondFill,
+    RiTrophyFill,
+    RiStarSmileFill,
+    RiHeartPulseFill,
+    RiPsychotherapyFill,
+    RiDirectionFill
+} from 'react-icons/ri'
 
 
 const SelectExercises = () => {
@@ -20,33 +34,39 @@ const SelectExercises = () => {
                     {
                         value: "What are you worried for?",
                         isSelected: false,
-                        componentLink: "what-are-you-worried-for"
+                        componentLink: "what-are-you-worried-for",
+                        icon: "RiQuestionAnswerFill"
                     },
                     {
                         value: "Give yourself a reality check",
                         isSelected: false,
-                        componentLink: "give-yourself-a-reality-check"
+                        componentLink: "give-yourself-a-reality-check",
+                        icon: "RiChatCheckFill"
                     },
 
                     {
                         value: "Establish your self-esteem",
                         isSelected: false,
-                        componentLink: "improve-self-esteem"
+                        componentLink: "improve-self-esteem",
+                        icon: "RiHomeHeartFill"
                     },
                     {
                         value: "What triggers your stress",
                         isSelected: false,
-                        componentLink: "what-triggers-your-stress"
+                        componentLink: "what-triggers-your-stress",
+                        icon: "RiBuilding3Fill"
                     },
                     {
                         value: "Challenge negativity",
                         isSelected: false,
-                        componentLink: "challenge-negative-thoughts"
+                        componentLink: "challenge-negative-thoughts",
+                        icon: "RiServiceFill"
                     },
                     {
                         value: "Gratitude",
                         isSelected: false,
-                        componentLink: "gratitude"
+                        componentLink: "gratitude",
+                        icon: "RiContrastDrop2Fill"
                     }
                 ]
             },
@@ -59,42 +79,38 @@ const SelectExercises = () => {
                     {
                         value: "Find out your motivations",
                         isSelected: false,
-                        componentLink: "find-out-your-motivations"
+                        componentLink: "find-out-your-motivations",
+                        icon: "RiVipDiamondFill"
                     },
                     {
                         value: "Find yourself at your best",
                         isSelected: false,
-                        componentLink: "find-yourself-at-your-best"
+                        componentLink: "find-yourself-at-your-best",
+                        icon: "RiTrophyFill"
                     },
                     {
                         value: "Understand your feelings",
                         isSelected: false,
-                        componentLink: "understand-your-feeling-and-emotions"
+                        componentLink: "understand-your-feeling-and-emotions",
+                        icon: "RiStarSmileFill"
                     },
                     {
                         value: "Unwind from a stressful moment",
                         isSelected: false,
-                        componentLink: "unwind-from-a-stressful-moment"
+                        componentLink: "unwind-from-a-stressful-moment",
+                        icon: "RiHeartPulseFill"
                     },
-                    // {
-                    //     value: "Quiet down the negative thoughts ",
-                    //     isSelected: false,
-                    //     componentLink: "quiet-down-the-negative-thoughts"
-                    // },
                     {
                         value: "Reconstruct thoughts",
                         isSelected: false,
-                        componentLink: "reconstruct-thoughts"
-                    },
-                    {
-                        value: "Understanding forgiveness",
-                        isSelected: false,
-                        componentLink: "understanding-forgiveness"
+                        componentLink: "reconstruct-thoughts",
+                        icon: "RiPsychotherapyFill"
                     },
                     {
                         value: "Behaviour change",
                         isSelected: false,
-                        componentLink: "behaviour-change"
+                        componentLink: "behaviour-change",
+                        icon: "RiDirectionFill"
                     },
                 ]
             },
@@ -112,6 +128,44 @@ const SelectExercises = () => {
         navigate("/" + componentLink)
     }
 
+    const setIcon = (type, index) => {
+        if (type === "short-exercises") {
+            switch (index) {
+                case 0:
+                    return <RiQuestionAnswerFill size={30} className="my-auto ml-2 text-blue-1100" />
+                case 1:
+                    return <RiChatCheckFill size={30} className="my-auto ml-2 text-blue-1100" />
+                case 2:
+                    return <RiHomeHeartFill size={30} className="my-auto ml-2 text-blue-1100" />
+                case 3:
+                    return <RiBuilding3Fill size={30} className="my-auto ml-2 text-blue-1100" />
+                case 4:
+                    return <RiServiceFill size={30} className="my-auto ml-2 text-blue-1100" />
+                case 5:
+                    return <RiContrastDrop2Fill size={30} className="my-auto ml-2 text-blue-1100" />
+                default:
+                    break;
+            }
+        } else {
+            switch (index) {
+                case 0:
+                    return <RiVipDiamondFill size={30} className="my-auto ml-2 text-blue-1100" />
+                case 1:
+                    return <RiTrophyFill size={30} className="my-auto ml-2 text-blue-1100" />
+                case 2:
+                    return <RiStarSmileFill size={30} className="my-auto ml-2 text-blue-1100" />
+                case 3:
+                    return <RiHeartPulseFill size={30} className="my-auto ml-2 text-blue-1100" />
+                case 4:
+                    return <RiPsychotherapyFill size={30} className="my-auto ml-2 text-blue-1100" />
+                case 5:
+                    return <RiDirectionFill size={30} className="my-auto ml-2 text-blue-1100" />
+                default:
+                    break;
+            }
+        }
+    }
+
     return <div className='mx-auto px-4 lg:px-64 py-6'>
         <AnimatedList className="" animation="grow" initialAnimationDuration="4000">
             <h2 className="text-left border-b-2 border-blue-1100 text-blue-1100 font-bold font-heading text-xl lg:text-2xl">{welcomeContent.title}</h2>
@@ -126,8 +180,8 @@ const SelectExercises = () => {
                                     {item.data.map((exercise, index) => {
                                         return <div>
                                             <div key={index} className='justify-between w-full flex flex-row text-justify lg:cursor-pointer' onClick={(e) => handleChange(e, item.type, index)}>
-                                                <FaFortAwesome size={30} className="my-auto ml-2 text-blue-1100" />
-                                                <p className="w-2/4 py-4 text-blue-1100 ml-10 font-regular font-heading whitespace-pre-wrap">{exercise.value}</p>
+                                                {setIcon(item.type, index)}
+                                                <p className="w-2/4 py-4 text-blue-1100 font-regular font-heading whitespace-pre-wrap">{exercise.value}</p>
                                                 <FaChevronRight size={14} className="my-auto mr-4 text-blue-1100" />
                                             </div>
                                             <div className='border-b-default border-gray-300 ml-12'></div>
