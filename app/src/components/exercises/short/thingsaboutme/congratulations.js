@@ -1,6 +1,7 @@
 import React from 'react'
 import { FaStar } from 'react-icons/fa';
 import { useNavigate, useLocation } from "react-router-dom";
+import ScrollToTopOnMount from '../../../../utils/ScrollToTop';
 
 const CongratulationsSelfEsteem = () => {
     const navigate = useNavigate();
@@ -12,6 +13,7 @@ const CongratulationsSelfEsteem = () => {
 
     return <div className='flex pb-32'>
         {/* Left Part */}
+        <ScrollToTopOnMount />
         <div className='mx-auto w-full lg:w-1/2 ' >
             <div className='m-8'>
                 <div className='flex justify-center'>

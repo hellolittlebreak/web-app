@@ -10,7 +10,7 @@ const FindOutYourMotivations = () => {
     const navigate = useNavigate();
 
     const [exercises, setExercises] = useState({
-        title: "Find out your motivations",
+        title: "Discover your motivations",
         placeholder: "Write here",
         data: [
             {
@@ -66,14 +66,12 @@ const FindOutYourMotivations = () => {
     })
 
     const [currentPage, setCurrentPage] = useState(0)
-    const [currentVisiblePage, setCurrentVisiblePage] = useState(0)
-
 
     useEffect(() => {
         console.log(currentPage)
         const refId = getRef(exercises.data[currentPage].refId);
         refId.current.scrollIntoView({ behavior: 'smooth', block: 'start' })
-    }, [currentPage])
+    })
 
     const handleChange = (e, position, isSelected) => {
         try {
@@ -98,6 +96,8 @@ const FindOutYourMotivations = () => {
                                 ...item,
                                 isSelected: isSelected,
                             };
+
+                            singleSelectionItems.data[currentPosition].response = selectedItem.value
 
                             return selectedItem
                         } else {
@@ -136,7 +136,7 @@ const FindOutYourMotivations = () => {
         setExercises(newExercisesList)
         const currentPosition = parseInt(e.target.parentNode.id) + 1
         if (currentPosition === exercises.data.length) {
-            navigate("/congratulations")
+            navigate("/congratulations-discover-your-motivations", { state: { value: exercises.data } })
         } else {
             setCurrentPage(() => currentPosition)
         }
@@ -148,7 +148,7 @@ const FindOutYourMotivations = () => {
             exercises.data.map((item, index) => {
 
                 if (item.shouldBeVisible === true) {
-                    return <div id={index} key={index} ref={setRef(item.refId)} className="h-screen lg:h-96">
+                    return <div id={index} key={index} ref={setRef(item.refId)} className="h-screen lg:h-72">
 
                         <p className="text-md text-blue-1100 font-heading font-semibold lg:ml-4 lg:mt-6">{item.title}</p>
                         <ul className="mt-2 lg:mt-4 flex flex-wrap">
@@ -160,8 +160,8 @@ const FindOutYourMotivations = () => {
                             })}
                         </ul>
                         {item.hint && <div className="w-full p-2">
-                            <p className='font-body text-md text-blue-1100 p-2 bg-gray-300 hover:bg-blue-1100 hover:text-white rounded-lg'>{item.hint}</p>
-                            <textarea rows="3" className="w-full h-40 rounded-lg lg:mt-6 p-2 text-blue-1100 bg-gray-100 border-blue-1100 border-2 outline-none" type="text" name="response" value={item.response} placeholder={exercises.placeholder} onChange={(e) => handleChange(e, currentPage, true)} />
+                            <p className='font-body text-md text-blue-1100 p-2 bg-white bg-opacity-50 rounded-lg'>{item.hint}</p>
+                            <textarea rows="3" className="w-full h-10 rounded-lg mt-6 p-2 text-blue-1100 bg-gray-100 border-blue-1100 border-2 outline-none" type="text" name="response" value={item.response} placeholder={exercises.placeholder} onChange={(e) => handleChange(e, currentPage, true)} />
                         </div>}
                         <button className="lg:ml-4 lg:mt-6 bg-blue-1100 hover:bg-blue-700 px-4 py-2 text-white rounded-lg flex text-center" onClick={(e) => handleClick(e, index + 1)} >OK <FaCheck className="my-auto ml-2 pointer-events-none" /></button>
 

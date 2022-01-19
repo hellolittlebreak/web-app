@@ -77,9 +77,9 @@ const SelectExercises = () => {
                 type: "long-exercises",
                 data: [
                     {
-                        value: "Find out your motivations",
+                        value: "Discover your motivations",
                         isSelected: false,
-                        componentLink: "find-out-your-motivations",
+                        componentLink: "discover-your-motivations",
                         icon: "RiVipDiamondFill"
                     },
                     {

@@ -1,6 +1,7 @@
 import React from 'react'
 import { FaStar } from 'react-icons/fa';
 import { useNavigate } from "react-router-dom";
+import ScrollToTopOnMount from '../../../../utils/ScrollToTop';
 
 const CongratulationsRealityCheck = () => {
     const navigate = useNavigate();
@@ -11,6 +12,7 @@ const CongratulationsRealityCheck = () => {
 
     return <div className='grid grid-cols-0 lg:grid-rows-0 lg:grid-cols-2'>
         {/* Left Part */}
+        <ScrollToTopOnMount />
         <div className='bg-cover h-screen ' style={{ backgroundImage: `url(https://littlebreak.io/wp-content/uploads/2022/01/give-yourself-a-reality-check-congratulations-scaled.jpeg)` }} >
             <div className='m-8 lg:m-12'>
                 <div className='flex justify-center'><FaStar size={20} className="text-orange-600 m-4" /></div>

@@ -62,11 +62,8 @@ const WhatTriggersYourStress = () => {
     })
 
     const [currentPage, setCurrentPage] = useState(0)
-    const [currentVisiblePage, setCurrentVisiblePage] = useState(0)
-
 
     useEffect(() => {
-        console.log(currentPage)
         const refId = getRef(exercises.data[currentPage].refId);
         refId.current.scrollIntoView({ behavior: 'smooth', block: 'start' })
     }, [currentPage])

@@ -1,6 +1,5 @@
 
-import { Routes, Route, Link } from "react-router-dom";
-import UserBackgroundInfo from "./components/backgroundinfo/index_new";
+import { Routes, Route } from "react-router-dom";
 import CantrilLadder from "./components/cantrilladder";
 import CantrilLadderResult from "./components/cantrilladder/result";
 import Welcome from "./components/welcome";
@@ -27,6 +26,7 @@ import Gratitude from "./components/exercises/short/gratitude";
 import CongratulationsWhatTriggersYourStress from "./components/exercises/short/whattriggersyourstress/congratulations";
 import CongratulationsChallengeNegativeThoughts from "./components/exercises/short/challengenegativethoughts/congratulations";
 import CongratulationsGratitude from "./components/exercises/short/gratitude/congratulations";
+import CongratulationsDiscoverYourMotivations from "./components/exercises/long/findoutyourmotivations/congratulations";
 
 const firebaseConfig = {
   apiKey: "AIzaSyClDDnFfPSVzOJszY6awn-WOrq3PJNEYMc",
@@ -50,6 +50,7 @@ function App() {
       </header>
       <div className="bg-blue-1000 ">
         <Routes>
+
           {/* <Route path="/" element={< UserBackgroundInfo />} /> */}
           <Route exact path="cantril-self-anchoring-striving-scale" element={<CantrilLadder />} />
           <Route exact path="cantril-self-anchoring-result" element={< CantrilLadderResult />} />
@@ -62,7 +63,10 @@ function App() {
           <Route exact path="understand-your-feeling-and-emotions" element={<UnderstandFeelingsAndEmotions />} />
           <Route exact path="unwind-from-a-stressful-moment" element={<UnwindFromStressfulMoment />} />
           <Route exact path="quiet-down-the-negative-thoughts" element={<QuietDownNegativeThoughts />} />
-          <Route exact path="find-out-your-motivations" element={<FindOutYourMotivations />} />
+
+          <Route exact path="discover-your-motivations" element={<FindOutYourMotivations />} />
+          <Route exact path="congratulations-discover-your-motivations" element={<CongratulationsDiscoverYourMotivations />} />
+
           <Route exact path="reconstruct-thoughts" element={<ReconstructThoughts />} />
 
           {/* SHORT Exercises */}
