@@ -2,7 +2,7 @@ import React from 'react'
 import { FaStar } from 'react-icons/fa';
 import { useNavigate, useLocation } from "react-router-dom";
 
-const CongratulationsWhatTriggersYourStress = () => {
+const CongratulationsChallengeNegativeThoughts = () => {
     const navigate = useNavigate();
     const location = useLocation();
 
@@ -27,11 +27,7 @@ const CongratulationsWhatTriggersYourStress = () => {
             {location.state.value.map((item, index) => {
                 return <div key={index} className="mx-8 my-4 flex items-center">
                     <FaStar size={15} className="text-orange-600 mx-4" />
-                    {item.response.choices ? <p className="text-blue-1100 font-body ">{item.title} {item.response.choices.map((choice, index) => {
-                        return <span key={index} style={{ fontStyle: 'italic' }} className="font-semibold">{choice.value} </span>
-                    })}</p> :
-                        <p className="text-blue-1100 font-body ">{item.title}<span style={{ fontStyle: 'italic' }} className="font-semibold">{item.response}</span></p>}
-
+                    <p className="text-blue-1100 font-body ">{item.title} <span style={{ fontStyle: 'italic' }} className="font-semibold">{item.response}</span></p>
                 </div>
             })
             }
@@ -44,4 +40,4 @@ const CongratulationsWhatTriggersYourStress = () => {
     </div>
 }
 
-export default CongratulationsWhatTriggersYourStress;
+export default CongratulationsChallengeNegativeThoughts;

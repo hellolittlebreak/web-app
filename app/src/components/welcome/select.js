@@ -181,7 +181,7 @@ const SelectExercises = () => {
                                         return <div>
                                             <div key={index} className='justify-between w-full flex flex-row text-justify lg:cursor-pointer' onClick={(e) => handleChange(e, item.type, index)}>
                                                 {setIcon(item.type, index)}
-                                                <p className="lg:w-2/3 py-6 text-blue-1100 font-regular font-heading whitespace-pre-wrap">{exercise.value}</p>
+                                                <p className="w-2/4 py-4 text-blue-1100 font-regular font-heading whitespace-pre-wrap">{exercise.value}</p>
                                                 <FaChevronRight size={14} className="my-auto mr-4 text-blue-1100" />
                                             </div>
                                             <div className='border-b-default border-gray-300 ml-12'></div>
