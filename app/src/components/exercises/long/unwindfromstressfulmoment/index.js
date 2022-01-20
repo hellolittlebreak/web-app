@@ -2,13 +2,16 @@ import React, { useEffect, useState } from "react";
 import useDynamicRefs from 'use-dynamic-refs';
 import { useNavigate } from 'react-router-dom'
 import { FaCheck } from 'react-icons/fa'
+import "../../../../styles/main.css"
+import ReactPlayer from "react-player";
 
 const UnwindFromStressfulMoment = () => {
     const [getRef, setRef] = useDynamicRefs();
+    const navigate = useNavigate();
     const [exercises, setExercises] = useState({
 
         title: "Unwind from a stressful moment",
-        placeholder: "Write here...",
+        placeholder: "Write your thoughts here...",
         data: [
             {
                 refId: "referrerIdOne",
@@ -96,6 +99,7 @@ const UnwindFromStressfulMoment = () => {
                 title: "What was the event that triggered these responses?",
                 hint: "Threats to either physical or emotional wellness can trigger these responses, such as a racing car when crossing the street, or fear of embarrassment when giving a presentation.",
                 shouldBeVisible: false,
+                response: "",
                 type: "text"
             },
             {
@@ -103,6 +107,7 @@ const UnwindFromStressfulMoment = () => {
                 title: "What did you do at the time of the event?",
                 hint: "Maybe you told yourself calm down, nothing's going to happen. Maybe you went for a walk. What did you do and were they effective?",
                 shouldBeVisible: false,
+                response: "",
                 type: "text"
             },
             {
@@ -139,6 +144,11 @@ const UnwindFromStressfulMoment = () => {
                     }
                 ]
             },
+            {
+                refId: "refIdEight",
+                type: "video",
+                shouldBeVisible: false
+            }
         ]
     })
 
@@ -175,7 +185,7 @@ const UnwindFromStressfulMoment = () => {
                                     isSelected: isSelected,
                                 };
 
-                                allExercises.data[currentPosition].response.choices.push({ value: newItem.name })
+                                allExercises.data[currentPosition].response.choices.push({ value: newItem.value })
 
                                 return newItem;
 
@@ -225,7 +235,11 @@ const UnwindFromStressfulMoment = () => {
         newExercisesList.data = newElement
         setExercises(newExercisesList)
         const currentPosition = parseInt(e.target.parentNode.id) + 1
-        setCurrentPage(() => currentPosition)
+        if (currentPosition === exercises.data.length) {
+            navigate("/congratulations-unwind-from-stressful-moment", { state: { value: exercises.data } })
+        } else {
+            setCurrentPage(() => currentPosition)
+        }
     }
 
     useEffect(() => {
@@ -233,7 +247,7 @@ const UnwindFromStressfulMoment = () => {
         refId.current.scrollIntoView({ behavior: 'smooth', block: 'start' })
     }, [currentPage])
 
-    return <div className="lg:py-10 mx-auto px-4 lg:px-64 pt-6">
+    return <div className="lg:pb-48 lg:pt-10 mx-auto px-4 lg:px-64 pt-6">
         <h2 className="text-left border-b-2 border-blue-1100 text-blue-1100 font-bold font-heading text-md lg:text-xl">{exercises.title}</h2>
         {
             exercises.data.map((item, index) => {
@@ -250,14 +264,19 @@ const UnwindFromStressfulMoment = () => {
                         </ul>
                         <ul>
                             {item.notes && item.notes.map((item, index) => {
-                                return <p key={index} className="lg:select-none m-2 px-4 py-2 border-blue-1100  bg-gray-300 hover:bg-blue-1100 hover:text-white text-blue-1100 rounded-lg font-body"> {item.value}</p>
+                                return <div className="thought">
+                                    <p key={index} className="sb14 lg:select-none m-2 px-4 border-blue-1100 text-blue-1100 rounded-lg font-body"> {item.value}</p>
+                                </div>
                             })}
                         </ul>
                         {item.hint && <div className="w-full p-2">
-                            <p className='font-body text-md text-blue-1100 p-2 bg-gray-300 hover:bg-blue-1100 hover:text-white rounded-lg'>{item.hint}</p>
-                            <textarea rows="3" className="w-full h-40 rounded-lg lg:mt-6 p-2 text-blue-1100 bg-gray-100 border-blue-1100 border-2 outline-none" type="text" name="response" value={item.response} placeholder={exercises.placeholder} onChange={(e) => handleClick(e, currentPage, true)} />
+                            <p className='font-body text-md text-blue-1100 p-2 bg-white bg-opacity-50 rounded-lg'>{item.hint}</p>
+                            <textarea rows="3" className="w-full h-10 rounded-lg mt-6 p-2 text-blue-1100 bg-gray-100 border-blue-1100 border-2 outline-none" type="text" name="response" value={item.response} placeholder={exercises.placeholder} onChange={(e) => handleSelection(e, true, index)} />
                         </div>}
-                        <button className="lg:ml-4 lg:mt-6 bg-blue-1100 hover:bg-blue-700 px-4 py-2 text-white rounded-lg flex text-center" onClick={(e) => handleClick(e, index + 1)} >OK <FaCheck className="my-auto ml-2 pointer-events-none" /></button>
+                        {item.type === "video" && <ReactPlayer width="100%" className="mx-auto mt-10 lg:mt-20"
+                            url="https://vimeo.com/668288600"
+                        />}
+                        <button className="lg:ml-4 lg:mt-6 bg-blue-1100 hover:bg-blue-700 px-4 py-2 text-white rounded-lg flex text-center" onClick={(e) => handleClick(e, index + 1)} >Next <FaCheck className="my-auto ml-2 pointer-events-none" /></button>
 
                     </div>
                 }

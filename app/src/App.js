@@ -28,6 +28,7 @@ import CongratulationsChallengeNegativeThoughts from "./components/exercises/sho
 import CongratulationsGratitude from "./components/exercises/short/gratitude/congratulations";
 import CongratulationsDiscoverYourMotivations from "./components/exercises/long/findoutyourmotivations/congratulations";
 import CongratulationsFindYourselfAtYourBest from "./components/exercises/long/findyourselfatyourbest/congratulations";
+import CongratulationsUnwindFromStressfulMoment from "./components/exercises/long/unwindfromstressfulmoment/congratulations";
 
 const firebaseConfig = {
   apiKey: "AIzaSyClDDnFfPSVzOJszY6awn-WOrq3PJNEYMc",
@@ -63,12 +64,15 @@ function App() {
           <Route exact path="find-yourself-at-your-best" element={<FindYourselfAtYourBest />} />
           <Route exact path="congratulations-find-yourself-at-your-best" element={<CongratulationsFindYourselfAtYourBest />} />
 
-          <Route exact path="understand-your-feeling-and-emotions" element={<UnderstandFeelingsAndEmotions />} />
           <Route exact path="unwind-from-a-stressful-moment" element={<UnwindFromStressfulMoment />} />
-          <Route exact path="quiet-down-the-negative-thoughts" element={<QuietDownNegativeThoughts />} />
+          <Route exact path="congratulations-unwind-from-stressful-moment" element={<CongratulationsUnwindFromStressfulMoment />} />
 
           <Route exact path="discover-your-motivations" element={<FindOutYourMotivations />} />
           <Route exact path="congratulations-discover-your-motivations" element={<CongratulationsDiscoverYourMotivations />} />
+
+          <Route exact path="understand-your-feeling-and-emotions" element={<UnderstandFeelingsAndEmotions />} />
+
+          <Route exact path="quiet-down-the-negative-thoughts" element={<QuietDownNegativeThoughts />} />
 
           <Route exact path="reconstruct-thoughts" element={<ReconstructThoughts />} />
 

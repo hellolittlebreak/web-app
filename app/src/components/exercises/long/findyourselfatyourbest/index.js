@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import useDynamicRefs from 'use-dynamic-refs';
-import { FaArrowDown, FaArrowUp, FaCheck } from 'react-icons/fa'
+import { FaCheck } from 'react-icons/fa'
 import { useNavigate } from "react-router-dom"
 import ReactPlayer from "react-player"
 import "../../../../styles/main.css"
@@ -145,7 +145,6 @@ const FindYourselfAtYourBest = () => {
         setExercises(newExercisesList)
         const currentPosition = parseInt(e.target.parentNode.id) + 1
         if (currentPosition === exercises.data.length) {
-            console.log(exercises.data)
             navigate("/congratulations-find-yourself-at-your-best", { state: { value: exercises.data } })
         } else {
             setCurrentPage(() => currentPosition)
