@@ -27,6 +27,7 @@ import CongratulationsWhatTriggersYourStress from "./components/exercises/short/
 import CongratulationsChallengeNegativeThoughts from "./components/exercises/short/challengenegativethoughts/congratulations";
 import CongratulationsGratitude from "./components/exercises/short/gratitude/congratulations";
 import CongratulationsDiscoverYourMotivations from "./components/exercises/long/findoutyourmotivations/congratulations";
+import CongratulationsFindYourselfAtYourBest from "./components/exercises/long/findyourselfatyourbest/congratulations";
 
 const firebaseConfig = {
   apiKey: "AIzaSyClDDnFfPSVzOJszY6awn-WOrq3PJNEYMc",
@@ -60,6 +61,8 @@ function App() {
 
           {/* LONG Exercises */}
           <Route exact path="find-yourself-at-your-best" element={<FindYourselfAtYourBest />} />
+          <Route exact path="congratulations-find-yourself-at-your-best" element={<CongratulationsFindYourselfAtYourBest />} />
+
           <Route exact path="understand-your-feeling-and-emotions" element={<UnderstandFeelingsAndEmotions />} />
           <Route exact path="unwind-from-a-stressful-moment" element={<UnwindFromStressfulMoment />} />
           <Route exact path="quiet-down-the-negative-thoughts" element={<QuietDownNegativeThoughts />} />
