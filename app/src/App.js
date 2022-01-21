@@ -29,6 +29,7 @@ import CongratulationsGratitude from "./components/exercises/short/gratitude/con
 import CongratulationsDiscoverYourMotivations from "./components/exercises/long/findoutyourmotivations/congratulations";
 import CongratulationsFindYourselfAtYourBest from "./components/exercises/long/findyourselfatyourbest/congratulations";
 import CongratulationsUnwindFromStressfulMoment from "./components/exercises/long/unwindfromstressfulmoment/congratulations";
+import CongratulationsReconstructThoughts from "./components/exercises/long/reconstructthoughts/congratulations";
 
 const firebaseConfig = {
   apiKey: "AIzaSyClDDnFfPSVzOJszY6awn-WOrq3PJNEYMc",
@@ -75,6 +76,7 @@ function App() {
           <Route exact path="quiet-down-the-negative-thoughts" element={<QuietDownNegativeThoughts />} />
 
           <Route exact path="reconstruct-thoughts" element={<ReconstructThoughts />} />
+          <Route exact path="congratulations-reconstruct-thoughts" element={<CongratulationsReconstructThoughts />} />
 
           {/* SHORT Exercises */}
           <Route exact path="what-are-you-worried-for" element={<WhatAreYouWorriedFor />} />

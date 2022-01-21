@@ -116,7 +116,7 @@ const ReconstructThoughts = () => {
         setExercises(newExercisesList)
         const currentPosition = parseInt(e.target.parentNode.id) + 1
         if (currentPosition === exercises.data.length) {
-            navigate("/congratulations")
+            navigate("/congratulations-reconstruct-thoughts", { state: { value: exercises.data } })
         } else {
             setCurrentPage(() => currentPosition)
         }
