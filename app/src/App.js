@@ -7,7 +7,7 @@ import Welcome from "./components/welcome";
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
 import FindYourselfAtYourBest from "./components/exercises/long/findyourselfatyourbest/index";
-import QuietDownNegativeThoughts from "./components/exercises/long/quietdownnegativethoughts";
+import QuietDownNegativeThoughts from "./components/exercises/long/behaviourchange";
 import UnderstandFeelingsAndEmotions from "./components/exercises/long/understandfeelingsandemotions";
 import UnwindFromStressfulMoment from "./components/exercises/long/unwindfromstressfulmoment";
 import FindOutYourMotivations from "./components/exercises/long/findoutyourmotivations";
@@ -30,6 +30,8 @@ import CongratulationsDiscoverYourMotivations from "./components/exercises/long/
 import CongratulationsFindYourselfAtYourBest from "./components/exercises/long/findyourselfatyourbest/congratulations";
 import CongratulationsUnwindFromStressfulMoment from "./components/exercises/long/unwindfromstressfulmoment/congratulations";
 import CongratulationsReconstructThoughts from "./components/exercises/long/reconstructthoughts/congratulations";
+import BehaviourChange from "./components/exercises/long/behaviourchange";
+import CongratulationsBehaviourChange from "./components/exercises/long/behaviourchange/congratulations";
 
 const firebaseConfig = {
   apiKey: "AIzaSyClDDnFfPSVzOJszY6awn-WOrq3PJNEYMc",
@@ -71,12 +73,13 @@ function App() {
           <Route exact path="discover-your-motivations" element={<FindOutYourMotivations />} />
           <Route exact path="congratulations-discover-your-motivations" element={<CongratulationsDiscoverYourMotivations />} />
 
-          <Route exact path="understand-your-feeling-and-emotions" element={<UnderstandFeelingsAndEmotions />} />
-
-          <Route exact path="quiet-down-the-negative-thoughts" element={<QuietDownNegativeThoughts />} />
-
           <Route exact path="reconstruct-thoughts" element={<ReconstructThoughts />} />
           <Route exact path="congratulations-reconstruct-thoughts" element={<CongratulationsReconstructThoughts />} />
+
+          <Route exact path="understand-your-feeling-and-emotions" element={<UnderstandFeelingsAndEmotions />} />
+
+          <Route exact path="behaviour-change" element={<BehaviourChange />} />
+          <Route exact path="congratulations-behaviour-change" element={<CongratulationsBehaviourChange />} />
 
           {/* SHORT Exercises */}
           <Route exact path="what-are-you-worried-for" element={<WhatAreYouWorriedFor />} />
