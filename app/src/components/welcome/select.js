@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { useNavigate } from "react-router-dom";
 import { AnimatedList } from 'react-animated-list'
 import "../../styles/main.css"
-import { FaFortAwesome, FaChevronRight } from 'react-icons/fa';
+import { FaChevronRight } from 'react-icons/fa';
 import {
     RiQuestionAnswerFill,
     RiChatCheckFill,
@@ -121,7 +121,6 @@ const SelectExercises = () => {
         let componentLink
         if (type === "short-exercises") {
             componentLink = welcomeContent.content[0].data[position].componentLink
-            navigate("/" + componentLink)
         } else {
             componentLink = welcomeContent.content[1].data[position].componentLink
         }

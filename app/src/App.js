@@ -6,6 +6,7 @@ import Welcome from "./components/welcome";
 
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
+
 import FindYourselfAtYourBest from "./components/exercises/long/findyourselfatyourbest/index";
 import UnderstandFeelingsAndEmotions from "./components/exercises/long/understandfeelingsandemotions/exercise";
 import UnwindFromStressfulMoment from "./components/exercises/long/unwindfromstressfulmoment";
