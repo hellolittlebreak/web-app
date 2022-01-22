@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { FaCheck } from 'react-icons/fa'
 import useDynamicRefs from 'use-dynamic-refs';
 import { useNavigate } from "react-router-dom";
+import ScrollToTopOnMount from '../../../../utils/ScrollToTop';
 
 const ThingsAboutMe = () => {
     const [getRef, setRef] = useDynamicRefs();
@@ -104,6 +105,7 @@ const ThingsAboutMe = () => {
     }, [currentPage])
 
     return <div className="lg:py-10 mx-auto px-4 lg:px-64">
+        <ScrollToTopOnMount />
         <h2 className="text-left border-b-2 border-blue-1100 text-blue-1100 font-bold font-heading text-md lg:text-xl">{exercises.title}</h2>
         <div className='mt-10 thought'>
             <p className='sb14 whitespace-pre-wrap text-blue-1100 rounded-lg p-4 font-heading'>{exercises.description}</p>

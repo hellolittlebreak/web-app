@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom'
 import { FaCheck } from 'react-icons/fa'
 import "../../../../styles/main.css"
 import ReactPlayer from "react-player";
+import ScrollToTopOnMount from "../../../../utils/ScrollToTop";
 
 const UnwindFromStressfulMoment = () => {
     const [getRef, setRef] = useDynamicRefs();
@@ -248,6 +249,7 @@ const UnwindFromStressfulMoment = () => {
     }, [currentPage])
 
     return <div className="lg:pb-48 lg:pt-10 mx-auto px-4 lg:px-64 pt-6">
+        <ScrollToTopOnMount />
         <h2 className="text-left border-b-2 border-blue-1100 text-blue-1100 font-bold font-heading text-md lg:text-xl">{exercises.title}</h2>
         {
             exercises.data.map((item, index) => {

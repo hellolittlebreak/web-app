@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { FaCheck } from 'react-icons/fa'
 import useDynamicRefs from 'use-dynamic-refs';
 import { useNavigate } from "react-router-dom";
+import ScrollToTopOnMount from '../../../../utils/ScrollToTop';
 
 const Gratitude = () => {
 
@@ -90,6 +91,7 @@ const Gratitude = () => {
     }
 
     return <div className="mx-auto px-4 lg:px-64 pt-6">
+        <ScrollToTopOnMount />
         <h2 className="text-left border-b-2 border-blue-1100 text-blue-1100 font-bold font-heading text-md lg:text-xl">{exercises.title}</h2>
         {
             exercises.data.map((item, index) => {

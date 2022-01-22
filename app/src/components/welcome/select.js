@@ -17,6 +17,7 @@ import {
     RiPsychotherapyFill,
     RiDirectionFill
 } from 'react-icons/ri'
+import ScrollToTopOnMount from '../../utils/ScrollToTop';
 
 
 const SelectExercises = () => {
@@ -167,6 +168,7 @@ const SelectExercises = () => {
 
     return <div className='mx-auto px-4 lg:px-64 py-6'>
         <AnimatedList className="" animation="grow" initialAnimationDuration="4000">
+            <ScrollToTopOnMount />
             <h2 className="text-left border-b-2 border-blue-1100 text-blue-1100 font-bold font-heading text-xl lg:text-2xl">{welcomeContent.title}</h2>
             <div className="flex justify-center lg:mt-10">
                 <ul className="w-full lg:w-4/5 grid grid-cols-0  lg:grid-rows-0 lg:grid-cols-2 gap-4 mt-4 justify-center text-center">
