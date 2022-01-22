@@ -91,14 +91,12 @@ const ChallengeNegativeThoughts = () => {
 
     return <div className="mx-auto px-4 lg:px-64 pt-6">
         <ScrollToTopOnMount />
-        <h2 className="text-left border-b-2 border-blue-1100 text-blue-1100 font-bold font-heading text-md lg:text-xl">{exercises.title}</h2>
+        <h2 className="text-left border-b-2 border-blue-1100 text-blue-1100 font-bold font-heading text-xl lg:text-2xl">{exercises.title}</h2>
         {
             exercises.data.map((item, index) => {
                 if (item.shouldBeVisible === true) {
                     return <div id={index} key={index} ref={setRef(item.refId)} className="h-screen lg:h-96">
-
-                        <p className="text-md text-blue-1100 font-heading font-semibold lg:ml-4 lg:mt-6">{item.title}</p>
-
+                        <p className="text-lg text-blue-1100 font-heading font-semibold lg:ml-4 lg:mt-6">{item.title}</p>
                         {item.type === "text" && <div className="w-full p-2">
                             <textarea rows="1" className="w-full lg:w-1/2 h-10 rounded-lg mt-6 p-2 text-blue-1100 bg-gray-100 border-blue-1100 border-2 outline-none" type="text" name="response" value={item.response} placeholder={exercises.placeholder} onChange={(e) => handleChange(e, currentPage, true)} />
                         </div>}

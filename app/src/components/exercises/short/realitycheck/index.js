@@ -299,7 +299,7 @@ const RealityCheck = () => {
 
     return <div className="w-full h-full mx-auto px-4 lg:px-64 pt-6 lg:pb-20">
         <ScrollToTopOnMount />
-        <h2 className="text-left border-b-2 border-blue-1100 text-blue-1100 font-bold font-heading text-md lg:text-xl">{exercises.title}</h2>
+        <h2 className="text-left border-b-2 border-blue-1100 text-blue-1100 font-bold font-heading text-xl lg:text-2xl">{exercises.title}</h2>
         <div className='mt-10 thought'>
             <p className='sb14 whitespace-pre-wrap text-blue-1100 rounded-lg p-4 font-heading'>{exercises.description}</p>
         </div>
@@ -308,7 +308,7 @@ const RealityCheck = () => {
                 if (item.shouldBeVisible === true) {
                     return <div id={index} key={index} ref={setRef(item.refId)} className="h-screen lg:h-56">
                         <div className='lg:ml-4 inline'>
-                            <p className="text-md text-blue-1100 font-heading font-semibold lg:mt-32 inline">{item.title}  </p>
+                            <p className="text-lg text-blue-1100 font-heading font-semibold lg:mt-32 inline">{item.title}  </p>
                             {item.isSelected && (item.selectedCorrectAnswer ? <p className='inline text-green-700'>- {exercises.correctAnswer}</p> : <p className='inline text-red-700'>- {exercises.wrongAnswer}</p>)}
                         </div>
                         {item.subTitle && <p className="text-md text-blue-1100 font-heading font-semibold lg:ml-4 lg:my-4">{item.subTitle}</p>}

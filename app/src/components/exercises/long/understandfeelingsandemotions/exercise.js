@@ -265,9 +265,9 @@ const UnderstandFeelingsAndEmotions = () => {
         }
     }, [currentPage])
 
-    return <div className="mx-auto px-4 lg:pb-32 lg:px-64 pt-6">
+    return <div className="h-fit mx-auto px-4 lg:pb-32 lg:px-64 pt-6">
         <ScrollToTopOnMount />
-        <h2 className="text-left border-b-2 border-blue-1100 text-blue-1100 font-bold font-heading text-md lg:text-xl">{exercises.title}</h2>
+        <h2 className="text-left border-b-2 border-blue-1100 text-blue-1100 font-bold font-heading text-xl lg:text-2xl">{exercises.title}</h2>
         <div className="rounded-lg m-4 p-4 text-center font-heading text-blue-1100">
             <p>sonder</p>
             <p>son-der noun.</p>
@@ -281,7 +281,7 @@ const UnderstandFeelingsAndEmotions = () => {
                         {
                             item.newTitle ? <p className="text-md text-blue-1100 font-heading font-semibold lg:ml-4 lg:mt-6">{item.question} <span className="italic lowercase">{item.newTitle}</span>?</p> : <p className="text-md text-blue-1100 font-heading font-semibold lg:ml-4 lg:mt-6">{item.question}</p>
                         }
-                        {item.title && <p className="text-md bg-white bg-opacity-75 rounded-lg p-2 text-blue-1100 font-body lg:ml-2 lg:mt-6">{item.title}</p>}
+                        {item.title && <p className="text-lg bg-white bg-opacity-75 rounded-lg p-2 text-blue-1100 font-body lg:ml-2 lg:mt-6">{item.title}</p>}
                         <ul className="mt-2 lg:mt-4 flex flex-wrap w-auto">
                             {item.choices && item.choices.map((item, index) => {
                                 if (item.isSelected) {

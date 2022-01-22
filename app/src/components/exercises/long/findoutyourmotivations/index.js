@@ -146,15 +146,13 @@ const FindOutYourMotivations = () => {
 
     return <div className="mx-auto px-4 lg:px-64 pt-6">
         <ScrollToTopOnMount />
-        <h2 className="text-left border-b-2 border-blue-1100 text-blue-1100 font-bold font-heading text-md lg:text-xl">{exercises.title}</h2>
+        <h2 className="text-left border-b-2 border-blue-1100 text-blue-1100 font-bold font-heading text-xl lg:text-2xl">{exercises.title}</h2>
         {
             exercises.data.map((item, index) => {
-
                 if (item.shouldBeVisible === true) {
-                    return <div id={index} key={index} ref={setRef(item.refId)} className="h-screen lg:h-72">
-
-                        <p className="text-md text-blue-1100 font-heading font-semibold lg:ml-4 lg:mt-6">{item.title}</p>
-                        <ul className="mt-2 lg:mt-4 flex flex-wrap">
+                    return <div id={index} key={index} ref={setRef(item.refId)} className="h-screen lg:h-72 mt-6">
+                        <p className="text-lg text-blue-1100 font-heading font-semibold lg:ml-2 lg:mt-6">{item.title}</p>
+                        <ul className="my-2 lg:my-4 flex flex-wrap">
                             {item.choices && item.choices.map((item, index) => {
                                 if (item.isSelected) {
                                     return <p key={index} className="transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110 cursor-pointer lg:cursor-pointer lg:select-none m-2 px-4 py-2 inline-block border-2 border-blue-1100 bg-blue-1100 text-white rounded-full border-solid" onClick={(e) => handleChange(e, index, false)}> {item.value}</p>
@@ -166,7 +164,7 @@ const FindOutYourMotivations = () => {
                             <p className='font-body text-md text-blue-1100 p-2 bg-white bg-opacity-50 rounded-lg'>{item.hint}</p>
                             <textarea rows="3" className="w-full h-10 rounded-lg mt-6 p-2 text-blue-1100 bg-gray-100 border-blue-1100 border-2 outline-none" type="text" name="response" value={item.response} placeholder={exercises.placeholder} onChange={(e) => handleChange(e, currentPage, true)} />
                         </div>}
-                        <button className="lg:ml-4 lg:mt-6 bg-blue-1100 hover:bg-blue-700 px-4 py-2 text-white rounded-lg flex text-center" onClick={(e) => handleClick(e, index + 1)} >OK <FaCheck className="my-auto ml-2 pointer-events-none" /></button>
+                        <button className="lg:ml-2 mt-6 bg-blue-1100 hover:bg-blue-700 px-4 py-2 text-white rounded-lg flex text-center" onClick={(e) => handleClick(e, index + 1)} >OK <FaCheck className="my-auto ml-2 pointer-events-none" /></button>
 
                     </div>
 

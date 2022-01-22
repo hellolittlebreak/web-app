@@ -159,14 +159,14 @@ const FindYourselfAtYourBest = () => {
         }
     }, [currentPage])
 
-    return <div className="lg:py-20 px-4 lg:px-64 pt-6">
+    return <div className="lg:pb-20 px-4 lg:px-64 pt-6">
         <ScrollToTopOnMount />
-        <h2 className="text-left border-b-2 border-blue-1100 text-blue-1100 font-bold font-heading text-md lg:text-xl">{exercises.title}</h2>
+        <h2 className="text-left border-b-2 border-blue-1100 text-blue-1100 font-bold font-heading text-xl lg:text-2xl">{exercises.title}</h2>
         {
             exercises.data.map((item, index) => {
                 if (item.shouldBeVisible === true) {
                     return <div id={index} key={index} ref={setRef(item.refId)} className="h-screen lg:h-96 lg:mt-10">
-                        <p className="text-md text-blue-1100 font-heading font-semibold lg:ml-4">{item.title}</p>
+                        <p className="text-lg text-blue-1100 font-heading font-semibold lg:ml-4">{item.title}</p>
                         {item.subTitle && <div className="thought">
                             <p className="sb14 text-md text-blue-1100 font-heading text-xs lg:text-sm lg:ml-4">{item.subTitle}</p>
                         </div>}

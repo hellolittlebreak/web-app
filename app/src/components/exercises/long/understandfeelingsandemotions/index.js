@@ -36,8 +36,8 @@ const StartUnderstandFeelingsAndEmotions = () => {
         navigate("/understand-your-feeling-and-emotions")
     }
 
-    return <div className="mx-auto px-4 lg:pb-32 lg:px-64 pt-6">
-        <h2 className="text-left border-b-2 border-blue-1100 text-blue-1100 font-bold font-heading text-md lg:text-xl">{exercises.title}</h2>
+    return <div className="h-fit mx-auto px-4 lg:pb-32 lg:px-64 pt-6">
+        <h2 className="text-left border-b-2 border-blue-1100 text-blue-1100 font-bold font-heading text-xl lg:text-2xl">{exercises.title}</h2>
         {
             exercises.data.map((item, index) => {
                 if (item.shouldBeVisible === true) {

@@ -30,8 +30,8 @@ import CongratulationsDiscoverYourMotivations from "./components/exercises/long/
 import CongratulationsFindYourselfAtYourBest from "./components/exercises/long/findyourselfatyourbest/congratulations";
 import CongratulationsUnwindFromStressfulMoment from "./components/exercises/long/unwindfromstressfulmoment/congratulations";
 import CongratulationsReconstructThoughts from "./components/exercises/long/reconstructthoughts/congratulations";
-import BehaviourChange from "./components/exercises/long/quietdownnegativethoughts";
-import CongratulationsBehaviourChange from "./components/exercises/long/quietdownnegativethoughts/congratulations";
+import BehaviourChange from "./components/exercises/long/behaviourchange";
+import CongratulationsBehaviourChange from "./components/exercises/long/behaviourchange/congratulations";
 import StartUnderstandFeelingsAndEmotions from "./components/exercises/long/understandfeelingsandemotions";
 import CongratulationsUnderstandFeelingsAndEmotions from "./components/exercises/long/understandfeelingsandemotions/congratulations";
 

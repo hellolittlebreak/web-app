@@ -100,12 +100,12 @@ const BehaviourChange = () => {
 
     return <div className="lg:pb-32 mx-auto px-4 lg:px-64 pt-6">
         <ScrollToTopOnMount />
-        <h2 className="text-left border-b-2 border-blue-1100 text-blue-1100 font-bold font-heading text-md lg:text-2xl">{exercises.title}</h2>
+        <h2 className="text-left border-b-2 border-blue-1100 text-blue-1100 font-bold font-heading text-xl lg:text-2xl">{exercises.title}</h2>
         {
             exercises.data.map((item, index) => {
                 if (item.shouldBeVisible === true) {
                     return <div id={index} key={index} ref={setRef(item.refId)} className="h-screen lg:h-72 my-6 lg:my-12">
-                        <p className="p-2 rounded-lg py-2 text-xl text-blue-1100 font-heading font-semibold">{item.question}</p>
+                        <p className="p-2 rounded-lg py-2 text-lg text-blue-1100 font-heading font-semibold">{item.question}</p>
                         {item.subQuestion && <p className='italic font-body text-md text-blue-1100 p-2 rounded-lg my-2'>{item.subQuestion}</p>}
                         {item.type === "text" && <div className="w-full p-2">
                             <textarea rows="3" className="w-full h-10 rounded-lg mt-6 p-2 text-blue-1100 bg-gray-100 border-blue-1100 border-2 outline-none" type="text" name="response" value={item.response} placeholder={exercises.placeHolder} onChange={(e) => handleChange(e, currentPage, true)} />
