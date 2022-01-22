@@ -19,7 +19,7 @@ const StartUnderstandFeelingsAndEmotions = () => {
                         value: "Recognising our emotions can be a rather peculiar task.",
                     },
                     {
-                        value: "ISome emotions are simple to recognise; others are a lot more complex and difficult to grasp."
+                        value: "Some emotions are simple to recognise; others are a lot more complex and difficult to grasp."
                     },
                     {
                         value: "Emotions guide our decisions, help us to connect with others and keep us safe."

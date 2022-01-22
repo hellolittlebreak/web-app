@@ -244,8 +244,10 @@ const UnwindFromStressfulMoment = () => {
     }
 
     useEffect(() => {
-        const refId = getRef(exercises.data[currentPage].refId);
-        refId.current.scrollIntoView({ behavior: 'smooth', block: 'start' })
+        if (currentPage > 0) {
+            const refId = getRef(exercises.data[currentPage].refId);
+            refId.current.scrollIntoView({ behavior: 'smooth', block: 'start' })
+        }
     }, [currentPage])
 
     return <div className="lg:pb-48 lg:pt-10 mx-auto px-4 lg:px-64 pt-6">
