@@ -1,5 +1,23 @@
 {
   "projects": {
-    "default": "littlebreak---dev"
+    "default": "littlebreak---dev",
+    "dev": "littlebreak---dev",
+    "prod": "littlebreak---prod"
+  },
+  "targets": {
+    "littlebreak---dev": {
+      "hosting": {
+        "web": [
+          "littlebreak---dev"
+        ]
+      }
+    },
+    "littlebreak---prod": {
+      "hosting": {
+        "web": [
+          "littlebreak---prod"
+        ]
+      }
+    }
   }
 }

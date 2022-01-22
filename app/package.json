@@ -7,6 +7,7 @@
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
+    "env-cmd": "^10.1.0",
     "firebase": "^9.6.0",
     "formik": "^2.2.9",
     "react": "^17.0.2",
@@ -22,8 +23,15 @@
   "scripts": {
     "build:style": "npx tailwindcss src/styles/index.css -o src/styles/tailwind.css",
     "build:tail": "npx tailwindcss -i ./src/styles/index.css -o ./src/styles/tailwind.css --watch",
-    "start": "craco start",
-    "build": "craco build; firebase deploy",
+    "start": "craco start env-cmd -f .env.development;",
+    "start:prod": "craco start env-cmd -f .env.production;",
+
+    "build": "craco build && env-cmd -f .env.development",
+    "build:prod": "craco build && env-cmd -f .env.production",
+
+    "deploy:dev": "firebase use dev; npm run build; firebase deploy --only hosting:web",
+    "deploy:prod": "firebase use prod; npm run build:prod; firebase deploy --only hosting:web",
+
     "test": "craco test",
     "eject": "react-scripts eject"
   },
