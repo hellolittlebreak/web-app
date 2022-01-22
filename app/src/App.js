@@ -7,8 +7,7 @@ import Welcome from "./components/welcome";
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
 import FindYourselfAtYourBest from "./components/exercises/long/findyourselfatyourbest/index";
-import QuietDownNegativeThoughts from "./components/exercises/long/behaviourchange";
-import UnderstandFeelingsAndEmotions from "./components/exercises/long/understandfeelingsandemotions";
+import UnderstandFeelingsAndEmotions from "./components/exercises/long/understandfeelingsandemotions/exercise";
 import UnwindFromStressfulMoment from "./components/exercises/long/unwindfromstressfulmoment";
 import FindOutYourMotivations from "./components/exercises/long/findoutyourmotivations";
 import Congratulations from "./components/congratulations";
@@ -30,8 +29,10 @@ import CongratulationsDiscoverYourMotivations from "./components/exercises/long/
 import CongratulationsFindYourselfAtYourBest from "./components/exercises/long/findyourselfatyourbest/congratulations";
 import CongratulationsUnwindFromStressfulMoment from "./components/exercises/long/unwindfromstressfulmoment/congratulations";
 import CongratulationsReconstructThoughts from "./components/exercises/long/reconstructthoughts/congratulations";
-import BehaviourChange from "./components/exercises/long/behaviourchange";
-import CongratulationsBehaviourChange from "./components/exercises/long/behaviourchange/congratulations";
+import BehaviourChange from "./components/exercises/long/quietdownnegativethoughts";
+import CongratulationsBehaviourChange from "./components/exercises/long/quietdownnegativethoughts/congratulations";
+import StartUnderstandFeelingsAndEmotions from "./components/exercises/long/understandfeelingsandemotions";
+import CongratulationsUnderstandFeelingsAndEmotions from "./components/exercises/long/understandfeelingsandemotions/congratulations";
 
 const firebaseConfig = {
   apiKey: "AIzaSyClDDnFfPSVzOJszY6awn-WOrq3PJNEYMc",
@@ -76,7 +77,9 @@ function App() {
           <Route exact path="reconstruct-thoughts" element={<ReconstructThoughts />} />
           <Route exact path="congratulations-reconstruct-thoughts" element={<CongratulationsReconstructThoughts />} />
 
+          <Route exact path="start-exercise-understand-your-feeling-and-emotions" element={<StartUnderstandFeelingsAndEmotions />} />
           <Route exact path="understand-your-feeling-and-emotions" element={<UnderstandFeelingsAndEmotions />} />
+          <Route exact path="congratulations-understand-feelings-and-emotions" element={<CongratulationsUnderstandFeelingsAndEmotions />} />
 
           <Route exact path="behaviour-change" element={<BehaviourChange />} />
           <Route exact path="congratulations-behaviour-change" element={<CongratulationsBehaviourChange />} />

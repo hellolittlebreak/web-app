@@ -91,7 +91,7 @@ const SelectExercises = () => {
                     {
                         value: "Understand your feelings",
                         isSelected: false,
-                        componentLink: "understand-your-feeling-and-emotions",
+                        componentLink: "start-exercise-understand-your-feeling-and-emotions",
                         icon: "RiStarSmileFill"
                     },
                     {

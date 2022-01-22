@@ -274,7 +274,7 @@ const UnwindFromStressfulMoment = () => {
                             <textarea rows="3" className="w-full h-10 rounded-lg mt-6 p-2 text-blue-1100 bg-gray-100 border-blue-1100 border-2 outline-none" type="text" name="response" value={item.response} placeholder={exercises.placeholder} onChange={(e) => handleSelection(e, true, index)} />
                         </div>}
                         {item.type === "video" && <ReactPlayer width="100%" className="mx-auto mt-10 lg:mt-20"
-                            url="https://vimeo.com/668288600"
+                            url="https://vimeo.com/668699791"
                         />}
                         <button className="lg:ml-4 lg:mt-6 bg-blue-1100 hover:bg-blue-700 px-4 py-2 text-white rounded-lg flex text-center" onClick={(e) => handleClick(e, index + 1)} >Next <FaCheck className="my-auto ml-2 pointer-events-none" /></button>
 
