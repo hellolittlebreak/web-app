@@ -4,9 +4,17 @@ import { FaCheck } from 'react-icons/fa'
 import { useNavigate } from "react-router-dom";
 import "../../../../styles/main.css"
 import ScrollToTopOnMount from "../../../../utils/ScrollToTop";
+import { getAnalytics, logEvent } from "firebase/analytics";
 
 const UnderstandFeelingsAndEmotions = () => {
     const [getRef, setRef] = useDynamicRefs();
+    const analytics = getAnalytics()
+
+    useEffect(() => {
+        logEvent(analytics, 'screen_view', {
+            firebase_screen: "UnderstandFeelingsAndEmotionsExercise"
+        });
+    }, [analytics])
     const navigate = useNavigate();
     const [exercises, setExercises] = useState({
         title: "Understanding emotions",

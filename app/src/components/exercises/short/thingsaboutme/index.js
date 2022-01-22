@@ -3,10 +3,20 @@ import { FaCheck } from 'react-icons/fa'
 import useDynamicRefs from 'use-dynamic-refs';
 import { useNavigate } from "react-router-dom";
 import ScrollToTopOnMount from '../../../../utils/ScrollToTop';
+import { getAnalytics, logEvent } from "firebase/analytics";
 
 const ThingsAboutMe = () => {
     const [getRef, setRef] = useDynamicRefs();
     const navigate = useNavigate();
+
+    const analytics = getAnalytics()
+
+    useEffect(() => {
+        logEvent(analytics, 'screen_view', {
+            firebase_screen: "ThingsAboutMe"
+        });
+    }, [analytics])
+
     const [exercises, setExercises] = useState({
         title: "Six things about me",
         description: "Sometimes we forget to stop and appreciate how far we have come. \nSometimes we forget to be kind to ourselves and embrace how awesome we are. \n\nWhen life gets tough, our self-confidence slips down. \n\nIn this exercise, we will guide you to establish a healthy self-esteem by re-learning six things about yourself.",

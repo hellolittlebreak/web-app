@@ -3,11 +3,20 @@ import { FaCheck } from 'react-icons/fa'
 import useDynamicRefs from 'use-dynamic-refs';
 import { useNavigate } from "react-router-dom";
 import ScrollToTopOnMount from '../../../../utils/ScrollToTop';
+import { getAnalytics, logEvent } from "firebase/analytics";
 
 const WhatAreYouWorriedFor = () => {
 
     const [getRef, setRef] = useDynamicRefs();
     const navigate = useNavigate();
+
+    const analytics = getAnalytics()
+
+    useEffect(() => {
+        logEvent(analytics, 'screen_view', {
+            firebase_screen: "WhatAreYouWorriedFor"
+        });
+    }, [analytics])
 
     const [exercises, setExercises] = useState({
         title: "Understanding your worries",
@@ -60,8 +69,6 @@ const WhatAreYouWorriedFor = () => {
     })
 
     const [currentPage, setCurrentPage] = useState(0)
-    const [currentVisiblePage, setCurrentVisiblePage] = useState(0)
-
 
     useEffect(() => {
         console.log(currentPage)

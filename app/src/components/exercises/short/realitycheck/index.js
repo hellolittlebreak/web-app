@@ -3,10 +3,19 @@ import { FaCheck } from 'react-icons/fa'
 import useDynamicRefs from 'use-dynamic-refs';
 import { useNavigate } from "react-router-dom";
 import ScrollToTopOnMount from '../../../../utils/ScrollToTop';
+import { getAnalytics, logEvent } from "firebase/analytics";
 
 const RealityCheck = () => {
     const [getRef, setRef] = useDynamicRefs();
     const navigate = useNavigate();
+
+    const analytics = getAnalytics();
+
+    useEffect(() => {
+        logEvent(analytics, 'screen_view', {
+            firebase_screen: "RealityCheck"
+        });
+    }, [analytics])
 
     const [exercises, setExercises] = useState({
         title: "Give yourself a reality check",
@@ -220,8 +229,6 @@ const RealityCheck = () => {
     })
 
     const [currentPage, setCurrentPage] = useState(0)
-    const [currentVisiblePage, setCurrentVisiblePage] = useState(0)
-
 
     useEffect(() => {
         if (currentPage > 0) {

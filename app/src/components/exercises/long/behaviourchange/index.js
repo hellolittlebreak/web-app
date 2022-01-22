@@ -1,12 +1,20 @@
 import React, { useState, useEffect } from 'react'
-import { FaCheck, FaStar } from 'react-icons/fa'
+import { FaCheck } from 'react-icons/fa'
 import useDynamicRefs from 'use-dynamic-refs';
 import { useNavigate } from "react-router-dom";
 import ScrollToTopOnMount from '../../../../utils/ScrollToTop';
+import { getAnalytics, logEvent } from "firebase/analytics";
 
 const BehaviourChange = () => {
     const [getRef, setRef] = useDynamicRefs();
     const navigate = useNavigate();
+    const analytics = getAnalytics()
+
+    useEffect(() => {
+        logEvent(analytics, 'screen_view', {
+            firebase_screen: "BehaviourChange"
+        });
+    }, [analytics])
 
     const [exercises, setExercises] = useState({
         title: "Stop unwanted Thought or Behaviour",

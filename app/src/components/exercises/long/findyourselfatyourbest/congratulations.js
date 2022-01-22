@@ -1,7 +1,8 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { FaStar } from 'react-icons/fa';
 import { useNavigate, useLocation } from "react-router-dom";
 import ScrollToTopOnMount from '../../../../utils/ScrollToTop';
+import { getAnalytics, logEvent } from "firebase/analytics";
 
 const CongratulationsFindYourselfAtYourBest = () => {
     const navigate = useNavigate();
@@ -10,6 +11,14 @@ const CongratulationsFindYourselfAtYourBest = () => {
     const takeAnotherExercise = () => {
         navigate("/select-exercises")
     }
+
+    const analytics = getAnalytics()
+
+    useEffect(() => {
+        logEvent(analytics, 'screen_view', {
+            firebase_screen: "FindOutYourMotivations"
+        });
+    }, [analytics])
 
     return <div className='mx-auto w-full lg:w-1/2 py-10' >
         <ScrollToTopOnMount />

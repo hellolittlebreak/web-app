@@ -1,7 +1,8 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { FaStar } from 'react-icons/fa';
 import { useNavigate, useLocation } from "react-router-dom";
 import ScrollToTopOnMount from '../../../../utils/ScrollToTop';
+import { getAnalytics, logEvent } from "firebase/analytics";
 
 const CongratulationsWhatAreYouWorriedFor = () => {
     const navigate = useNavigate();
@@ -10,6 +11,14 @@ const CongratulationsWhatAreYouWorriedFor = () => {
     const takeAnotherExercise = () => {
         navigate("/select-exercises")
     }
+
+    const analytics = getAnalytics()
+
+    useEffect(() => {
+        logEvent(analytics, 'screen_view', {
+            firebase_screen: "CongratulationsWhatAreYouWorriedFor"
+        });
+    }, [analytics])
 
     return <div className='grid grid-cols-0 lg:grid-rows-0 lg:grid-cols-2'>
         {/* Left Part */}

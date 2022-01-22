@@ -1,14 +1,22 @@
-import React, { useRef, useState, useEffect, createRef } from 'react'
-import { AnimatedList } from 'react-animated-list'
-import { FaArrowDown, FaArrowUp, FaCheck } from 'react-icons/fa'
+import React, { useState, useEffect } from 'react'
+import { FaCheck } from 'react-icons/fa'
 import useDynamicRefs from 'use-dynamic-refs';
 import { useNavigate } from "react-router-dom";
 import ScrollToTopOnMount from '../../../../utils/ScrollToTop';
+import { getAnalytics, logEvent } from "firebase/analytics";
 
 const FindOutYourMotivations = () => {
 
     const [getRef, setRef] = useDynamicRefs();
     const navigate = useNavigate();
+
+    const analytics = getAnalytics()
+
+    useEffect(() => {
+        logEvent(analytics, 'screen_view', {
+            firebase_screen: "FindOutYourMotivations"
+        });
+    }, [analytics])
 
     const [exercises, setExercises] = useState({
         title: "Discover your motivations",
@@ -150,7 +158,7 @@ const FindOutYourMotivations = () => {
         {
             exercises.data.map((item, index) => {
                 if (item.shouldBeVisible === true) {
-                    return <div id={index} key={index} ref={setRef(item.refId)} className="h-screen lg:h-72 mt-6">
+                    return <div id={index} key={index} ref={setRef(item.refId)} className="h-screen lg:h-84 mb-10 mt-6">
                         <p className="text-lg text-blue-1100 font-heading font-semibold lg:ml-2 lg:mt-6">{item.title}</p>
                         <ul className="my-2 lg:my-4 flex flex-wrap">
                             {item.choices && item.choices.map((item, index) => {

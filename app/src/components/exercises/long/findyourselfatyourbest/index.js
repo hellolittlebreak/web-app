@@ -5,8 +5,17 @@ import { useNavigate } from "react-router-dom"
 import ReactPlayer from "react-player"
 import "../../../../styles/main.css"
 import ScrollToTopOnMount from "../../../../utils/ScrollToTop";
+import { getAnalytics, logEvent } from "firebase/analytics";
 
 const FindYourselfAtYourBest = () => {
+
+    const analytics = getAnalytics()
+
+    useEffect(() => {
+        logEvent(analytics, 'screen_view', {
+            firebase_screen: "FindYourselfAtYourBest"
+        });
+    }, [analytics])
 
     const [getRef, setRef] = useDynamicRefs();
     const navigate = useNavigate();

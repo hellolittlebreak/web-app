@@ -1,11 +1,12 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useNavigate } from "react-router-dom";
 import { AnimatedList } from 'react-animated-list'
 import "../../styles/main.css"
-
+import { getAnalytics, logEvent } from "firebase/analytics";
 
 const Welcome = () => {
     const navigate = useNavigate();
+    const analytics = getAnalytics()
     const [welcomeContent, setWelcomeContent] = useState({
         title: "Life gets busy. Sometimes you forget to take a little break to...",
         description: "Little Break, loaded with psychology research guided insight, is here to help you utilise those small moments of your day to relax, reflect and grow mentally, to become healthier, happier, stronger.",
@@ -29,6 +30,10 @@ const Welcome = () => {
     const handleClick = () => {
         navigate("/select-exercises")
     }
+
+    useEffect(() => {
+        logEvent(analytics, "welcome_page")
+    }, [])
 
     return <div className='mx-auto px-4 lg:px-64 pt-6'>
         <AnimatedList animation="grow" initialAnimationDuration="5000">

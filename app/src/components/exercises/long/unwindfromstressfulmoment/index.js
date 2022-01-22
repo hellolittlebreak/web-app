@@ -5,10 +5,18 @@ import { FaCheck } from 'react-icons/fa'
 import "../../../../styles/main.css"
 import ReactPlayer from "react-player";
 import ScrollToTopOnMount from "../../../../utils/ScrollToTop";
+import { getAnalytics, logEvent } from "firebase/analytics";
 
 const UnwindFromStressfulMoment = () => {
     const [getRef, setRef] = useDynamicRefs();
     const navigate = useNavigate();
+    const analytics = getAnalytics()
+
+    useEffect(() => {
+        logEvent(analytics, 'screen_view', {
+            firebase_screen: "UnwindFromStressfulMoment"
+        });
+    }, [analytics])
     const [exercises, setExercises] = useState({
 
         title: "Unwind from a stressful moment",

@@ -3,10 +3,20 @@ import { FaCheck, FaStar } from 'react-icons/fa'
 import useDynamicRefs from 'use-dynamic-refs';
 import { useNavigate } from "react-router-dom";
 import ScrollToTopOnMount from '../../../../utils/ScrollToTop';
+import { getAnalytics, logEvent } from "firebase/analytics";
 
 const ReconstructThoughts = () => {
     const [getRef, setRef] = useDynamicRefs();
     const navigate = useNavigate();
+
+    const analytics = getAnalytics()
+
+    useEffect(() => {
+        logEvent(analytics, 'screen_view', {
+            firebase_screen: "ReconstructThoughts"
+        });
+    }, [analytics])
+
 
     const [exercises, setExercises] = useState({
         title: "Reconstruct negative thoughts",

@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import { useNavigate } from "react-router-dom";
 import { AnimatedList } from 'react-animated-list'
 import "../../styles/main.css"
@@ -18,10 +18,11 @@ import {
     RiDirectionFill
 } from 'react-icons/ri'
 import ScrollToTopOnMount from '../../utils/ScrollToTop';
-
+import { getAnalytics, logEvent } from "firebase/analytics";
 
 const SelectExercises = () => {
     const navigate = useNavigate();
+    const analytics = getAnalytics()
     const [welcomeContent, setWelcomeContent] = useState({
         title: "What type of exercises do you feel like doing today?",
         description: "",
@@ -122,8 +123,10 @@ const SelectExercises = () => {
         let componentLink
         if (type === "short-exercises") {
             componentLink = welcomeContent.content[0].data[position].componentLink
+            logEvent(analytics, `selected_short_exercise ${componentLink}`)
         } else {
             componentLink = welcomeContent.content[1].data[position].componentLink
+            logEvent(analytics, `selected_long_exercise ${componentLink}`)
         }
         navigate("/" + componentLink)
     }
