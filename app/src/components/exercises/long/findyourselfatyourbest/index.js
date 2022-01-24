@@ -25,19 +25,19 @@ const FindYourselfAtYourBest = () => {
         data: [
             {
                 refId: "refIdOne",
-                title: "Recall a recent time or event when you were at your absolute best.",
+                title: "Recall a recent time or event when you were at your best.",
                 subTitle: "Maybe you were solving a serious challenge, or perhaps you made someone else's life better.",
-                question: "Think about what made you feel happier, more alive. Maybe you were:",
+                question: "When you were at your best, what did you feel? Select as many as you felt.",
                 type: "multiple-choice-selection",
                 shouldBeVisible: true,
                 choices: [
-                    { value: "more relaxed", isSelected: false },
+                    { value: "more alive", isSelected: false },
                     { value: "more grounded", isSelected: false },
                     { value: "more enthusiastic", isSelected: false },
                     { value: "more energized", isSelected: false },
                     { value: "more engaged", isSelected: false },
                     { value: "more creative", isSelected: false },
-                    { value: "more connected", isSelected: false },
+                    { value: "more relaxed", isSelected: false },
                     { value: "happier", isSelected: false },
                     { value: "healthier", isSelected: false },
                 ],
@@ -47,7 +47,7 @@ const FindYourselfAtYourBest = () => {
             },
             {
                 refId: "refIdTwo",
-                title: "What happened? What part did you take? How did you feel?",
+                title: "What was the event that happened? Which part did you take? How did you feel?",
                 hint: "Describe your story as if you are reliving it. Don't be shy about your own achievement, there is no need to be humble here. Allow the details in your narrative to demonstrate your strengths and values. ",
                 response: "",
                 type: "text",
