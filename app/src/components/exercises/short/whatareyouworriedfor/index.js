@@ -205,7 +205,7 @@ const WhatAreYouWorriedFor = () => {
                                 return <p key={index} className="w-full lg:w-2/5 transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110 cursor-pointer lg:cursor-pointer lg:select-none mx-6 m-2 px-4 py-2 border-2 border-blue-1100 bg-white hover:bg-blue-1100 hover:text-white rounded-full border-solid" onClick={(e) => handleChange(e, index, true)}> {item.value}</p>
                             })}
                         </ul>
-                        {item.hint && <p className='font-body text-md text-blue-1100 p-2 bg-opacity-75 bg-white  rounded-lg'>{item.hint}</p>}
+                        {item.hint && <p className='font-body text-md text-blue-1100 p-2 bg-opacity-75 bg-white my-4 rounded-lg'>{item.hint}</p>}
                         {item.type === "text" && <div className="w-full p-2">
                             <textarea rows="3" className="w-full h-20 rounded-lg mt-6 p-2 text-blue-1100 bg-gray-100 border-blue-1100 border-2 outline-none" type="text" name="response" value={item.response} placeholder={exercises.placeholder} onChange={(e) => handleChange(e, currentPage, true)} />
                         </div>}
