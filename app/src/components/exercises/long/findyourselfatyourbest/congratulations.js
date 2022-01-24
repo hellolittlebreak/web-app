@@ -28,11 +28,11 @@ const CongratulationsFindYourselfAtYourBest = () => {
             </div>
             <h1 className='text-center text-4xl font-heading text-blue-1100'>Congratulations</h1>
             <div className='bg-white rounded-lg p-10 mt-10 bg-opacity-50'>
-                <p className='font-heading text-blue-1100 font-regular text-md my-2'>During this 7-min little break, you have taken the time to embrace yourself and how far you have come</p>
-                <p className='font-heading text-blue-1100 font-regular text-md my-2'>It is a step closer towards establishing confidence and developing a healthy self-esteem.</p>
+                <p className='font-heading text-blue-1100 font-regular text-md my-2'>During this 7-min little break, you have reminded yourself of when you were at your best.</p>
+                <p className='font-heading text-blue-1100 font-regular text-md my-2'>You have identified the qualities and strengths in yourself that allow you to perform at your best. You have also taken the time to think about how you could use more of those strengths to achieve a better version of yourself.</p>
             </div>
         </div>
-        <p className="font-heading font-bold text-blue-1100 mx-8 my-8">In this "Find yourself at your best" long exercise, you reflected on finding yourself at your best:</p>
+        <p className="font-heading font-bold text-blue-1100 mx-8 my-8">In this "Find yourself at your best" long exercise, you reflected on:</p>
         {location.state.value.map((item, index) => {
             return <div key={index} className="mx-8 my-4 flex items-center">
                 <table className='table'>
