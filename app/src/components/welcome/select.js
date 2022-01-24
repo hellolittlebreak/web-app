@@ -34,7 +34,7 @@ const SelectExercises = () => {
                 type: "short-exercises",
                 data: [
                     {
-                        value: "What are you worried for?",
+                        value: "Understand your worries",
                         isSelected: false,
                         componentLink: "what-are-you-worried-for",
                         icon: "RiQuestionAnswerFill"
