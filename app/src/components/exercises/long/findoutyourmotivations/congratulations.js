@@ -28,8 +28,9 @@ const CongratulationsDiscoverYourMotivations = () => {
             </div>
             <h1 className='text-center text-4xl font-heading text-blue-1100'>Congratulations</h1>
             <div className='bg-white rounded-lg p-10 mt-10 bg-opacity-50'>
-                <p className='font-heading text-blue-1100 font-regular text-md my-2'>During this 7-min little break, you have taken the time to embrace yourself and how far you have come</p>
-                <p className='font-heading text-blue-1100 font-regular text-md my-2'>It is a step closer towards finding out about your motivations.</p>
+                <p className='font-heading text-blue-1100 font-regular text-md my-2'>During this 7-min little break, you have taken the first step to understand your motivations.</p>
+                <p className='font-heading text-blue-1100 font-regular text-md my-2'>Different people are motivated by different things. Motivations drive us to achieve our dreams nad goals.</p>
+                <p className='font-heading text-blue-1100 font-regular text-md my-2'>It is therefore important to discover your core motivation in life.</p>
             </div>
         </div>
         <p className="font-heading font-bold text-blue-1100 mx-8 my-8">In this "Discover your motivations" long exercise, you reflected on what motivates you:</p>
