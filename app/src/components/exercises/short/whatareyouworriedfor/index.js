@@ -78,9 +78,10 @@ const WhatAreYouWorriedFor = () => {
     const [currentPage, setCurrentPage] = useState(0)
 
     useEffect(() => {
-        console.log(currentPage)
-        const refId = getRef(exercises.data[currentPage].refId);
-        refId.current.scrollIntoView({ behavior: 'smooth', block: 'start' })
+        if (currentPage > 0) {
+            const refId = getRef(exercises.data[currentPage].refId);
+            refId.current.scrollIntoView({ behavior: 'smooth', block: 'start' })
+        }
     }, [currentPage])
 
     const handleChange = (e, position, isSelected) => {
