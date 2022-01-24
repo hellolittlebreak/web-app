@@ -135,34 +135,34 @@ const SelectExercises = () => {
         if (type === "short-exercises") {
             switch (index) {
                 case 0:
-                    return <RiQuestionAnswerFill size={30} className="my-auto ml-2 text-blue-1100" />
+                    return <RiQuestionAnswerFill size={30} className="my-auto ml-4 text-blue-1100" />
                 case 1:
-                    return <RiChatCheckFill size={30} className="my-auto ml-2 text-blue-1100" />
+                    return <RiChatCheckFill size={30} className="my-auto ml-4 text-blue-1100" />
                 case 2:
-                    return <RiHomeHeartFill size={30} className="my-auto ml-2 text-blue-1100" />
+                    return <RiHomeHeartFill size={30} className="my-auto ml-4 text-blue-1100" />
                 case 3:
-                    return <RiBuilding3Fill size={30} className="my-auto ml-2 text-blue-1100" />
+                    return <RiBuilding3Fill size={30} className="my-auto ml-4 text-blue-1100" />
                 case 4:
-                    return <RiServiceFill size={30} className="my-auto ml-2 text-blue-1100" />
+                    return <RiServiceFill size={30} className="my-auto ml-4 text-blue-1100" />
                 case 5:
-                    return <RiContrastDrop2Fill size={30} className="my-auto ml-2 text-blue-1100" />
+                    return <RiContrastDrop2Fill size={30} className="my-auto ml-4 text-blue-1100" />
                 default:
                     break;
             }
         } else {
             switch (index) {
                 case 0:
-                    return <RiVipDiamondFill size={30} className="my-auto ml-2 text-blue-1100" />
+                    return <RiVipDiamondFill size={30} className="my-auto ml-4 text-blue-1100" />
                 case 1:
-                    return <RiTrophyFill size={30} className="my-auto ml-2 text-blue-1100" />
+                    return <RiTrophyFill size={30} className="my-auto ml-4 text-blue-1100" />
                 case 2:
-                    return <RiStarSmileFill size={30} className="my-auto ml-2 text-blue-1100" />
+                    return <RiStarSmileFill size={30} className="my-auto ml-4 text-blue-1100" />
                 case 3:
-                    return <RiHeartPulseFill size={30} className="my-auto ml-2 text-blue-1100" />
+                    return <RiHeartPulseFill size={30} className="my-auto ml-4 text-blue-1100" />
                 case 4:
-                    return <RiPsychotherapyFill size={30} className="my-auto ml-2 text-blue-1100" />
+                    return <RiPsychotherapyFill size={30} className="my-auto ml-4 text-blue-1100" />
                 case 5:
-                    return <RiDirectionFill size={30} className="my-auto ml-2 text-blue-1100" />
+                    return <RiDirectionFill size={30} className="my-auto ml-4 text-blue-1100" />
                 default:
                     break;
             }
@@ -174,18 +174,18 @@ const SelectExercises = () => {
             <ScrollToTopOnMount />
             <h2 className="text-left border-b-2 border-blue-1100 text-blue-1100 font-bold font-heading text-xl lg:text-2xl">{welcomeContent.title}</h2>
             <div className="flex justify-center lg:mt-10">
-                <ul className="w-full lg:w-4/5 grid grid-cols-0  lg:grid-rows-0 lg:grid-cols-2 gap-4 mt-4 justify-center text-center">
+                <ul className="w-full grid grid-cols-0  lg:grid-rows-0 lg:grid-cols-2 gap-4 mt-4 justify-center text-center">
                     <AnimatedList className="" animation="grow" initialAnimationDuration="4000">
                         {welcomeContent.content.map((item, index) => {
                             return <div key={index} className="flex flex-col content-center h-full rounded-lg bg-opacity-75 bg-white">
-                                <p className="cursor-none lg:select-none m-2 px-4 inline-block w-full  font-heading font-semibold text-xl text-blue-1100"> {item.value}</p>
-                                <span className="cursor-none lg:select-none px-4 inline-block w-full font-heading text-sm text-blue-1100 ">{item.duration}</span>
+                                <p className="cursor-none lg:select-none m-4 px-4 inline-block w-full  font-heading font-semibold text-xl text-blue-1100"> {item.value}</p>
+                                <span className="cursor-none lg:select-none px-4 inline-block w-full font-heading text-sm text-blue-1100 mt-2 mb-4">{item.duration}</span>
                                 <div className=''>
                                     {item.data.map((exercise, index) => {
                                         return <div>
                                             <div key={index} className='justify-between w-full flex flex-row text-justify lg:cursor-pointer' onClick={(e) => handleChange(e, item.type, index)}>
                                                 {setIcon(item.type, index)}
-                                                <p className="w-2/4 py-4 text-blue-1100 font-regular font-heading whitespace-pre-wrap">{exercise.value}</p>
+                                                <p className="w-2/3 py-6 text-blue-1100 font-regular font-heading whitespace-pre-wrap">{exercise.value}</p>
                                                 <FaChevronRight size={14} className="my-auto mr-4 text-blue-1100" />
                                             </div>
                                             <div className='border-b-default border-gray-300 ml-12'></div>
