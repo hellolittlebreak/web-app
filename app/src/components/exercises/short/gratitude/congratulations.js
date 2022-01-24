@@ -30,7 +30,7 @@ const CongratulationsGratitude = () => {
                 </div>
                 <h1 className='text-center text-4xl font-heading text-blue-1100'>Congratulations</h1>
                 <div className='bg-white rounded-lg p-10 mt-10 bg-opacity-50'>
-                    <p className='font-heading text-blue-1100 font-regular text-md my-2'>During this 3-min little break, you have taken the time to embrace yourself and how far you have come</p>
+                    <p className='font-heading text-blue-1100 font-regular text-md my-2'>During this 3-min little break, you have taken the time to embrace yourself and how far you have come.</p>
                     <p className='font-heading text-blue-1100 font-regular text-md my-2'>It is a step closer towards establishing confidence and developing gratitude and appreciation for the things in your life.</p>
                 </div>
             </div>
