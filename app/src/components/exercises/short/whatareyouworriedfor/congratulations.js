@@ -56,16 +56,14 @@ const CongratulationsWhatAreYouWorriedFor = () => {
                 <p className='font-body text-blue-1100 font-regular text-md mt-10'>You also understood that in reality, most worries don't come true.</p>
                 <p className='font-body text-blue-1100 font-regular text-md my-2'>Focusing on what Will happen instead of what Could happen, you reflected that ...</p>
 
-                {
-                    location.state.value.map((value, index) => {
-
-                        if (index === 1) {
-                            return <div className='bg-white px-4 rounded-lg lg:w-4/5 flex items-center my-2'>
-                                <FaStar size={20} className="text-orange-600 m-4 lg:w-1/12" />
-                                <p className='font-body text-blue-1100 font-regular text-md my-2'>{value.response}</p>
-                            </div>
-                        }
-                    })
+                {location.state.value.map((value, index) => {
+                    if (index === 2) {
+                        return <div className='bg-white px-4 rounded-lg lg:w-4/5 flex items-center my-2'>
+                            <FaStar size={20} className="text-orange-600 m-4 lg:w-1/12" />
+                            <p className='font-body text-blue-1100 font-regular text-md my-2'>{value.response}</p>
+                        </div>
+                    }
+                })
                 }
 
 

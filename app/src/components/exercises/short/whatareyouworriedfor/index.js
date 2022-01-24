@@ -59,8 +59,7 @@ const WhatAreYouWorriedFor = () => {
             },
             {
                 refId: "refIdTwo",
-                type: "text",
-                title: "“Worry often gives a small thing a big shadow.”     – Swedish Proverb",
+                title: "“Worry often gives a small thing a big shadow.” - Swedish Proverb",
                 hint: "Worry is a normal part of our life. We worry about all kinds of things. Performance review, first dates, deadlines, paying bills, midterms, health checkups, etc. What makes worry troublesome is that when we worry, we tend to jump straight to the worst possible consequence. Therefore in this exercise, we ask you to think about this…",
                 type: "informative",
                 shouldBeVisible: false,
@@ -182,6 +181,7 @@ const WhatAreYouWorriedFor = () => {
         setExercises(newExercisesList)
         const currentPosition = parseInt(e.target.parentNode.id) + 1
         if (currentPosition === exercises.data.length) {
+            console.log(exercises.data)
             navigate("/congratulations-what-are-you-worried-for", { state: { value: exercises.data } })
         } else {
             setCurrentPage(() => currentPosition)
@@ -205,9 +205,9 @@ const WhatAreYouWorriedFor = () => {
                                 return <p key={index} className="transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110 cursor-pointer lg:cursor-pointer lg:select-none m-2 px-4 py-2 inline-block border-2 border-blue-1100 bg-white hover:bg-blue-1100 hover:text-white rounded-full border-solid" onClick={(e) => handleChange(e, index, true)}> {item.value}</p>
                             })}
                         </ul>
-                        {item.hint && <div className="w-full p-2">
-                            <p className='font-body text-md text-blue-1100 p-2 bg-opacity-75 bg-white  rounded-lg'>{item.hint}</p>
-                            <textarea rows="3" className="w-full h-10 rounded-lg mt-6 p-2 text-blue-1100 bg-gray-100 border-blue-1100 border-2 outline-none" type="text" name="response" value={item.response} placeholder={exercises.placeholder} onChange={(e) => handleChange(e, currentPage, true)} />
+                        {item.hint && <p className='font-body text-md text-blue-1100 p-2 bg-opacity-75 bg-white  rounded-lg'>{item.hint}</p>}
+                        {item.type === "text" && <div className="w-full p-2">
+                            <textarea rows="3" className="w-full h-20 rounded-lg mt-6 p-2 text-blue-1100 bg-gray-100 border-blue-1100 border-2 outline-none" type="text" name="response" value={item.response} placeholder={exercises.placeholder} onChange={(e) => handleChange(e, currentPage, true)} />
                         </div>}
                         <button className="lg:ml-4 lg:mt-6 bg-blue-1100 hover:bg-blue-700 px-4 py-2 text-white rounded-lg flex text-center" onClick={(e) => handleClick(e, index + 1)} >OK <FaCheck className="my-auto ml-2 pointer-events-none" /></button>
 
