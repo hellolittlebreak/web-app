@@ -61,7 +61,7 @@ const WhatAreYouWorriedFor = () => {
                 refId: "refIdTwo",
                 type: "text",
                 title: "“Worry often gives a small thing a big shadow.”     – Swedish Proverb",
-                subTitle: "Worry is a normal part of our life. We worry about all kinds of things. Performance review, first dates, deadlines, paying bills, midterms, health checkups, etc. What makes worry troublesome is that when we worry, we tend to jump straight to the worst possible consequence. Therefore in this exercise, we ask you to think about this…",
+                hint: "Worry is a normal part of our life. We worry about all kinds of things. Performance review, first dates, deadlines, paying bills, midterms, health checkups, etc. What makes worry troublesome is that when we worry, we tend to jump straight to the worst possible consequence. Therefore in this exercise, we ask you to think about this…",
                 type: "informative",
                 shouldBeVisible: false,
             },
