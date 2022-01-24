@@ -19,7 +19,7 @@ const ThingsAboutMe = () => {
 
     const [exercises, setExercises] = useState({
         title: "Six things about me",
-        description: "Sometimes we forget to stop and appreciate how far we have come. \nSometimes we forget to be kind to ourselves and embrace how awesome we are. \n\nWhen life gets tough, our self-confidence slips down. \n\nIn this exercise, we will guide you to establish a healthy self-esteem by re-learning six things about yourself.",
+        description: "Sometimes we forget to take a pause in life and appreciate how far we have come. \n\nSometimes we forget to be kind to ourselves and embrace how great we are. \n\nWhen life gets tough, our self-confidence slips down. \n\nIn this exercise, we will guide you towards establishing a healthy self-esteem by re-learning six things about yourself.",
         placeholder: "Reflect and fill in the blank",
         data: [
 
