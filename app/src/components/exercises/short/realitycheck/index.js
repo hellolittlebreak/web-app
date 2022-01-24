@@ -330,7 +330,7 @@ const RealityCheck = () => {
                         </ul>
 
 
-                        <button className="lg:ml-4 mt-10 lg:mt-6 bg-blue-1100 hover:bg-blue-700 px-4 py-2 text-white rounded-lg flex text-center" onClick={(e) => handleClick(e, index)} >OK <FaCheck className="my-auto ml-2 pointer-events-none" /></button>
+                        <button className="lg:ml-4 mt-10 lg:mt-6 bg-blue-1100 hover:bg-blue-700 px-4 py-2 text-white rounded-lg flex text-center" onClick={(e) => handleClick(e, index)} >Next <FaCheck className="my-auto ml-2 pointer-events-none" /></button>
                     </div>
 
                 }

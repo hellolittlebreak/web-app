@@ -128,7 +128,7 @@ const ThingsAboutMe = () => {
                             <p className="text-lg text-blue-1100 font-heading font-semibold lg:ml-4 lg:inline-block lg:my-10">{item.title}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
                             <textarea maxlength="50" rows="1" className="w-full lg:w-1/2  font-heading rounded-lg overflow-hidden whitespace-nowrap p-2 text-blue-1100 outline-none border-b-2 my-6 lg:my-10" type="text" name="response" value={item.response} placeholder={exercises.placeholder} onChange={(e) => handleSelection(e, currentPage, true)} />
                         </div>
-                        <button className="lg:ml-4 lg:mt-6 bg-blue-1100 hover:bg-blue-700 px-4 py-2 text-white rounded-lg flex text-center" onClick={(e) => handleClick(e, index + 1)} >OK <FaCheck className="my-auto ml-2 pointer-events-none" /></button>
+                        <button className="lg:ml-4 lg:mt-6 bg-blue-1100 hover:bg-blue-700 px-4 py-2 text-white rounded-lg flex text-center" onClick={(e) => handleClick(e, index + 1)} >Next <FaCheck className="my-auto ml-2 pointer-events-none" /></button>
                     </div>
                 }
             })
