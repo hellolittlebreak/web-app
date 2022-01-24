@@ -205,7 +205,7 @@ const UnwindFromStressfulMoment = () => {
                                 }
 
                                 allExercises.data[currentPosition].response.choices.map((item, index) => {
-                                    if (item.value === newItem.name) {
+                                    if (item.value === newItem.value) {
                                         if (index > -1) {
                                             allExercises.data[currentPosition].response.choices.splice(index, 1);
                                         }
@@ -269,9 +269,9 @@ const UnwindFromStressfulMoment = () => {
                         <ul className="mt-2 lg:mt-4 flex flex-wrap">
                             {item.choices && item.choices.map((item, index) => {
                                 if (item.isSelected) {
-                                    return <p key={index} className="transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110 cursor-pointer lg:cursor-pointer lg:select-none m-2 px-4 py-2 inline-block border-2 border-blue-1100 bg-blue-1100 text-white rounded-full border-solid" onClick={(e) => handleSelection(e, false, index)}> {item.value}</p>
+                                    return <p key={index} className="w-full lg:w-2/5 transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110 cursor-pointer lg:cursor-pointer lg:select-none mx-6 m-2 px-4 py-2 border-2 border-blue-1100 bg-blue-1100 text-white rounded-full border-solid" onClick={(e) => handleSelection(e, index, false)}> {item.value}</p>
                                 }
-                                return <p key={index} className="transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110 cursor-pointer lg:cursor-pointer lg:select-none m-2 px-4 py-2 inline-block border-2 border-blue-1100 bg-white hover:bg-blue-1100 hover:text-white rounded-full border-solid" onClick={(e) => handleSelection(e, true, index)}> {item.value}</p>
+                                return <p key={index} className="w-full lg:w-2/5 transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110 cursor-pointer lg:cursor-pointer lg:select-none mx-6 m-2 px-4 py-2 border-2 border-blue-1100 bg-white hover:bg-blue-1100 hover:text-white rounded-full border-solid" onClick={(e) => handleSelection(e, index, true)}> {item.value}</p>
                             })}
                         </ul>
                         <ul>

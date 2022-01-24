@@ -320,12 +320,12 @@ const RealityCheck = () => {
                         </div>
                         {item.subTitle && <p className="text-md text-blue-1100 font-heading font-semibold lg:ml-4 lg:my-4">{item.subTitle}</p>}
                         {item.question && <p className="whitespace-pre-wrap text-md text-blue-1100 font-heading font-semibold lg:ml-4 lg:my-4">{item.question}</p>}
-                        <ul className="mt-2 lg:mt-4 flex-wrap">
+                        <ul className="mt-2 lg:mt-4 flex flex-wrap">
                             {item.choices && item.choices.map((item, index) => {
                                 if (item.isSelected) {
-                                    return <p key={index} className="transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110 lg:cursor-pointer lg:select-none m-2 px-4 py-2 inline-block border-2 border-blue-1100 bg-blue-1100 text-white rounded-full border-solid" onClick={(e) => handleChange(e, index, false)}> {item.value}</p>
+                                    return <p key={index} className="w-full lg:w-2/5 transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110 cursor-pointer lg:cursor-pointer lg:select-none mx-6 m-2 px-4 py-2 border-2 border-blue-1100 bg-blue-1100 text-white rounded-full border-solid" onClick={(e) => handleChange(e, index, false)}> {item.value}</p>
                                 }
-                                return <p key={index} className="transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110 lg:cursor-pointer lg:select-none m-2 px-4 py-2 inline-block border-2 border-blue-1100 bg-white hover:bg-blue-1100 hover:text-white rounded-full border-solid" onClick={(e) => handleChange(e, index, true)}> {item.value}</p>
+                                return <p key={index} className="w-full lg:w-2/5 transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110 cursor-pointer lg:cursor-pointer lg:select-none mx-6 m-2 px-4 py-2 border-2 border-blue-1100 bg-white hover:bg-blue-1100 hover:text-white rounded-full border-solid" onClick={(e) => handleChange(e, index, true)}> {item.value}</p>
                             })}
                         </ul>
 

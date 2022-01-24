@@ -142,8 +142,6 @@ const ReconstructThoughts = () => {
                         <p className="text-center bg-white bg-opacity-50 rounded-lg py-2 text-xl text-blue-1100 font-heading font-semibold">{item.title}</p>
                         <table className='table'>
                             <tbody>
-
-
                                 {item.suggestions && item.suggestions.map((item, index) => {
                                     return <tr>
                                         <td><FaStar size={15} className="w-10 text-orange-600" /></td>
