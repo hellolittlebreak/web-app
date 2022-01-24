@@ -28,9 +28,8 @@ const CongratulationsRealityCheck = () => {
                 <h1 className='text-center text-4xl font-heading text-blue-1100'>Congratulations</h1>
                 <div className='bg-white rounded-lg p-10 mt-20 bg-opacity-50'>
                     <p className='font-heading text-blue-1100 font-regular text-md my-2'>During this 3-min little break, you have taken the first step towards differentiating thoughts and opinions from facts.</p>
-                    <p className='font-heading text-blue-1100 font-regular text-md my-2'>It is a very important mental-fitness training.</p>
-                    <p className='font-heading text-blue-1100 font-regular text-md my-2'>And an often overlooked critical skill.</p>
-                    <p className='font-heading text-blue-1100 font-regular text-md my-2'>Practice this exercise a few times to train your mind to give yourself reality checks</p>
+                    <p className='font-heading text-blue-1100 font-regular text-md my-2'>It is a very important mental-fitness training, and an often overlooked critical skill.</p>
+                    <p className='font-heading text-blue-1100 font-regular text-md my-2'>Practice this exercise a few times to train your mind to give yourself reality checks.</p>
                 </div>
             </div>
             <div className="flex flex-col justify-center w-full items-center">
@@ -41,9 +40,8 @@ const CongratulationsRealityCheck = () => {
         {/* Right Part */}
         <div className='bg-blue-1000'>
             <div className='m-8 lg:m-12'>
-                <p className='font-body text-blue-1100 font-regular text-md my-2'>In this "Reality Check" short exercise, you trained a critical skill.</p>
-                <p className='font-body text-blue-1100 font-regular text-md my-2'>You can now differentiate thoughts and opinions from facts.</p>
-                <p className='font-body text-blue-1100 font-regular text-md my-2'>When you move on to your day do not forget to apply what you learned from this exercise to your daily thoughts.</p>
+                <p className='font-body text-blue-1100 font-regular text-md my-2'>In this "Reality Check" short exercise, you trained a critical skill - differentiate thoughts and opinions from facts.</p>
+                <p className='font-body text-blue-1100 font-regular text-md my-2'>When you move on to your day, do not forget to apply what you learned from this exercise to your daily thoughts.</p>
                 <p className='font-body text-blue-1100 font-regular text-md my-2'>When a thought occurs, check-in with yourself:</p>
                 <p className='font-body text-blue-1100 font-bold text-md my-8'>Is this my opinion or a fact?</p>
                 <p className='font-body text-blue-1100 font-regular text-md my-8'>Remember:</p>
