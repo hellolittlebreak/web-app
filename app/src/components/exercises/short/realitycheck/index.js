@@ -19,7 +19,7 @@ const RealityCheck = () => {
 
     const [exercises, setExercises] = useState({
         title: "Give yourself a reality check",
-        description: "Our mind processes all kinds of thoughts each day. \nSome thoughts are accurate reflection of events in our life, some are opinions that could be either overly pessimistic or overly positive.  \nOur opinions are not necessarily facts. \nOften what we need is a reality check that helps us differentiate opinions from facts. \nFor the following statements, select whether they are an opinion or a fact.",
+        description: "Our mind processes all kinds of thoughts each day. \nSome thoughts are accurate reflections of events in our life, some are opinions that could be either overly pessimistic or overly positive.  \nOur opinions are not necessarily facts. Often what we need is a reality check that helps us differentiate opinions from facts. \nFor the following statements, select whether they are an opinion or a fact.",
         placeholder: "Write here",
         correctAnswer: "Correct, this is an opinion!",
         wrongAnswer: "Not quite, this is an opinion, not a fact.",
@@ -33,7 +33,7 @@ const RealityCheck = () => {
                 isSelected: false,
                 choices: [
                     {
-                        value: "Thought",
+                        value: "Opinion",
                         isSelected: false,
                         isCorrect: true
                     },
@@ -53,7 +53,7 @@ const RealityCheck = () => {
                 isSelected: false,
                 choices: [
                     {
-                        value: "Thought",
+                        value: "Opinion",
                         isSelected: false,
                         isCorrect: false
                     },
@@ -73,7 +73,7 @@ const RealityCheck = () => {
                 isSelected: false,
                 choices: [
                     {
-                        value: "Thought",
+                        value: "Opinion",
                         isSelected: false,
                         isCorrect: true
                     },
@@ -92,7 +92,7 @@ const RealityCheck = () => {
                 selectedCorrectAnswer: false,
                 choices: [
                     {
-                        value: "Thought",
+                        value: "Opinion",
                         isSelected: false,
                         isCorrect: false
                     },
@@ -111,7 +111,7 @@ const RealityCheck = () => {
                 selectedCorrectAnswer: false,
                 choices: [
                     {
-                        value: "Thought",
+                        value: "Opinion",
                         isSelected: false,
                         isCorrect: true
                     },
@@ -130,7 +130,7 @@ const RealityCheck = () => {
                 selectedCorrectAnswer: false,
                 choices: [
                     {
-                        value: "Thought",
+                        value: "Opinion",
                         isSelected: false,
                         isCorrect: false
                     },
@@ -149,7 +149,7 @@ const RealityCheck = () => {
                 selectedCorrectAnswer: false,
                 choices: [
                     {
-                        value: "Thought",
+                        value: "Opinion",
                         isSelected: false,
                         isCorrect: false
                     },
@@ -168,7 +168,7 @@ const RealityCheck = () => {
                 selectedCorrectAnswer: false,
                 choices: [
                     {
-                        value: "Thought",
+                        value: "Opinion",
                         isSelected: false,
                         isCorrect: true
                     },
@@ -187,7 +187,7 @@ const RealityCheck = () => {
                 selectedCorrectAnswer: false,
                 choices: [
                     {
-                        value: "Thought",
+                        value: "Opinion",
                         isSelected: false,
                         isCorrect: true
                     },
@@ -206,7 +206,7 @@ const RealityCheck = () => {
                 selectedCorrectAnswer: false,
                 choices: [
                     {
-                        value: "Thought",
+                        value: "Opinion",
                         isSelected: false,
                         isCorrect: false
                     },
@@ -220,8 +220,8 @@ const RealityCheck = () => {
             {
                 refId: "refIdEleven",
                 title: "As you can see, some statements are facts whilst others are simply our opinions",
-                subTitle: "We tend to think that each and every thought we have is true",
-                question: "However thoughts are not facts. They are more often opinions that we form. \n\nOpinions deviates from facts, and can be sometimes useful and other times harmful. \n\nIt is therefore important to train our mind to differentiate opinions from facts.",
+                subTitle: "\nWe tend to think that each and every thought we have is true",
+                question: "\nHowever thoughts are not facts. They are more often opinions that we form. \n\nOpinions deviates from facts, and can be sometimes useful and other times harmful. \n\nIt is therefore important to train our mind to differentiate opinions from facts.",
                 type: "informative",
                 shouldBeVisible: false
             }
