@@ -64,6 +64,7 @@ const WhatTriggersYourStress = () => {
                 refId: "refIdThree",
                 type: "text",
                 title: "What can you do to eliminate or reduce your exposure to the stress triggers?",
+                description: "Sometimes the option to avoid your stress trigger is not obvious. For example, pressure from work or expectations from family could seem unescapable. \nHowever, there are always ways to reduce your exposure to these triggers. \nFor example, avoid working with the colleague that has been giving you the negative energy at work. \nThink about what are the potential ways for you to avoid or reduce even a little bit of exposure to your stress triggers?                   ",
                 hint: "",
                 shouldBeVisible: false,
                 response: ""
