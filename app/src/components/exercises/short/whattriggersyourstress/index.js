@@ -31,11 +31,11 @@ const WhatTriggersYourStress = () => {
                 },
                 choices: [
                     {
-                        value: "Lack of life purpose",
+                        value: "Lack of purpose in life",
                         isSelected: false
                     },
                     {
-                        value: "Work performance",
+                        value: "Pressure from work",
                         isSelected: false
                     },
                     {
@@ -43,7 +43,7 @@ const WhatTriggersYourStress = () => {
                         isSelected: false
                     },
                     {
-                        value: "Friends and family",
+                        value: "Family and close relations",
                         isSelected: false
                     },
                     {
@@ -55,7 +55,7 @@ const WhatTriggersYourStress = () => {
             {
                 refId: "refIdTwo",
                 type: "informative",
-                title: "The best way to deal with a stress trigger is to avoid it.",
+                title: "Now you have identified your stress trigger, the best way to reduce stress is to avoid these triggers in your daily routine.",
                 description: "This often means making necessary changes to your daily routines, lifestyle, or existing relationships.                ",
                 shouldBeVisible: false,
                 response: ""
