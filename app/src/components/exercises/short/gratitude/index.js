@@ -19,27 +19,27 @@ const Gratitude = () => {
     }, [analytics])
 
     const [exercises, setExercises] = useState({
-        title: "What is going well today? Can you think of three things?",
-        placeholder: "Write here",
+        title: "Gratitude and appreciation",
+        placeholder: "Reflect and write here",
         data: [
             {
                 refId: "refIdOne",
                 type: "text",
-                title: "Something or someone that made me smile today",
+                title: "What is going well today? Can you think of three things? \n \n1. Someone that made me smile today",
                 shouldBeVisible: true,
                 response: ""
             },
             {
                 refId: "refIdTwo",
                 type: "text",
-                title: "Something I was happy about",
+                title: "2. Something I was happy about",
                 shouldBeVisible: false,
                 response: ""
             },
             {
                 refId: "refIdThree",
                 type: "text",
-                title: "One thing I am grateful for",
+                title: "3. One item I have that I am grateful for",
                 shouldBeVisible: false,
                 response: ""
             }
