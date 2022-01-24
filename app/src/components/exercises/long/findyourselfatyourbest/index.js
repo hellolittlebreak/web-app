@@ -174,7 +174,7 @@ const FindYourselfAtYourBest = () => {
         {
             exercises.data.map((item, index) => {
                 if (item.shouldBeVisible === true) {
-                    return <div id={index} key={index} ref={setRef(item.refId)} className="h-screen lg:h-96 lg:mt-10">
+                    return <div id={index} key={index} ref={setRef(item.refId)} className="h-screen lg:h-108 lg:mt-10">
                         <p className="text-lg text-blue-1100 font-heading font-semibold lg:ml-4">{item.title}</p>
                         {item.subTitle && <div className="thought">
                             <p className="sb14 text-md text-blue-1100 font-heading text-xs lg:text-sm lg:ml-4">{item.subTitle}</p>
@@ -192,7 +192,7 @@ const FindYourselfAtYourBest = () => {
                         </ul>
                         {item.hint && <div className="w-full p-2">
                             <p className='font-body text-md text-blue-1100 p-2 bg-white bg-opacity-50 rounded-lg'>{item.hint}</p>
-                            <textarea rows="3" className="w-full h-10 rounded-lg mt-6 p-2 text-blue-1100 bg-gray-100 border-blue-1100 border-2 outline-none" type="text" name="response" value={item.response} placeholder={exercises.placeholder} onChange={(e) => handleSelection(e, true, index)} />
+                            <textarea rows="3" className="w-full h-20 rounded-lg mt-6 p-2 text-blue-1100 bg-gray-100 border-blue-1100 border-2 outline-none" type="text" name="response" value={item.response} placeholder={exercises.placeholder} onChange={(e) => handleSelection(e, true, index)} />
                         </div>}
                         {item.type === "video" && <ReactPlayer width="100%" className="mx-auto"
                             url="https://vimeo.com/660493074"

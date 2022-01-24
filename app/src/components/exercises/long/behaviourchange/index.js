@@ -116,7 +116,7 @@ const BehaviourChange = () => {
                         <p className="p-2 rounded-lg py-2 text-lg text-blue-1100 font-heading font-semibold">{item.question}</p>
                         {item.subQuestion && <p className='italic font-body text-md text-blue-1100 p-2 rounded-lg my-2'>{item.subQuestion}</p>}
                         {item.type === "text" && <div className="w-full p-2">
-                            <textarea rows="3" className="w-full h-10 rounded-lg mt-6 p-2 text-blue-1100 bg-gray-100 border-blue-1100 border-2 outline-none" type="text" name="response" value={item.response} placeholder={exercises.placeHolder} onChange={(e) => handleChange(e, currentPage, true)} />
+                            <textarea rows="3" className="w-full h-20 rounded-lg mt-6 p-2 text-blue-1100 bg-gray-100 border-blue-1100 border-2 outline-none" type="text" name="response" value={item.response} placeholder={exercises.placeHolder} onChange={(e) => handleChange(e, currentPage, true)} />
                         </div>}
                         <button className="ml-2 mt-4 lg:mt-8 bg-blue-1100 hover:bg-blue-700 px-4 py-2 text-white rounded-lg flex text-center" onClick={(e) => handleClick(e, index + 1)} >Next <FaCheck className="my-auto ml-2 pointer-events-none" /></button>
                     </div>

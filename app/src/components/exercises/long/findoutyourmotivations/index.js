@@ -152,7 +152,7 @@ const FindOutYourMotivations = () => {
         }
     }
 
-    return <div className="mx-auto px-4 lg:px-64 pt-6">
+    return <div className="mx-auto pb-20 px-4 lg:px-64 pt-6">
         <ScrollToTopOnMount />
         <h2 className="text-left border-b-2 border-blue-1100 text-blue-1100 font-bold font-heading text-xl lg:text-2xl">{exercises.title}</h2>
         {
@@ -170,7 +170,7 @@ const FindOutYourMotivations = () => {
                         </ul>
                         {item.hint && <div className="w-full p-2">
                             <p className='font-body text-md text-blue-1100 p-2 bg-white bg-opacity-50 rounded-lg'>{item.hint}</p>
-                            <textarea rows="3" className="w-full h-10 rounded-lg mt-6 p-2 text-blue-1100 bg-gray-100 border-blue-1100 border-2 outline-none" type="text" name="response" value={item.response} placeholder={exercises.placeholder} onChange={(e) => handleChange(e, currentPage, true)} />
+                            <textarea rows="3" className="w-full h-20 rounded-lg mt-6 p-2 text-blue-1100 bg-gray-100 border-blue-1100 border-2 outline-none" type="text" name="response" value={item.response} placeholder={exercises.placeholder} onChange={(e) => handleChange(e, currentPage, true)} />
                         </div>}
                         <button className="lg:ml-2 mt-6 bg-blue-1100 hover:bg-blue-700 px-4 py-2 text-white rounded-lg flex text-center" onClick={(e) => handleClick(e, index + 1)} >Next <FaCheck className="my-auto ml-2 pointer-events-none" /></button>
 

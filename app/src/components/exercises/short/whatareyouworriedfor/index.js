@@ -20,7 +20,7 @@ const WhatAreYouWorriedFor = () => {
 
     const [exercises, setExercises] = useState({
         title: "Understanding your worries",
-        placeholder: "Write here",
+        placeholder: "Write your thoughts here...",
         data: [
             {
                 refId: "refIdOne",

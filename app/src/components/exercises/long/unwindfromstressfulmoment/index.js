@@ -283,7 +283,7 @@ const UnwindFromStressfulMoment = () => {
                         </ul>
                         {item.hint && <div className="w-full p-2">
                             <p className='font-body text-md text-blue-1100 p-2 bg-white bg-opacity-50 rounded-lg'>{item.hint}</p>
-                            <textarea rows="3" className="w-full h-10 rounded-lg mt-6 p-2 text-blue-1100 bg-gray-100 border-blue-1100 border-2 outline-none" type="text" name="response" value={item.response} placeholder={exercises.placeholder} onChange={(e) => handleSelection(e, true, index)} />
+                            <textarea rows="3" className="w-full h-20 rounded-lg mt-6 p-2 text-blue-1100 bg-gray-100 border-blue-1100 border-2 outline-none" type="text" name="response" value={item.response} placeholder={exercises.placeholder} onChange={(e) => handleSelection(e, true, index)} />
                         </div>}
                         {item.type === "video" && <ReactPlayer width="100%" className="mx-auto mt-10 lg:mt-20"
                             url="https://vimeo.com/668699791"

@@ -31,57 +31,57 @@ const UnderstandFeelingsAndEmotions = () => {
                     }
                 ]
             },
-//             {
-//                 refId: "referrerIdTwo",
-//                 title: "",
-//                 type: "text-details",
-//                 shouldBeVisible: false,
-//                 notes: [
-//                     {
-//                         value: "Recognising our emotions can be a rather peculiar task.",
-//                     },
-//                     {
-//                         value: "Some emotions are pure as the clearest sky or the darkest night."
-//                     },
-//                     {
-//                         value: "Some emotions are a lot more complex and difficult to grasp."
-//                     }
-//                 ]
-//             },
-//             {
-//                 refId: "referrerIdThree",
-//                 title: "",
-//                 type: "text-details",
-//                 shouldBeVisible: false,
-//                 notes: [
-//                     {
-//                         value: "We were taught to regulate our emotions from an early age.",
-//                     },
-//                     {
-//                         value: "Few of us are taught to understand and recognise our emotions properly."
-//                     },
-//                     {
-//                         value: "Emotions help us survive and motivate us to do things."
-//                     }
-//                 ]
-//             },
-//             {
-//                 refId: "referrerIdFour",
-//                 title: "",
-//                 type: "text-details",
-//                 shouldBeVisible: false,
-//                 notes: [
-//                     {
-//                         value: "Emotions guide our decisions, help us to connect with others and keep us safe.",
-//                     },
-//                     {
-//                         value: "Emotional intelligence, or your ability to understand and manage emotions, has been shown to play an important role in decision-making."
-//                     },
-//                     {
-//                         value: "It is positively correlated with higher life satisfaction, self-esteem and lower levels of insecurity or depression. It is also negatively correlated with poor health choices and behavior."
-//                     }
-//                 ]
-//             },
+            //             {
+            //                 refId: "referrerIdTwo",
+            //                 title: "",
+            //                 type: "text-details",
+            //                 shouldBeVisible: false,
+            //                 notes: [
+            //                     {
+            //                         value: "Recognising our emotions can be a rather peculiar task.",
+            //                     },
+            //                     {
+            //                         value: "Some emotions are pure as the clearest sky or the darkest night."
+            //                     },
+            //                     {
+            //                         value: "Some emotions are a lot more complex and difficult to grasp."
+            //                     }
+            //                 ]
+            //             },
+            //             {
+            //                 refId: "referrerIdThree",
+            //                 title: "",
+            //                 type: "text-details",
+            //                 shouldBeVisible: false,
+            //                 notes: [
+            //                     {
+            //                         value: "We were taught to regulate our emotions from an early age.",
+            //                     },
+            //                     {
+            //                         value: "Few of us are taught to understand and recognise our emotions properly."
+            //                     },
+            //                     {
+            //                         value: "Emotions help us survive and motivate us to do things."
+            //                     }
+            //                 ]
+            //             },
+            //             {
+            //                 refId: "referrerIdFour",
+            //                 title: "",
+            //                 type: "text-details",
+            //                 shouldBeVisible: false,
+            //                 notes: [
+            //                     {
+            //                         value: "Emotions guide our decisions, help us to connect with others and keep us safe.",
+            //                     },
+            //                     {
+            //                         value: "Emotional intelligence, or your ability to understand and manage emotions, has been shown to play an important role in decision-making."
+            //                     },
+            //                     {
+            //                         value: "It is positively correlated with higher life satisfaction, self-esteem and lower levels of insecurity or depression. It is also negatively correlated with poor health choices and behavior."
+            //                     }
+            //                 ]
+            //             },
             {
                 refId: "referrerIdFive",
                 title: "Learning to identify our emotions help us develop a better understanding of ourselves, build more meaningful relationships and make better decisions.",
@@ -300,7 +300,7 @@ const UnderstandFeelingsAndEmotions = () => {
                             })}
                         </ul>
                         {item.type === "text" && <div className="w-full p-2">
-                            <textarea rows="3" className="w-full h-10 rounded-lg mt-2 p-2 text-blue-1100 bg-gray-100 border-blue-1100 border-2 outline-none" type="text" name="response" value={item.response} placeholder={exercises.placeholder} onChange={(e) => handleSelection(e, currentPage, true)} />
+                            <textarea rows="3" className="w-full h-20 rounded-lg mt-2 p-2 text-blue-1100 bg-gray-100 border-blue-1100 border-2 outline-none" type="text" name="response" value={item.response} placeholder={exercises.placeholder} onChange={(e) => handleSelection(e, currentPage, true)} />
                         </div>}
                         <button className="lg:ml-4 lg:mt-6 bg-blue-1100 hover:bg-blue-700 px-4 py-2 text-white rounded-lg flex text-center" onClick={(e) => handleClick(e, index + 1)} >Next <FaCheck className="my-auto ml-2 pointer-events-none" /></button>
 

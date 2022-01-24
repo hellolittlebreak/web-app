@@ -20,12 +20,13 @@ const Gratitude = () => {
 
     const [exercises, setExercises] = useState({
         title: "Gratitude and appreciation",
+        subTitle: "What is going well today? Can you think of three things?",
         placeholder: "Reflect and write here",
         data: [
             {
                 refId: "refIdOne",
                 type: "text",
-                title: "What is going well today? Can you think of three things? \n \n1. Someone that made me smile today",
+                title: "1. Someone that made me smile today",
                 shouldBeVisible: true,
                 response: ""
             },
@@ -102,6 +103,7 @@ const Gratitude = () => {
     return <div className="mx-auto px-4 lg:px-64 pt-6">
         <ScrollToTopOnMount />
         <h2 className="text-left border-b-2 border-blue-1100 text-blue-1100 font-bold font-heading text-xl lg:text-2xl">{exercises.title}</h2>
+        <p className="text-xl text-blue-1100 font-heading font-semibold lg:ml-4 lg:inline-block lg:my-10">{exercises.subTitle}</p>
         {
             exercises.data.map((item, index) => {
                 if (item.shouldBeVisible === true) {
