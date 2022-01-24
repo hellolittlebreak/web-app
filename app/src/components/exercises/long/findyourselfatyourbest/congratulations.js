@@ -3,6 +3,7 @@ import { FaStar } from 'react-icons/fa';
 import { useNavigate, useLocation } from "react-router-dom";
 import ScrollToTopOnMount from '../../../../utils/ScrollToTop';
 import { getAnalytics, logEvent } from "firebase/analytics";
+import { convertComponentToPdf } from "../../../../utils/ExportToPdf"
 
 const CongratulationsFindYourselfAtYourBest = () => {
     const navigate = useNavigate();

@@ -10,6 +10,9 @@
     "env-cmd": "^10.1.0",
     "firebase": "^9.6.0",
     "formik": "^2.2.9",
+    "html-to-pdfmake": "^2.3.8",
+    "jspdf": "^2.5.0",
+    "pdfmake": "^0.2.4",
     "react": "^17.0.2",
     "react-animated-list": "^0.1.4",
     "react-dom": "^17.0.2",
@@ -25,13 +28,10 @@
     "build:tail": "npx tailwindcss -i ./src/styles/index.css -o ./src/styles/tailwind.css --watch",
     "start": "craco start env-cmd -f .env.development;",
     "start:prod": "craco start env-cmd -f .env.production;",
-
     "build": "craco build && env-cmd -f .env.development",
     "build:prod": "craco build && env-cmd -f .env.production",
-
     "deploy:dev": "firebase use dev; npm run build; firebase deploy --only hosting:web",
     "deploy:prod": "firebase use prod; npm run build:prod; firebase deploy --only hosting:web",
-
     "test": "craco test",
     "eject": "react-scripts eject"
   },

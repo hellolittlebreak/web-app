@@ -304,7 +304,7 @@ const RealityCheck = () => {
         }
     }
 
-    return <div className="w-full h-full mx-auto px-4 lg:px-64 pt-6 lg:pb-20">
+    return <div className="w-full h-full mx-auto px-4 lg:px-64 pt-6 lg:pb-32">
         <ScrollToTopOnMount />
         <h2 className="text-left border-b-2 border-blue-1100 text-blue-1100 font-bold font-heading text-xl lg:text-2xl">{exercises.title}</h2>
         <div className='mt-10 thought'>

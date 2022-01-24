@@ -3,6 +3,7 @@ import { FaStar } from 'react-icons/fa';
 import { useNavigate, useLocation } from "react-router-dom";
 import ScrollToTopOnMount from '../../../../utils/ScrollToTop';
 import { getAnalytics, logEvent } from "firebase/analytics";
+import { convertComponentToPdf } from "../../../../utils/ExportToPdf"
 
 const CongratulationsWhatAreYouWorriedFor = () => {
     const navigate = useNavigate();
@@ -23,7 +24,7 @@ const CongratulationsWhatAreYouWorriedFor = () => {
     return <div className='grid grid-cols-0 lg:grid-rows-0 lg:grid-cols-2'>
         {/* Left Part */}
         <ScrollToTopOnMount />
-        <div className='bg-cover h-screen ' style={{ backgroundImage: `url(https://littlebreak.io/wp-content/uploads/2022/01/give-yourself-a-reality-check-congratulations-scaled.jpeg)` }} >
+        <div className='bg-cover h-full lg:h-screen' style={{ backgroundImage: `url(https://littlebreak.io/wp-content/uploads/2022/01/give-yourself-a-reality-check-congratulations-scaled.jpeg)` }} >
             <div className='m-8 lg:m-12'>
                 <div className='flex justify-center'><FaStar size={20} className="text-orange-600 m-4" /></div>
                 <h1 className='text-center text-4xl font-heading text-blue-1100'>Congratulations</h1>
@@ -32,13 +33,14 @@ const CongratulationsWhatAreYouWorriedFor = () => {
                     <p className='font-heading text-blue-1100 font-regular text-md my-2'>Practice this exercise whenever you would like to get a realistic understanding of your worries.</p>
                 </div>
             </div>
-            <div className="flex flex-col justify-center w-full items-center">
-                <p className="lg:inline-block lg:cursor-pointer rounded-full px-4 lg:px-20 text-center py-4 mt-4 bg-blue-1100 hover:bg-blue-800 text-white font-body text-md lg:text-base" onClick={() => takeAnotherExercise()}>Take another exercise</p>
+            <div className="flex flex-col justify-evenly w-full items-center mt-16">
+                <p className="w-4/5 lg:cursor-pointer rounded-full mx-2 my-2 text-center py-4 hover:bg-blue-800 hover:text-white text-blue-1100 font-body text-md lg:text-base border-default" onClick={() => convertComponentToPdf(document.getElementById('divIdToPrint'))}>Download the result</p>
+                <p className="w-4/5 lg:cursor-pointer rounded-full mx-2 my-2 text-center py-4  bg-blue-1100 hover:bg-blue-800 text-white font-body text-md lg:text-base" onClick={() => takeAnotherExercise()}>Take another exercise</p>
             </div>
         </div>
         {/* End Left Part */}
         {/* Right Part */}
-        <div className='bg-blue-1000'>
+        <div id="divIdToPrint" className='bg-blue-1000'>
             <div className='m-8 lg:m-12'>
                 <p className='font-body text-blue-1100 font-regular text-md my-2'>In this "Understanding your worries" short exercise, you reflected on what you are most worried about.</p>
 
@@ -65,8 +67,6 @@ const CongratulationsWhatAreYouWorriedFor = () => {
                     }
                 })
                 }
-
-
             </div>
         </div>
         {/* End Right Part */}
