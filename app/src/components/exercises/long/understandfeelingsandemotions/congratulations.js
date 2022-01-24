@@ -28,11 +28,12 @@ const CongratulationsUnderstandFeelingsAndEmotions = () => {
             </div>
             <h1 className='text-center text-4xl font-heading text-blue-1100'>Congratulations</h1>
             <div className='bg-white rounded-lg p-10 mt-10 bg-opacity-50'>
-                <p className='font-heading text-blue-1100 font-regular text-md my-2'>During this 7-min little break, you have taken the time to embrace yourself and how far you have come</p>
-                <p className='font-heading text-blue-1100 font-regular text-md my-2'>It is a step closer towards understanding your feelings and emotions.</p>
+                <p className='font-heading text-blue-1100 font-regular text-md my-2'>During this 7-min little break, you have taken the time to recognise your feelings and emotions.</p>
+                <p className='font-heading text-blue-1100 font-regular text-md my-2'>You also went deeper to uncover what are the triggers of your emotions and why did it trigger you to feel that way.</p>
+                <p className='font-heading text-blue-1100 font-regular text-md my-2'>Understanding our emotions is a first step towards building up greater emotional intelligence. Our ability to understand and manage emotions plays an important role in decision-making in our life, and overall contributes to higher life satisfaction.</p>
             </div>
         </div>
-        <p className="font-heading font-bold text-blue-1100 mx-8 my-8">In this "Understand your feelings and emotions" long exercise, you reflected on "why" questions:</p>
+        <p className="font-heading font-bold text-blue-1100 mx-8 my-8">In this "Understand your feelings and emotions" long exercise, you reflected on the following:</p>
         {location.state.value.map((item, index) => {
             return <div key={index} className="mx-8 my-4 flex items-center">
                 <table className='table'>
