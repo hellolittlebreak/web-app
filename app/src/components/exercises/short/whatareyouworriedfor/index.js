@@ -24,7 +24,7 @@ const WhatAreYouWorriedFor = () => {
         data: [
             {
                 refId: "refIdOne",
-                title: "What is something that you are worried about?",
+                title: "What is something that you are worried about? Feel free to select as many.",
                 type: "multiple-choice-selection",
                 shouldBeVisible: true,
                 response: {
