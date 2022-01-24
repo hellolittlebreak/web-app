@@ -65,7 +65,7 @@ const SelectExercises = () => {
                         icon: "RiServiceFill"
                     },
                     {
-                        value: "Gratitude",
+                        value: "Gratitude and appreciation",
                         isSelected: false,
                         componentLink: "gratitude",
                         icon: "RiContrastDrop2Fill"
@@ -103,7 +103,7 @@ const SelectExercises = () => {
                         icon: "RiHeartPulseFill"
                     },
                     {
-                        value: "Reconstruct thoughts",
+                        value: "Reconstruct negative thoughts",
                         isSelected: false,
                         componentLink: "reconstruct-thoughts",
                         icon: "RiPsychotherapyFill"
