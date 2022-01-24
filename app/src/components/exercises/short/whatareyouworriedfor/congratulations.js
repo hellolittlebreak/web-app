@@ -29,7 +29,7 @@ const CongratulationsWhatAreYouWorriedFor = () => {
                 <h1 className='text-center text-4xl font-heading text-blue-1100'>Congratulations</h1>
                 <div className='bg-white rounded-lg p-10 mt-20 bg-opacity-50'>
                     <p className='font-heading text-blue-1100 font-regular text-md my-2'>During this 3-min little break, you have taken the first step towards understanding your worries and developing a healthier way of thinking about your worries.</p>
-                    <p className='font-heading text-blue-1100 font-regular text-md my-2'>Practice when you worry about something that might not be real.</p>
+                    <p className='font-heading text-blue-1100 font-regular text-md my-2'>Practice this exercise whenever you would like to get a realistic understanding of your worries.</p>
                 </div>
             </div>
             <div className="flex flex-col justify-center w-full items-center">
@@ -40,7 +40,7 @@ const CongratulationsWhatAreYouWorriedFor = () => {
         {/* Right Part */}
         <div className='bg-blue-1000'>
             <div className='m-8 lg:m-12'>
-                <p className='font-body text-blue-1100 font-regular text-md my-2'>In this "Understanding your worries" short exercise, you reflected on what are you most worried about.</p>
+                <p className='font-body text-blue-1100 font-regular text-md my-2'>In this "Understanding your worries" short exercise, you reflected on what you are most worried about.</p>
 
                 {location.state.value.map((value, index) => {
                     if (index === 0) {
