@@ -15,7 +15,7 @@ const StartUnderstandFeelingsAndEmotions = () => {
         });
     }, [analytics])
     const [exercises, setExercises] = useState({
-        title: "Understanding emotions",
+        title: "Understand your feelings and emotions",
         placeholder: "Write your thoughts here...",
         data: [
             {
