@@ -31,59 +31,8 @@ const UnderstandFeelingsAndEmotions = () => {
                     }
                 ]
             },
-            //             {
-            //                 refId: "referrerIdTwo",
-            //                 title: "",
-            //                 type: "text-details",
-            //                 shouldBeVisible: false,
-            //                 notes: [
-            //                     {
-            //                         value: "Recognising our emotions can be a rather peculiar task.",
-            //                     },
-            //                     {
-            //                         value: "Some emotions are pure as the clearest sky or the darkest night."
-            //                     },
-            //                     {
-            //                         value: "Some emotions are a lot more complex and difficult to grasp."
-            //                     }
-            //                 ]
-            //             },
-            //             {
-            //                 refId: "referrerIdThree",
-            //                 title: "",
-            //                 type: "text-details",
-            //                 shouldBeVisible: false,
-            //                 notes: [
-            //                     {
-            //                         value: "We were taught to regulate our emotions from an early age.",
-            //                     },
-            //                     {
-            //                         value: "Few of us are taught to understand and recognise our emotions properly."
-            //                     },
-            //                     {
-            //                         value: "Emotions help us survive and motivate us to do things."
-            //                     }
-            //                 ]
-            //             },
-            //             {
-            //                 refId: "referrerIdFour",
-            //                 title: "",
-            //                 type: "text-details",
-            //                 shouldBeVisible: false,
-            //                 notes: [
-            //                     {
-            //                         value: "Emotions guide our decisions, help us to connect with others and keep us safe.",
-            //                     },
-            //                     {
-            //                         value: "Emotional intelligence, or your ability to understand and manage emotions, has been shown to play an important role in decision-making."
-            //                     },
-            //                     {
-            //                         value: "It is positively correlated with higher life satisfaction, self-esteem and lower levels of insecurity or depression. It is also negatively correlated with poor health choices and behavior."
-            //                     }
-            //                 ]
-            //             },
             {
-                refId: "referrerIdFive",
+                refId: "referrerIdTwo",
                 title: "Learning to identify our emotions help us develop a better understanding of ourselves, build more meaningful relationships and make better decisions.",
                 subTitle: "Today, we will start by taking an emotional temperature:",
                 question: "What emotions have I felt today? Select up to 3 emotions",
@@ -106,7 +55,7 @@ const UnderstandFeelingsAndEmotions = () => {
                 error: "You need to select max 3 items"
             },
             {
-                refId: "referrerIdSix",
+                refId: "referrerIdThree",
                 question: "Which feeling is the most prominent?",
                 type: "single-selection",
                 response: "",
@@ -120,7 +69,7 @@ const UnderstandFeelingsAndEmotions = () => {
                 error: "You need to select one item"
             },
             {
-                refId: "referrerIdSeven",
+                refId: "referrerIdFour",
                 question: "When did you feel this way? What triggered you to feel",
                 type: "text",
                 shouldBeVisible: false,
@@ -128,7 +77,7 @@ const UnderstandFeelingsAndEmotions = () => {
                 response: "",
             },
             {
-                refId: "referrerIdEight",
+                refId: "referrerIdSix",
                 question: "Why did it make you feel",
                 type: "text",
                 shouldBeVisible: false,
