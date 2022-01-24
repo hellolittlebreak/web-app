@@ -60,8 +60,16 @@ const WhatAreYouWorriedFor = () => {
             {
                 refId: "refIdTwo",
                 type: "text",
-                title: "What are some clues that your worry will come true?",
-                hint: "Think about what WILL happen, instead of what COULD happen. This helps you to focus on reality and avoids unrealistic worries",
+                title: "“Worry often gives a small thing a big shadow.”     – Swedish Proverb",
+                subTitle: "Worry is a normal part of our life. We worry about all kinds of things. Performance review, first dates, deadlines, paying bills, midterms, health checkups, etc. What makes worry troublesome is that when we worry, we tend to jump straight to the worst possible consequence. Therefore in this exercise, we ask you to think about this…",
+                type: "informative",
+                shouldBeVisible: false,
+            },
+            {
+                refId: "refIdThree",
+                type: "text",
+                title: "What are some clues that your worry will Not come true?",
+                hint: "Think about what Will happen, instead of what Could happen. This helps you to focus on reality and avoids unrealistic worries.",
                 shouldBeVisible: false,
                 response: ""
             }
