@@ -202,7 +202,6 @@ const UnderstandFeelingsAndEmotions = () => {
         setExercises(newExercisesList)
         const currentPosition = parseInt(e.target.parentNode.id) + 1
         if (currentPosition === exercises.data.length) {
-            console.log(exercises.data)
             navigate("/congratulations-understand-feelings-and-emotions", { state: { value: exercises.data } })
         } else {
             setCurrentPage(() => currentPosition)
@@ -228,7 +227,7 @@ const UnderstandFeelingsAndEmotions = () => {
         {
             exercises.data.map((item, index) => {
                 if (item.shouldBeVisible === true) {
-                    return <div id={index} key={index} ref={setRef(item.refId)} className="h-screen lg:h-96 lg:mt-20">
+                    return <div id={index} key={index} ref={setRef(item.refId)} className="h-screen lg:mt-20">
                         {
                             item.newTitle ? <p className="text-md text-blue-1100 font-heading font-semibold lg:ml-4 lg:mt-6">{item.question} <span className="italic lowercase">{item.newTitle}</span>?</p> : <p className="text-md text-blue-1100 font-heading font-semibold lg:ml-4 lg:mt-6">{item.question}</p>
                         }
@@ -236,9 +235,9 @@ const UnderstandFeelingsAndEmotions = () => {
                         <ul className="mt-2 lg:mt-4 flex flex-wrap w-auto">
                             {item.choices && item.choices.map((item, index) => {
                                 if (item.isSelected) {
-                                    return <p key={index} className="w-full lg:w-2/5 transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110 cursor-pointer lg:cursor-pointer lg:select-none mx-6 m-2 px-4 py-2 border-2 border-blue-1100 bg-blue-1100 text-white rounded-full border-solid" onClick={(e) => handleSelection(e, index, false)}> {item.value}</p>
+                                    return <p key={index} className="w-full lg:w-2/5 transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110 cursor-pointer lg:cursor-pointer lg:select-none mx-6 m-2 px-4 py-2 border-2 border-blue-1100 bg-blue-1100 text-white rounded-full border-solid" onClick={(e) => handleSelection(e, false, index)}> {item.value}</p>
                                 }
-                                return <p key={index} className="w-full lg:w-2/5 transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110 cursor-pointer lg:cursor-pointer lg:select-none mx-6 m-2 px-4 py-2 border-2 border-blue-1100 bg-white hover:bg-blue-1100 hover:text-white rounded-full border-solid" onClick={(e) => handleSelection(e, index, true)}> {item.value}</p>
+                                return <p key={index} className="w-full lg:w-2/5 transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110 cursor-pointer lg:cursor-pointer lg:select-none mx-6 m-2 px-4 py-2 border-2 border-blue-1100 bg-white hover:bg-blue-1100 hover:text-white rounded-full border-solid" onClick={(e) => handleSelection(e, true, index)}> {item.value}</p>
                             })}
                         </ul>
                         <ul>

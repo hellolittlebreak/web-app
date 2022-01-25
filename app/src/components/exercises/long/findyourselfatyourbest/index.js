@@ -174,7 +174,7 @@ const FindYourselfAtYourBest = () => {
         {
             exercises.data.map((item, index) => {
                 if (item.shouldBeVisible === true) {
-                    return <div id={index} key={index} ref={setRef(item.refId)} className="h-screen lg:h-108 lg:mt-10">
+                    return <div id={index} key={index} ref={setRef(item.refId)} className="h-screen lg:mt-10">
                         <p className="text-lg text-blue-1100 font-heading font-semibold lg:ml-4">{item.title}</p>
                         {item.subTitle && <div className="thought">
                             <p className="sb14 text-md text-blue-1100 font-heading text-xs lg:text-sm lg:ml-4">{item.subTitle}</p>
@@ -185,9 +185,9 @@ const FindYourselfAtYourBest = () => {
                         <ul className="mt-2 lg:mt-10 flex flex-wrap">
                             {item.choices && item.choices.map((item, index) => {
                                 if (item.isSelected) {
-                                    return <p key={index} className="w-full lg:w-2/5 transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110 cursor-pointer lg:cursor-pointer lg:select-none mx-6 m-2 px-4 py-2 border-2 border-blue-1100 bg-blue-1100 text-white rounded-full border-solid" onClick={(e) => handleSelection(e, index, false)}> {item.value}</p>
+                                    return <p key={index} className="w-full lg:w-2/5 transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110 cursor-pointer lg:cursor-pointer lg:select-none mx-6 m-2 px-4 py-2 border-2 border-blue-1100 bg-blue-1100 text-white rounded-full border-solid" onClick={(e) => handleSelection(e, false, index)}> {item.value}</p>
                                 }
-                                return <p key={index} className="w-full lg:w-2/5 transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110 cursor-pointer lg:cursor-pointer lg:select-none mx-6 m-2 px-4 py-2 border-2 border-blue-1100 bg-white hover:bg-blue-1100 hover:text-white rounded-full border-solid" onClick={(e) => handleSelection(e, index, true)}> {item.value}</p>
+                                return <p key={index} className="w-full lg:w-2/5 transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110 cursor-pointer lg:cursor-pointer lg:select-none mx-6 m-2 px-4 py-2 border-2 border-blue-1100 bg-white hover:bg-blue-1100 hover:text-white rounded-full border-solid" onClick={(e) => handleSelection(e, true, index)}> {item.value}</p>
                             })}
                         </ul>
                         {item.hint && <div className="w-full p-2">
