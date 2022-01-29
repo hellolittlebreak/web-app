@@ -30,11 +30,11 @@ const CongratulationsReconstructThoughts = () => {
                 </div>
                 <h1 className='text-center text-4xl font-heading text-blue-1100'>Congratulations</h1>
                 <div className='bg-white rounded-lg p-10 mt-10 bg-opacity-50'>
-                    <p className='font-heading text-blue-1100 font-regular text-md my-2'>During this 7-min little break, you have taken the time to embrace yourself and how far you have come</p>
-                    <p className='font-heading text-blue-1100 font-regular text-md my-2'>It is a step closer towards reconstructing your thoughts.</p>
+                    <p className='font-heading text-blue-1100 font-regular text-md my-2'>During this 7-min little break, you have learned the simple three-step approach to reconstruct negative thoughts.</p>
+                    <p className='font-heading text-blue-1100 font-regular text-md my-2'>Practice this exercise a few times to train your mind to automatically catch and challenge unhelpful thoughts, and restructure them in more helpful ways.</p>
                 </div>
             </div>
-            <p className="font-heading font-bold text-blue-1100 mx-8 my-8">In this "Reconstruct your thoughts" long exercise, you tried to remember some of the past things from your life:</p>
+            <p className="font-heading font-bold text-blue-1100 mx-8 my-8">In this "Reconstruct your thoughts" long exercise, you practiced restructuring a negative thought from recent events:</p>
             {location.state.value.map((item, index) => {
                 return <div key={index} className="mx-8 my-4 flex items-center">
                     <table className='table'>
