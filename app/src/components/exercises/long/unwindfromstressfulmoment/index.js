@@ -24,18 +24,18 @@ const UnwindFromStressfulMoment = () => {
         data: [
             {
                 refId: "referrerIdOne",
-                title: "The Fight-or-Flight Response",
+                title: "The Fight or Flight Stress Response",
                 type: "text-details",
                 shouldBeVisible: true,
                 notes: [
                     {
-                        value: "Today, we focus on an exercise that helps you recognises when the “fight or flight” is taking over you. We will also give you tips and exercises on how to switch it off and return to your calm and rational self.",
+                        value: "A stressful situation — sometimes environmental, such as an important deadline, sometimes psychological, such as persistent worry about losing a job — can be overwhelming and often leaving us emotionally paralysed for a while after.",
                     },
                     {
-                        value: "A stressful situation -- sometimes environmental, such as an important deadline, sometimes psychological, such as persistent worry about losing a job — can trigger a cascade of stress hormones that produce classic physiological responses like elevated heart rate, quickened breathes, tensing muscles sweating palms."
+                        value: "What happens to our body is that during a stressful situation, a cascade of stress hormones are released. They produce the classic physiological responses like elevated heart rate, quickened breathes, tensing muscles and sweating palms."
                     },
                     {
-                        value: "We have all been there."
+                        value: "Such stress response is also known as the fight-or-flight response. Today, we focus on an exercise that helps you recognises when stress is taking over you. We will also give you tips on how to unwind from the stressful moment and return to your calm and rational self."
                     }
                 ]
             },
@@ -46,19 +46,19 @@ const UnwindFromStressfulMoment = () => {
                 shouldBeVisible: false,
                 notes: [
                     {
-                        value: "This combination of reactions to emotion is also known as the \"fight-or-flight\" response."
+                        value: "Evolutionarily, this response enables us to react quickly to dangerous situations."
                     },
                     {
-                        value: "Evolutionarily, this response enables us to react quickly to dangerous situations. In modern days, our body can also overreact to stressors that are not life-threatening, such as traffic jams, work pressure, and family difficulties."
+                        value: "In modern days, our body can also overreact to stressors that are not life-threatening, such as traffic jams, work pressure, and family difficulties."
                     },
                     {
-                        value: "As our body perceives stress, our nervous system functions like a gas pedal in a car, triggering the “fight or flight” response and releasing cortisol, often called “stress hormone”, into your bloodstream."
+                        value: "As our body perceives stress, our nervous system functions like a gas pedal in a car, triggering the “fight or flight” response and releasing cortisol, often called “stress hormone”, into our bloodstream."
                     }
                 ]
             },
             {
                 refId: "referrerIdThree",
-                title: "Have I had any of the following responses in recent events? Select all that applies.",
+                title: "Have you had any of the following responses in recent events? Select all that applies.",
                 type: "multiple-choice-selection",
                 shouldBeVisible: false,
                 choices: [
@@ -121,7 +121,7 @@ const UnwindFromStressfulMoment = () => {
             },
             {
                 refId: "referrerIdSix",
-                title: "When emotions take over, often it doesn’t help to tell ourselves “Calm down, nothing’s going to happen”. Reality is something physiological is happening in our body. Instead, try to calm our body down with deep breaths and slow exhales.",
+                title: "When stress takes over, often it doesn’t help to tell ourselves “Calm down, nothing’s going to happen”. Reality is, something physiological is happening in our body. Instead, try to calm our body down with deep breaths and slow exhales.",
                 shouldBeVisible: false,
                 type: "text-details",
                 notes: [
@@ -129,7 +129,7 @@ const UnwindFromStressfulMoment = () => {
                         value: "Calming the breath will in turn help regulate our heartbeats and relieve muscle tension. When our body is more balanced, we can then deal with our thoughts and take a closer look at how and why we’re feeling that way."
                     },
                     {
-                        value: "In the last exercise, you have practiced journaling to help you recognise when emotions are taking over. Next up, we have a few relaxation techniques that are developed to help you effectively manage your emotions and responses. Extend your Little Break below to try out some of the techniques!  "
+                        value: "Next up, we have a relaxation technique that is developed to help you effectively manage and unwind from your stress.  "
                     }
                 ]
             },
@@ -140,16 +140,10 @@ const UnwindFromStressfulMoment = () => {
                 shouldBeVisible: false,
                 notes: [
                     {
-                        value: "Deep breathing can effectively help lessen stress, anxiety, or other fight-or-flight emotions that could be taking over you in difficult situations."
+                        value: "In deep breathing relaxations, exhaling is a crucial element. It is linked to our parasympathetic nervous system, which influences our body’s ability to relax and calm down."
                     },
                     {
-                        value: "Inhaling deeply may not always calm you down."
-                    },
-                    {
-                        value: "But exhaling is linked to our parasympathetic nervous system, which influences our body's ability to relax and calm down."
-                    },
-                    {
-                        value: "When our body is more balanced, we can then deal with our thoughts and take a closer look at how and why we're feeling that way."
+                        value: "When our body is more balanced, we can then examine our thoughts and emotions more closely."
                     }
                 ]
             },
