@@ -30,11 +30,11 @@ const CongratulationsUnwindFromStressfulMoment = () => {
                 </div>
                 <h1 className='text-center text-4xl font-heading text-blue-1100'>Congratulations</h1>
                 <div className='bg-white rounded-lg p-10 mt-10 bg-opacity-50'>
-                    <p className='font-heading text-blue-1100 font-regular text-md my-2'>During this 7-min little break, you have taken the time to embrace yourself and how far you have come</p>
-                    <p className='font-heading text-blue-1100 font-regular text-md my-2'>It is a step closer towards establishing confidence and unwinding yourself from stress.</p>
+                    <p className='font-heading text-blue-1100 font-regular text-md my-2'>During this 7-min little break, you have taken the time to recognise when stress is taking over you, and learned a relaxation technique to unwind from stress.</p>
+                    <p className='font-heading text-blue-1100 font-regular text-md my-2'>Be mindful of how your body is responding to your daily environment. Remember to practice deep breathing whenever you are feeling stressed.</p>
                 </div>
             </div>
-            <p className="font-heading font-bold text-blue-1100 mx-8 my-8">In this "Unwind from stressful moment" long exercise, you tried to relax and make yourself feel better:</p>
+            <p className="font-heading font-bold text-blue-1100 mx-8 my-8">In this "Unwind from stressful moment" long exercise, you tried to recognise stress and learned to relax:</p>
             {location.state.value.map((item, index) => {
                 return <div key={index} className="mx-8 my-4 flex items-center">
                     {(item.type === "text" || item.type === "multiple-choice-selection") &&
